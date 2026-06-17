@@ -11,22 +11,23 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { LangProvider } from "@/lib/i18n";
+import { AuthProvider } from "@/lib/auth";
+import { LoginGate } from "@/components/login-gate";
+import { PWAInstallPrompt } from "@/components/pwa-install";
 
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Page introuvable / Not found</h2>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            Accueil / Home
           </Link>
         </div>
       </div>
@@ -45,26 +46,20 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
+          Cette page n'a pas pu être chargée.
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
-        </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
+            onClick={() => { router.invalidate(); reset(); }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Try again
+            Réessayer
           </button>
           <a
             href="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
-            Go home
+            Accueil
           </a>
         </div>
       </div>
@@ -76,31 +71,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SIGHT AFRICA — Strategic Operating System" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
+      { name: "theme-color", content: "#0F766E" },
+      { title: "SIGHT AFRICA — Système d'exploitation stratégique" },
       {
         name: "description",
         content:
-          "The 10-year blueprint of SIGHT AFRICA: building critical digital infrastructure for Burundi and East Africa across payments, identity, cloud, AI, education and media.",
+          "Blueprint 10 ans de SIGHT AFRICA : infrastructure numérique critique pour le Burundi et l'Afrique de l'Est — paiements, identité, cloud, IA, éducation et médias. Tous les montants en FBU.",
       },
       { name: "author", content: "SIGHT AFRICA" },
       { property: "og:title", content: "SIGHT AFRICA — Strategic Operating System" },
       {
         property: "og:description",
         content:
-          "Vision 2035, roadmap, products, organization and execution playbook for an African technology group.",
+          "Vision 2035, feuille de route, produits, organisation et plan d'exécution d'un groupe technologique africain.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "SIGHT AFRICA — Strategic Operating System" },
-      { name: "description", content: "SIGHT AFRICA Nexus builds foundational digital infrastructure for East Africa, fostering innovation and economic growth." },
-      { property: "og:description", content: "SIGHT AFRICA Nexus builds foundational digital infrastructure for East Africa, fostering innovation and economic growth." },
-      { name: "twitter:description", content: "SIGHT AFRICA Nexus builds foundational digital infrastructure for East Africa, fostering innovation and economic growth." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0a6aae0d-b277-40f5-9ca9-7c3a83573361/id-preview-2b89024d--20b645fd-4b1b-44da-bd21-c990df873936.lovable.app-1781677445154.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0a6aae0d-b277-40f5-9ca9-7c3a83573361/id-preview-2b89024d--20b645fd-4b1b-44da-bd21-c990df873936.lovable.app-1781677445154.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "manifest", href: "/manifest.webmanifest" },
       { rel: "icon", type: "image/png", href: "/__l5e/assets-v1/e8f53c28-8749-4984-927b-9891140f3645/sight-logo.png" },
       { rel: "apple-touch-icon", href: "/__l5e/assets-v1/e8f53c28-8749-4984-927b-9891140f3645/sight-logo.png" },
       {
@@ -117,7 +111,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <HeadContent />
       </head>
@@ -134,8 +128,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <LangProvider>
+        <AuthProvider>
+          <LoginGate>
+            <Outlet />
+            <PWAInstallPrompt />
+          </LoginGate>
+        </AuthProvider>
+      </LangProvider>
     </QueryClientProvider>
   );
 }

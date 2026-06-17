@@ -8,7 +8,7 @@ function nf(n: number, d = 1): string {
 
 export function formatFBU(usdAmount: number): string {
   const v = usdAmount * FX_USD_FBU;
-  if (v >= 1e12) return `${nf(v / 1e12, 2)} Bn FBU`; // billions (1e12)
+  if (v >= 1e12) return `${nf(v / 1e12, 2)} Bn FBU`;
   if (v >= 1e9) return `${nf(v / 1e9, 1)} Md FBU`;
   if (v >= 1e6) return `${nf(v / 1e6, 0)} M FBU`;
   if (v >= 1e3) return `${nf(v / 1e3, 0)} k FBU`;
@@ -20,10 +20,9 @@ export function convertMoneyStr(s: string): string {
   if (!s || typeof s !== "string") return s;
   return s.replace(/\$(\d+(?:[.,]\d+)?)\s*([kMB])?/g, (_m, num: string, suf?: string) => {
     let v = parseFloat(num.replace(",", "."));
-    if (suf === "k") v *= 1;          // already in thousands of USD? No: $300k = 300,000 USD
-    if (suf === "k") v = parseFloat(num.replace(",", ".")) * 1e3;
-    else if (suf === "M") v = parseFloat(num.replace(",", ".")) * 1e6;
-    else if (suf === "B") v = parseFloat(num.replace(",", ".")) * 1e9;
+    if (suf === "k") v *= 1e3;
+    else if (suf === "M") v *= 1e6;
+    else if (suf === "B") v *= 1e9;
     return formatFBU(v);
   });
 }
