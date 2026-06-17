@@ -92,6 +92,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "SIGHT AFRICA — Strategic Operating System" },
+      { name: "description", content: "SIGHT AFRICA Nexus builds foundational digital infrastructure for East Africa, fostering innovation and economic growth." },
+      { property: "og:description", content: "SIGHT AFRICA Nexus builds foundational digital infrastructure for East Africa, fostering innovation and economic growth." },
+      { name: "twitter:description", content: "SIGHT AFRICA Nexus builds foundational digital infrastructure for East Africa, fostering innovation and economic growth." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0a6aae0d-b277-40f5-9ca9-7c3a83573361/id-preview-2b89024d--20b645fd-4b1b-44da-bd21-c990df873936.lovable.app-1781677445154.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0a6aae0d-b277-40f5-9ca9-7c3a83573361/id-preview-2b89024d--20b645fd-4b1b-44da-bd21-c990df873936.lovable.app-1781677445154.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
