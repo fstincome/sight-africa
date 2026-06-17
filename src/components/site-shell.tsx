@@ -18,11 +18,11 @@ function Header() {
     <header className="sticky top-0 z-40 backdrop-blur-md bg-background/80 border-b border-border">
       <div className="container-x flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-3 group">
-          <Mark />
-          <div className="leading-none">
-            <div className="text-[15px] tracking-tight font-medium">SIGHT AFRICA</div>
-            <div className="eyebrow text-[10px] mt-1">Strategic Operating System</div>
-          </div>
+          <Mark className="h-10 w-auto" />
+          <span className="hidden sm:block leading-none border-l border-border pl-3">
+            <span className="block text-[11px] tracking-[0.18em] uppercase text-muted-foreground font-mono">AFRICA</span>
+            <span className="block text-[10px] tracking-[0.16em] uppercase text-primary font-mono mt-1">Strategic OS</span>
+          </span>
         </Link>
         <nav className="hidden lg:flex items-center gap-1">
           {NAV.map((n) => (
@@ -74,13 +74,11 @@ function Footer() {
     <footer className="rule-line mt-24">
       <div className="container-x py-16 grid md:grid-cols-4 gap-10">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-3">
-            <Mark />
-            <div className="font-display text-2xl">{SIGHT.name}</div>
-          </div>
-          <p className="mt-4 text-sm text-muted-foreground max-w-md leading-relaxed">
+          <Mark className="h-16 w-auto" />
+          <p className="mt-6 text-sm text-muted-foreground max-w-md leading-relaxed">
             {SIGHT.tagline} A strategic operating system for the decade ahead — built for founders, operators, partners and investors.
           </p>
+          <p className="mt-3 text-xs italic text-muted-foreground/80">Equipping today, inventing tomorrow.</p>
         </div>
         <div>
           <div className="eyebrow mb-3">Group</div>
