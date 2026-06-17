@@ -1,5 +1,6 @@
 import { Link, Outlet } from "@tanstack/react-router";
 import { NAV, SIGHT } from "@/lib/sight-data";
+import sightLogo from "@/assets/sight-logo.png.asset.json";
 import type { ReactNode } from "react";
 
 export function SiteShell({ children }: { children?: ReactNode }) {
@@ -17,11 +18,11 @@ function Header() {
     <header className="sticky top-0 z-40 backdrop-blur-md bg-background/80 border-b border-border">
       <div className="container-x flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-3 group">
-          <Mark />
-          <div className="leading-none">
-            <div className="text-[15px] tracking-tight font-medium">SIGHT AFRICA</div>
-            <div className="eyebrow text-[10px] mt-1">Strategic Operating System</div>
-          </div>
+          <Mark className="h-10 w-auto" />
+          <span className="hidden sm:block leading-none border-l border-border pl-3">
+            <span className="block text-[11px] tracking-[0.18em] uppercase text-muted-foreground font-mono">AFRICA</span>
+            <span className="block text-[10px] tracking-[0.16em] uppercase text-primary font-mono mt-1">Strategic OS</span>
+          </span>
         </Link>
         <nav className="hidden lg:flex items-center gap-1">
           {NAV.map((n) => (
@@ -73,13 +74,11 @@ function Footer() {
     <footer className="rule-line mt-24">
       <div className="container-x py-16 grid md:grid-cols-4 gap-10">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-3">
-            <Mark />
-            <div className="font-display text-2xl">{SIGHT.name}</div>
-          </div>
-          <p className="mt-4 text-sm text-muted-foreground max-w-md leading-relaxed">
+          <Mark className="h-16 w-auto" />
+          <p className="mt-6 text-sm text-muted-foreground max-w-md leading-relaxed">
             {SIGHT.tagline} A strategic operating system for the decade ahead — built for founders, operators, partners and investors.
           </p>
+          <p className="mt-3 text-xs italic text-muted-foreground/80">Equipping today, inventing tomorrow.</p>
         </div>
         <div>
           <div className="eyebrow mb-3">Group</div>
@@ -111,12 +110,13 @@ function Footer() {
   );
 }
 
-export function Mark() {
+export function Mark({ className = "h-9 w-auto" }: { className?: string } = {}) {
   return (
-    <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-sm border border-foreground/80">
-      <span className="absolute inset-1 border border-primary/60" />
-      <span className="relative h-1.5 w-1.5 rounded-full bg-primary" />
-    </span>
+    <img
+      src={sightLogo.url}
+      alt="SIGHT AFRICA"
+      className={`${className} object-contain`}
+    />
   );
 }
 
