@@ -18,6 +18,7 @@ import { Route as OrganizationRouteImport } from './routes/organization'
 import { Route as FutureProductsRouteImport } from './routes/future-products'
 import { Route as FinancialsRouteImport } from './routes/financials'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
+import { Route as BlueprintRouteImport } from './routes/blueprint'
 import { Route as IndexRouteImport } from './routes/index'
 
 const Vision2035Route = Vision2035RouteImport.update({
@@ -65,6 +66,11 @@ const EcosystemRoute = EcosystemRouteImport.update({
   path: '/ecosystem',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlueprintRoute = BlueprintRouteImport.update({
+  id: '/blueprint',
+  path: '/blueprint',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -73,6 +79,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/blueprint': typeof BlueprintRoute
   '/ecosystem': typeof EcosystemRoute
   '/financials': typeof FinancialsRoute
   '/future-products': typeof FutureProductsRoute
@@ -85,6 +92,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/blueprint': typeof BlueprintRoute
   '/ecosystem': typeof EcosystemRoute
   '/financials': typeof FinancialsRoute
   '/future-products': typeof FutureProductsRoute
@@ -98,6 +106,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/blueprint': typeof BlueprintRoute
   '/ecosystem': typeof EcosystemRoute
   '/financials': typeof FinancialsRoute
   '/future-products': typeof FutureProductsRoute
@@ -112,6 +121,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/blueprint'
     | '/ecosystem'
     | '/financials'
     | '/future-products'
@@ -124,6 +134,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/blueprint'
     | '/ecosystem'
     | '/financials'
     | '/future-products'
@@ -136,6 +147,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/blueprint'
     | '/ecosystem'
     | '/financials'
     | '/future-products'
@@ -149,6 +161,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BlueprintRoute: typeof BlueprintRoute
   EcosystemRoute: typeof EcosystemRoute
   FinancialsRoute: typeof FinancialsRoute
   FutureProductsRoute: typeof FutureProductsRoute
@@ -225,6 +238,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EcosystemRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blueprint': {
+      id: '/blueprint'
+      path: '/blueprint'
+      fullPath: '/blueprint'
+      preLoaderRoute: typeof BlueprintRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -237,6 +257,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BlueprintRoute: BlueprintRoute,
   EcosystemRoute: EcosystemRoute,
   FinancialsRoute: FinancialsRoute,
   FutureProductsRoute: FutureProductsRoute,
