@@ -43,6 +43,13 @@ function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2 shrink-0">
+          <Link
+            to="/blueprint"
+            className="hidden md:inline-flex font-mono text-[11px] px-2 py-1 border border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            title="Download Word blueprint"
+          >
+            ↓ .DOCX
+          </Link>
           <LangToggle />
           <button
             onClick={signOut}
