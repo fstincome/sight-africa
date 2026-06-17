@@ -334,3 +334,11 @@ const out = path.join("public", "sight-africa-blueprint.docx");
 fs.mkdirSync("public", { recursive: true });
 fs.writeFileSync(out, buf);
 console.log("Wrote", out, buf.length, "bytes");
+
+try {
+  execSync("libreoffice --headless --convert-to pdf --outdir public public/sight-africa-blueprint.docx", { stdio: "inherit" });
+  console.log("Wrote public/sight-africa-blueprint.pdf");
+} catch (e) {
+  console.warn("PDF conversion failed:", e?.message);
+}
+
