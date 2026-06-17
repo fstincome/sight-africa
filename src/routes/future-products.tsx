@@ -1,20 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Section } from "@/components/site-shell";
-import { FUTURE_PRODUCTS } from "@/lib/sight-data";
+import { useLocalizedData, useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/future-products")({
-  head: () => ({
-    meta: [
-      { title: "Future Build — SIGHT AFRICA" },
-      { name: "description", content: "The 15 subsidiaries SIGHT AFRICA will build over the next decade — cloud, identity, payments, data, security, compute, capital, academy, foundation and more." },
-      { property: "og:title", content: "Future Build — SIGHT AFRICA" },
-      { property: "og:description", content: "Every future product. Why each must exist." },
-    ],
-  }),
+  head: () => ({ meta: [{ title: "Construction future — SIGHT AFRICA" }] }),
   component: Page,
 });
 
 function Page() {
+  const t = useT();
+  const { FUTURE_PRODUCTS } = useLocalizedData();
   return (
     <SiteShell>
       <PageHeader
@@ -30,7 +25,7 @@ function Page() {
                 <div className="font-mono text-[10px] tracking-widest text-muted-foreground">
                   /{String(i + 1).padStart(2, "0")}
                 </div>
-                <div className="font-mono text-[10px] text-primary">BORN · {f.born}</div>
+                <div className="font-mono text-[10px] text-primary">{t("BORN")} · {f.born}</div>
               </div>
               <div className="font-display text-3xl mt-4">{f.code}</div>
               <div className="text-sm text-primary mt-1">{f.role}</div>

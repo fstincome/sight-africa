@@ -1,20 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Section } from "@/components/site-shell";
-import { PLAYBOOK } from "@/lib/sight-data";
+import { useLocalizedData, useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/playbook")({
-  head: () => ({
-    meta: [
-      { title: "Execution Playbook — SIGHT AFRICA" },
-      { name: "description", content: "For every product and every phase: what to build now, what to wait on, what to outsource, what to keep internal, what to automate and what to control manually." },
-      { property: "og:title", content: "Execution Playbook — SIGHT AFRICA" },
-      { property: "og:description", content: "Build, wait, outsource, automate." },
-    ],
-  }),
+  head: () => ({ meta: [{ title: "Plan d'exécution — SIGHT AFRICA" }] }),
   component: Page,
 });
 
 function Page() {
+  const t = useT();
+  const { PLAYBOOK } = useLocalizedData();
   return (
     <SiteShell>
       <PageHeader
@@ -28,16 +23,16 @@ function Page() {
             <div key={p.product} className="bg-background p-8">
               <div className="grid lg:grid-cols-12 gap-6">
                 <div className="lg:col-span-3">
-                  <div className="eyebrow">Product</div>
+                  <div className="eyebrow">{t("Product")}</div>
                   <h3 className="font-display text-3xl mt-2">{p.product}</h3>
                 </div>
                 <div className="lg:col-span-9 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                  <Cell k="Now" v={p.now} accent />
-                  <Cell k="Later" v={p.later} />
-                  <Cell k="Outsource" v={p.outsource} />
-                  <Cell k="Internal" v={p.internal} />
-                  <Cell k="Automate" v={p.automate} />
-                  <Cell k="Manual control" v={p.manual} />
+                  <Cell k={t("Now")} v={p.now} accent />
+                  <Cell k={t("Later")} v={p.later} />
+                  <Cell k={t("Outsource")} v={p.outsource} />
+                  <Cell k={t("Internal")} v={p.internal} />
+                  <Cell k={t("Automate")} v={p.automate} />
+                  <Cell k={t("Manual control")} v={p.manual} />
                 </div>
               </div>
             </div>

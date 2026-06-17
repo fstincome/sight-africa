@@ -1,7 +1,9 @@
 import { Link, Outlet } from "@tanstack/react-router";
-import { NAV, SIGHT } from "@/lib/sight-data";
 import sightLogo from "@/assets/sight-logo.png.asset.json";
 import type { ReactNode } from "react";
+import { useT, useLocalizedData } from "@/lib/i18n";
+import { LangToggle } from "@/components/lang-toggle";
+import { useAuth } from "@/lib/auth";
 
 export function SiteShell({ children }: { children?: ReactNode }) {
   return (
@@ -14,17 +16,20 @@ export function SiteShell({ children }: { children?: ReactNode }) {
 }
 
 function Header() {
+  const { NAV } = useLocalizedData();
+  const t = useT();
+  const { signOut } = useAuth();
   return (
     <header className="sticky top-0 z-40 backdrop-blur-md bg-background/80 border-b border-border">
-      <div className="container-x flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-3 group">
+      <div className="container-x flex items-center justify-between h-16 gap-4">
+        <Link to="/" className="flex items-center gap-3 group shrink-0">
           <Mark className="h-10 w-auto" />
           <span className="hidden sm:block leading-none border-l border-border pl-3">
             <span className="block text-[11px] tracking-[0.18em] uppercase text-muted-foreground font-mono">AFRICA</span>
-            <span className="block text-[10px] tracking-[0.16em] uppercase text-primary font-mono mt-1">Strategic OS</span>
+            <span className="block text-[10px] tracking-[0.16em] uppercase text-primary font-mono mt-1">{t("Strategic OS")}</span>
           </span>
         </Link>
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1 flex-1 justify-center">
           {NAV.map((n) => (
             <Link
               key={n.to}
@@ -37,12 +42,16 @@ function Header() {
             </Link>
           ))}
         </nav>
-        <Link
-          to="/vision-2035"
-          className="hidden md:inline-flex items-center gap-2 text-sm text-primary hover:underline underline-offset-4"
-        >
-          2035 →
-        </Link>
+        <div className="flex items-center gap-2 shrink-0">
+          <LangToggle />
+          <button
+            onClick={signOut}
+            className="hidden md:inline-flex font-mono text-[11px] px-2 py-1 border border-border text-muted-foreground hover:text-foreground"
+            title="Se déconnecter / Sign out"
+          >
+            ⎋
+          </button>
+        </div>
       </div>
       <MobileNav />
     </header>
@@ -50,6 +59,7 @@ function Header() {
 }
 
 function MobileNav() {
+  const { NAV } = useLocalizedData();
   return (
     <div className="lg:hidden border-t border-border overflow-x-auto">
       <div className="container-x flex gap-1 py-2 whitespace-nowrap">
@@ -70,33 +80,36 @@ function MobileNav() {
 }
 
 function Footer() {
+  const t = useT();
+  const { SIGHT } = useLocalizedData();
   return (
     <footer className="rule-line mt-24">
       <div className="container-x py-16 grid md:grid-cols-4 gap-10">
         <div className="md:col-span-2">
           <Mark className="h-16 w-auto" />
           <p className="mt-6 text-sm text-muted-foreground max-w-md leading-relaxed">
-            {SIGHT.tagline} A strategic operating system for the decade ahead — built for founders, operators, partners and investors.
+            {SIGHT.tagline} {t("A strategic operating system for the decade ahead — built for founders, operators, partners and investors.")}
           </p>
-          <p className="mt-3 text-xs italic text-muted-foreground/80">Equipping today, inventing tomorrow.</p>
+          <p className="mt-3 text-xs italic text-muted-foreground/80">{t("Equipping today, inventing tomorrow.")}</p>
+          <p className="mt-4 text-[11px] font-mono text-muted-foreground">FBU · 1 USD ≈ 2 950 FBU</p>
         </div>
         <div>
-          <div className="eyebrow mb-3">Group</div>
+          <div className="eyebrow mb-3">{t("Group")}</div>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/vision-2035" className="hover:text-primary">Vision 2035</Link></li>
-            <li><Link to="/roadmap" className="hover:text-primary">10-year roadmap</Link></li>
-            <li><Link to="/ecosystem" className="hover:text-primary">Ecosystem map</Link></li>
-            <li><Link to="/organization" className="hover:text-primary">Organization</Link></li>
+            <li><Link to="/vision-2035" className="hover:text-primary">{t("Vision 2035")}</Link></li>
+            <li><Link to="/roadmap" className="hover:text-primary">{t("10-year roadmap")}</Link></li>
+            <li><Link to="/ecosystem" className="hover:text-primary">{t("Ecosystem map")}</Link></li>
+            <li><Link to="/organization" className="hover:text-primary">{t("Organization")}</Link></li>
           </ul>
         </div>
         <div>
-          <div className="eyebrow mb-3">Stack</div>
+          <div className="eyebrow mb-3">{t("Stack")}</div>
           <ul className="space-y-2 text-sm">
             <li><a href="https://www.mysatoshis.bi" className="hover:text-primary" target="_blank" rel="noreferrer">My Satoshis →</a></li>
             <li><a href="https://www.exchanger.mysatoshis.bi" className="hover:text-primary" target="_blank" rel="noreferrer">MS Exchanger →</a></li>
             <li><Link to="/products" className="hover:text-primary">LEARN BTC</Link></li>
-            <li><Link to="/products" className="hover:text-primary">Africa Fintech Journal</Link></li>
-            <li><Link to="/products" className="hover:text-primary">Yepo</Link></li>
+            <li><Link to="/products" className="hover:text-primary">{t("Africa Fintech Journal")}</Link></li>
+            <li><Link to="/products" className="hover:text-primary">{t("Yepo")}</Link></li>
           </ul>
         </div>
       </div>
@@ -133,14 +146,15 @@ export function PageHeader({
   title: string;
   lead?: string;
 }) {
+  const t = useT();
   return (
     <section className="container-x pt-20 pb-12">
-      <Eyebrow>{eyebrow}</Eyebrow>
+      <Eyebrow>{t(eyebrow)}</Eyebrow>
       <h1 className="font-display text-5xl md:text-7xl leading-[0.95] tracking-tight mt-4 max-w-4xl">
-        {title}
+        {t(title)}
       </h1>
       {lead && (
-        <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">{lead}</p>
+        <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">{t(lead)}</p>
       )}
     </section>
   );
