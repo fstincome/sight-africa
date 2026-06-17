@@ -1,5 +1,6 @@
 import { Link, Outlet } from "@tanstack/react-router";
 import { NAV, SIGHT } from "@/lib/sight-data";
+import sightLogo from "@/assets/sight-logo.png.asset.json";
 import type { ReactNode } from "react";
 
 export function SiteShell({ children }: { children?: ReactNode }) {
@@ -111,12 +112,16 @@ function Footer() {
   );
 }
 
-export function Mark() {
+export function Mark({ size = 32 }: { size?: number } = {}) {
   return (
-    <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-sm border border-foreground/80">
-      <span className="absolute inset-1 border border-primary/60" />
-      <span className="relative h-1.5 w-1.5 rounded-full bg-primary" />
-    </span>
+    <img
+      src={sightLogo.url}
+      alt="SIGHT AFRICA"
+      width={size}
+      height={size}
+      className="object-contain"
+      style={{ height: size, width: size }}
+    />
   );
 }
 
