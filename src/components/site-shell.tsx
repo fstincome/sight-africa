@@ -112,15 +112,12 @@ function Footer() {
   );
 }
 
-export function Mark({ size = 32 }: { size?: number } = {}) {
+export function Mark({ className = "h-9 w-auto" }: { className?: string } = {}) {
   return (
     <img
       src={sightLogo.url}
       alt="SIGHT AFRICA"
-      width={size}
-      height={size}
-      className="object-contain"
-      style={{ height: size, width: size }}
+      className={`${className} object-contain`}
     />
   );
 }
