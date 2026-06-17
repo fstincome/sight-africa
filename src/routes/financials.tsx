@@ -1,20 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Section } from "@/components/site-shell";
-import { FINANCIAL_STRATEGY } from "@/lib/sight-data";
+import { useLocalizedData, useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/financials")({
-  head: () => ({
-    meta: [
-      { title: "Financial Strategy — SIGHT AFRICA" },
-      { name: "description", content: "How SIGHT AFRICA finances each phase: bootstrap revenue, grants, partnerships, venture capital, DFI co-investment and long-duration capital." },
-      { property: "og:title", content: "Financial Strategy — SIGHT AFRICA" },
-      { property: "og:description", content: "Capital strategy per phase." },
-    ],
-  }),
+  head: () => ({ meta: [{ title: "Stratégie financière — SIGHT AFRICA" }] }),
   component: Page,
 });
 
 function Page() {
+  const t = useT();
+  const { FINANCIAL_STRATEGY } = useLocalizedData();
+  const headers = ["Phase", "Bootstrap", "Revenue", "Grants", "Partnerships", "Investors", "Venture", "Sustainability"];
   return (
     <SiteShell>
       <PageHeader
@@ -27,13 +23,11 @@ function Page() {
           <table className="w-full text-sm">
             <thead>
               <tr className="text-left">
-                {["Phase", "Bootstrap", "Revenue", "Grants", "Partnerships", "Investors", "Venture", "Sustainability"].map(
-                  (h) => (
-                    <th key={h} className="eyebrow font-normal text-left p-4 border-b border-foreground align-top">
-                      {h}
-                    </th>
-                  ),
-                )}
+                {headers.map((h) => (
+                  <th key={h} className="eyebrow font-normal text-left p-4 border-b border-foreground align-top">
+                    {t(h)}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>

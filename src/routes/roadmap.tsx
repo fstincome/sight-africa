@@ -1,20 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Section } from "@/components/site-shell";
-import { ROADMAP } from "@/lib/sight-data";
+import { useLocalizedData, useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/roadmap")({
-  head: () => ({
-    meta: [
-      { title: "10-Year Roadmap — SIGHT AFRICA" },
-      { name: "description", content: "Year-by-year strategic priorities, releases, revenue targets, team growth, infrastructure and partnerships from 2026 to 2035." },
-      { property: "og:title", content: "10-Year Roadmap — SIGHT AFRICA" },
-      { property: "og:description", content: "Working backwards from 2035 to today." },
-    ],
-  }),
+  head: () => ({ meta: [{ title: "Feuille de route — SIGHT AFRICA" }] }),
   component: Page,
 });
 
 function Page() {
+  const t = useT();
+  const { ROADMAP } = useLocalizedData();
   return (
     <SiteShell>
       <PageHeader
@@ -31,18 +26,18 @@ function Page() {
                 <div className="lg:col-span-3">
                   <div className="font-display text-7xl leading-none">{y.year}</div>
                   <div className="mt-3 font-mono text-xs tracking-widest text-primary">
-                    PHASE · {y.theme.toUpperCase()}
+                    {t("PHASE")} · {y.theme.toUpperCase()}
                   </div>
                   <div className="mt-6 space-y-2 text-sm">
-                    <div><span className="text-muted-foreground">Revenue</span> · <span className="font-mono">{y.revenue}</span></div>
-                    <div><span className="text-muted-foreground">Team</span> · <span className="font-mono">{y.team}</span></div>
+                    <div><span className="text-muted-foreground">{t("Revenue")}</span> · <span className="font-mono">{y.revenue}</span></div>
+                    <div><span className="text-muted-foreground">{t("Team")}</span> · <span className="font-mono">{y.team}</span></div>
                   </div>
                 </div>
                 <div className="lg:col-span-9 grid md:grid-cols-2 gap-8">
-                  <Block title="Strategic priorities" items={y.priorities} />
-                  <Block title="Releases" items={y.releases} />
-                  <Block title="Infrastructure" items={y.infra} />
-                  <Block title="Partnerships" items={y.partners} />
+                  <Block title={t("Strategic priorities")} items={y.priorities} />
+                  <Block title={t("Releases")} items={y.releases} />
+                  <Block title={t("Infrastructure")} items={y.infra} />
+                  <Block title={t("Partnerships")} items={y.partners} />
                 </div>
               </div>
               {i < ROADMAP.length - 1 && <div className="rule-line" />}
