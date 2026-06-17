@@ -1,10 +1,13 @@
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { useAuth } from "@/lib/auth";
 import { useLang } from "@/lib/i18n";
 import sightLogo from "@/assets/sight-logo.png.asset.json";
 
 export function LoginGate({ children }: { children: ReactNode }) {
   const { authed } = useAuth();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+  if (!mounted) return <div className="min-h-screen bg-background" />;
   if (!authed) return <LoginScreen />;
   return <>{children}</>;
 }
