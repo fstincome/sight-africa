@@ -9,8 +9,62 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as Vision2035RouteImport } from './routes/vision-2035'
+import { Route as RoadmapRouteImport } from './routes/roadmap'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as PlaybookRouteImport } from './routes/playbook'
+import { Route as PhasesRouteImport } from './routes/phases'
+import { Route as OrganizationRouteImport } from './routes/organization'
+import { Route as FutureProductsRouteImport } from './routes/future-products'
+import { Route as FinancialsRouteImport } from './routes/financials'
+import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as IndexRouteImport } from './routes/index'
 
+const Vision2035Route = Vision2035RouteImport.update({
+  id: '/vision-2035',
+  path: '/vision-2035',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoadmapRoute = RoadmapRouteImport.update({
+  id: '/roadmap',
+  path: '/roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlaybookRoute = PlaybookRouteImport.update({
+  id: '/playbook',
+  path: '/playbook',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PhasesRoute = PhasesRouteImport.update({
+  id: '/phases',
+  path: '/phases',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrganizationRoute = OrganizationRouteImport.update({
+  id: '/organization',
+  path: '/organization',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FutureProductsRoute = FutureProductsRouteImport.update({
+  id: '/future-products',
+  path: '/future-products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinancialsRoute = FinancialsRouteImport.update({
+  id: '/financials',
+  path: '/financials',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EcosystemRoute = EcosystemRouteImport.update({
+  id: '/ecosystem',
+  path: '/ecosystem',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +73,158 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ecosystem': typeof EcosystemRoute
+  '/financials': typeof FinancialsRoute
+  '/future-products': typeof FutureProductsRoute
+  '/organization': typeof OrganizationRoute
+  '/phases': typeof PhasesRoute
+  '/playbook': typeof PlaybookRoute
+  '/products': typeof ProductsRoute
+  '/roadmap': typeof RoadmapRoute
+  '/vision-2035': typeof Vision2035Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ecosystem': typeof EcosystemRoute
+  '/financials': typeof FinancialsRoute
+  '/future-products': typeof FutureProductsRoute
+  '/organization': typeof OrganizationRoute
+  '/phases': typeof PhasesRoute
+  '/playbook': typeof PlaybookRoute
+  '/products': typeof ProductsRoute
+  '/roadmap': typeof RoadmapRoute
+  '/vision-2035': typeof Vision2035Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ecosystem': typeof EcosystemRoute
+  '/financials': typeof FinancialsRoute
+  '/future-products': typeof FutureProductsRoute
+  '/organization': typeof OrganizationRoute
+  '/phases': typeof PhasesRoute
+  '/playbook': typeof PlaybookRoute
+  '/products': typeof ProductsRoute
+  '/roadmap': typeof RoadmapRoute
+  '/vision-2035': typeof Vision2035Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/ecosystem'
+    | '/financials'
+    | '/future-products'
+    | '/organization'
+    | '/phases'
+    | '/playbook'
+    | '/products'
+    | '/roadmap'
+    | '/vision-2035'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/ecosystem'
+    | '/financials'
+    | '/future-products'
+    | '/organization'
+    | '/phases'
+    | '/playbook'
+    | '/products'
+    | '/roadmap'
+    | '/vision-2035'
+  id:
+    | '__root__'
+    | '/'
+    | '/ecosystem'
+    | '/financials'
+    | '/future-products'
+    | '/organization'
+    | '/phases'
+    | '/playbook'
+    | '/products'
+    | '/roadmap'
+    | '/vision-2035'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EcosystemRoute: typeof EcosystemRoute
+  FinancialsRoute: typeof FinancialsRoute
+  FutureProductsRoute: typeof FutureProductsRoute
+  OrganizationRoute: typeof OrganizationRoute
+  PhasesRoute: typeof PhasesRoute
+  PlaybookRoute: typeof PlaybookRoute
+  ProductsRoute: typeof ProductsRoute
+  RoadmapRoute: typeof RoadmapRoute
+  Vision2035Route: typeof Vision2035Route
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vision-2035': {
+      id: '/vision-2035'
+      path: '/vision-2035'
+      fullPath: '/vision-2035'
+      preLoaderRoute: typeof Vision2035RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roadmap': {
+      id: '/roadmap'
+      path: '/roadmap'
+      fullPath: '/roadmap'
+      preLoaderRoute: typeof RoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/playbook': {
+      id: '/playbook'
+      path: '/playbook'
+      fullPath: '/playbook'
+      preLoaderRoute: typeof PlaybookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/phases': {
+      id: '/phases'
+      path: '/phases'
+      fullPath: '/phases'
+      preLoaderRoute: typeof PhasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/organization': {
+      id: '/organization'
+      path: '/organization'
+      fullPath: '/organization'
+      preLoaderRoute: typeof OrganizationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/future-products': {
+      id: '/future-products'
+      path: '/future-products'
+      fullPath: '/future-products'
+      preLoaderRoute: typeof FutureProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/financials': {
+      id: '/financials'
+      path: '/financials'
+      fullPath: '/financials'
+      preLoaderRoute: typeof FinancialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ecosystem': {
+      id: '/ecosystem'
+      path: '/ecosystem'
+      fullPath: '/ecosystem'
+      preLoaderRoute: typeof EcosystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +237,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EcosystemRoute: EcosystemRoute,
+  FinancialsRoute: FinancialsRoute,
+  FutureProductsRoute: FutureProductsRoute,
+  OrganizationRoute: OrganizationRoute,
+  PhasesRoute: PhasesRoute,
+  PlaybookRoute: PlaybookRoute,
+  ProductsRoute: ProductsRoute,
+  RoadmapRoute: RoadmapRoute,
+  Vision2035Route: Vision2035Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
