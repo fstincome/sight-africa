@@ -57,7 +57,7 @@ function BlueprintPage() {
                 </span>
               )}
             </div>
-            <PdfThumbnails src={PDF} activePage={page} onSelect={setPage} onProgress={setProgress} />
+            <PdfThumbnails src={PDF} activePage={page} onSelect={(p) => { setPdfLoading(true); setPage(p); }} onProgress={setProgress} />
             <p className="text-xs text-muted-foreground mt-2">
               {progress.done
                 ? "All previews ready. Click a page to jump."
