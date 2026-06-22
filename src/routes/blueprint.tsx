@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { SiteShell, PageHeader, Section } from "@/components/site-shell";
+import { PdfThumbnails } from "@/components/pdf-thumbnails";
 
 export const Route = createFileRoute("/blueprint")({
   component: BlueprintPage,
@@ -15,12 +17,14 @@ const DOCX = "/sight-africa-blueprint.docx";
 const PDF = "/sight-africa-blueprint.pdf";
 
 function BlueprintPage() {
+  const [page, setPage] = useState(1);
+
   return (
     <SiteShell>
       <PageHeader
         eyebrow="Document · English · FBU"
         title="The full blueprint, side by side."
-        lead="Same content as the menu (Overview → Ecosystem), rendered as a single English document. Available as Word (.docx) and PDF — read inline or download."
+        lead="Scan every page on the left, read on the right. Available as Word (.docx) and PDF — read inline or download."
       />
       <Section>
         <div className="flex flex-wrap gap-3 mb-10">
@@ -38,8 +42,31 @@ function BlueprintPage() {
           </a>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6">
-          <div>
+        <div className="grid grid-cols-12 gap-6">
+          <div className="col-span-12 md:col-span-3">
+            <div className="eyebrow mb-3">Pages</div>
+            <PdfThumbnails src={PDF} activePage={page} onSelect={setPage} />
+            <p className="text-xs text-muted-foreground mt-2">
+              Click any page to jump there in the reader.
+            </p>
+          </div>
+
+          <div className="col-span-12 md:col-span-5">
+            <div className="eyebrow mb-3">PDF reader · page {page}</div>
+            <div className="border border-border bg-muted/30 h-[80vh] overflow-hidden">
+              <iframe
+                key={page}
+                title="SIGHT AFRICA Blueprint — PDF"
+                src={`${PDF}#page=${page}&view=FitH`}
+                className="w-full h-full"
+              />
+            </div>
+            <p className="text-xs text-muted-foreground mt-2">
+              Rendered by your browser PDF viewer.
+            </p>
+          </div>
+
+          <div className="col-span-12 md:col-span-4">
             <div className="eyebrow mb-3">Word (.docx) preview</div>
             <div className="border border-border bg-muted/30 h-[80vh] overflow-hidden">
               <iframe
@@ -52,19 +79,6 @@ function BlueprintPage() {
             </div>
             <p className="text-xs text-muted-foreground mt-2">
               Inline via Microsoft Office viewer. If blocked, use the download buttons above.
-            </p>
-          </div>
-          <div>
-            <div className="eyebrow mb-3">PDF preview</div>
-            <div className="border border-border bg-muted/30 h-[80vh] overflow-hidden">
-              <iframe
-                title="SIGHT AFRICA Blueprint — PDF"
-                src={`${PDF}#view=FitH`}
-                className="w-full h-full"
-              />
-            </div>
-            <p className="text-xs text-muted-foreground mt-2">
-              Rendered directly by the browser PDF viewer.
             </p>
           </div>
         </div>
