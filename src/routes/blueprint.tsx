@@ -18,6 +18,11 @@ const PDF = "/sight-africa-blueprint.pdf";
 
 function BlueprintPage() {
   const [page, setPage] = useState(1);
+  const [progress, setProgress] = useState({ rendered: 0, total: 0, done: false });
+  const [pdfLoading, setPdfLoading] = useState(true);
+  const [wordLoading, setWordLoading] = useState(true);
+
+  const thumbPct = progress.total > 0 ? Math.round((progress.rendered / progress.total) * 100) : 0;
 
   return (
     <SiteShell>
@@ -44,21 +49,50 @@ function BlueprintPage() {
 
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-3">
-            <div className="eyebrow mb-3">Pages</div>
-            <PdfThumbnails src={PDF} activePage={page} onSelect={setPage} />
+            <div className="eyebrow mb-3 flex justify-between">
+              <span>Pages</span>
+              {progress.total > 0 && (
+                <span className="text-muted-foreground normal-case tracking-normal">
+                  {progress.rendered}/{progress.total} · {thumbPct}%
+                </span>
+              )}
+            </div>
+            <PdfThumbnails src={PDF} activePage={page} onSelect={setPage} onProgress={setProgress} />
             <p className="text-xs text-muted-foreground mt-2">
-              Click any page to jump there in the reader.
+              {progress.done
+                ? "All previews ready. Click a page to jump."
+                : "Generating page previews — you can already click any rendered page."}
             </p>
           </div>
 
           <div className="col-span-12 md:col-span-5">
-            <div className="eyebrow mb-3">PDF reader · page {page}</div>
-            <div className="border border-border bg-muted/30 h-[80vh] overflow-hidden">
+            <div className="eyebrow mb-3 flex justify-between">
+              <span>PDF reader · page {page}</span>
+              <span className="text-muted-foreground normal-case tracking-normal">
+                {pdfLoading ? "loading…" : "ready"}
+              </span>
+            </div>
+            <div className="relative border border-border bg-muted/30 h-[80vh] overflow-hidden">
+              <div
+                className={`absolute top-0 left-0 right-0 h-1 z-10 transition-opacity ${
+                  pdfLoading ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <div className="h-full bg-primary/30 overflow-hidden">
+                  <div className="h-full w-1/3 bg-primary animate-[shimmer_1.2s_ease-in-out_infinite]" />
+                </div>
+              </div>
+              {pdfLoading && (
+                <div className="absolute inset-0 flex items-center justify-center text-xs text-muted-foreground pointer-events-none">
+                  Loading page {page}…
+                </div>
+              )}
               <iframe
                 key={page}
                 title="SIGHT AFRICA Blueprint — PDF"
                 src={`${PDF}#page=${page}&view=FitH`}
-                className="w-full h-full"
+                className="w-full h-full relative"
+                onLoad={() => setPdfLoading(false)}
               />
             </div>
             <p className="text-xs text-muted-foreground mt-2">
@@ -67,9 +101,29 @@ function BlueprintPage() {
           </div>
 
           <div className="col-span-12 md:col-span-4">
-            <div className="eyebrow mb-3">Word (.docx) preview</div>
-            <div className="border border-border bg-muted/30 h-[80vh] overflow-hidden">
+            <div className="eyebrow mb-3 flex justify-between">
+              <span>Word (.docx) preview</span>
+              <span className="text-muted-foreground normal-case tracking-normal">
+                {wordLoading ? "loading…" : "ready"}
+              </span>
+            </div>
+            <div className="relative border border-border bg-muted/30 h-[80vh] overflow-hidden">
+              <div
+                className={`absolute top-0 left-0 right-0 h-1 z-10 transition-opacity ${
+                  wordLoading ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <div className="h-full bg-primary/30 overflow-hidden">
+                  <div className="h-full w-1/3 bg-primary animate-[shimmer_1.2s_ease-in-out_infinite]" />
+                </div>
+              </div>
+              {wordLoading && (
+                <div className="absolute inset-0 flex items-center justify-center text-xs text-muted-foreground pointer-events-none">
+                  Loading Word viewer…
+                </div>
+              )}
               <iframe
+                onLoad={() => setWordLoading(false)}
                 title="SIGHT AFRICA Blueprint — Word"
                 src={`https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(
                   (typeof window !== "undefined" ? window.location.origin : "https://sight-africa.lovable.app") + DOCX
