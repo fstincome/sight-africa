@@ -101,3 +101,8 @@
   text-transform: uppercase;
   color: var(--color-muted-foreground);
 }
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
