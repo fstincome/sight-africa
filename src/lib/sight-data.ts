@@ -198,6 +198,151 @@ export const ROADMAP: Array<{
   },
 ];
 
+// PART 2b — Extended 20-year horizon (2036–2045). Same shape as ROADMAP.
+export const ROADMAP_20Y: typeof ROADMAP = [
+  ...ROADMAP,
+  {
+    year: 2036,
+    theme: "Post-IPO Consolidation",
+    priorities: [
+      "Integrate two acquisitions per year across PAY, DATA and MEDIA",
+      "Reach 40M end-users across the group",
+      "Stand up SIGHT FOUNDATION endowment at 600M FBU",
+    ],
+    releases: ["Group operating model v3", "SIGHT FOUNDATION endowment", "Pan-African PAY corridor"],
+    revenue: "23 Mds FBU ARR",
+    team: "4,800 → 5,600",
+    infra: ["Fifth data center", "Continental settlement layer"],
+    partners: ["AU Digital Strategy", "AfCFTA digital task force"],
+  },
+  {
+    year: 2037,
+    theme: "AI Industrialization",
+    priorities: [
+      "African-language LLM family in production across SIGHT COMPUTE",
+      "Yepo Enterprise serving 50k SMEs continent-wide",
+      "Capital recycling: SIGHT CAPITAL Fund III (3 Mds FBU)",
+    ],
+    releases: ["Kirundi/Swahili LLMs v2", "Yepo Industry Agents", "Fund III"],
+    revenue: "30 Mds FBU ARR",
+    team: "5,600 → 6,400",
+    infra: ["Dedicated GPU corridor (BI ↔ RW ↔ KE)", "Edge inference network"],
+    partners: ["AfDB AI fund", "African universities consortium"],
+  },
+  {
+    year: 2038,
+    theme: "Pan-African Reach",
+    priorities: [
+      "Commercial entry in Ethiopia, Zambia and Senegal",
+      "Cross-border PAY processing 25% of intra-EAC digital flows",
+      "Critical-infrastructure status recognized in 3 countries",
+    ],
+    releases: ["SIGHT PAY ET / ZM / SN", "Regional resilience compact", "Group ESG framework"],
+    revenue: "38 Mds FBU ARR",
+    team: "6,400 → 7,200",
+    infra: ["Three new operating countries", "Pan-African NOC"],
+    partners: ["BoZ, NBE, BCEAO", "ECOWAS digital programs"],
+  },
+  {
+    year: 2039,
+    theme: "Sovereign Cloud Standard",
+    priorities: [
+      "SIGHT CLOUD becomes the default sovereign cloud across francophone Africa",
+      "Public-sector revenue crosses 30% of group ARR",
+      "Industrial-grade SIGHT SECURITY MSSP for governments",
+    ],
+    releases: ["Sovereign Cloud certification v2", "Government SOC framework", "SIGHT DATA marketplace"],
+    revenue: "46 Mds FBU ARR",
+    team: "7,200 → 8,000",
+    infra: ["Sixth data center", "Cross-border classified network"],
+    partners: ["Francophone heads-of-state digital council", "ITU"],
+  },
+  {
+    year: 2040,
+    theme: "Burundi 2040 Milestone",
+    priorities: [
+      "Deliver Burundi Vision 2040 digital backbone in production",
+      "60M end-users; 3M merchants across the group",
+      "Spin out SIGHT HEALTH and SIGHT AGRI as independent listed subsidiaries",
+    ],
+    releases: ["BI 2040 backbone v1", "SIGHT HEALTH listing", "SIGHT AGRI listing"],
+    revenue: "55 Mds FBU ARR",
+    team: "8,000 → 8,800",
+    infra: ["National multi-region redundancy", "Health & agri data lakes"],
+    partners: ["Government of Burundi", "WHO, FAO regional"],
+  },
+  {
+    year: 2041,
+    theme: "Capital Ecosystem",
+    priorities: [
+      "SIGHT CAPITAL becomes the largest African-owned tech investor by deployed capital",
+      "Launch SIGHT CAPITAL public infrastructure fund (5 Mds FBU)",
+      "M&A engine completes 4–6 deals/year",
+    ],
+    releases: ["Public infra fund I", "Group M&A playbook v2", "Founder-in-residence program"],
+    revenue: "65 Mds FBU ARR",
+    team: "8,800 → 9,500",
+    infra: ["Group treasury operations center", "Continental compliance hub"],
+    partners: ["Sovereign wealth funds (GCC, ZA)", "Global DFIs as anchor LPs"],
+  },
+  {
+    year: 2042,
+    theme: "Compute Sovereignty",
+    priorities: [
+      "African-owned GPU fleet crosses 25,000 high-end accelerators",
+      "Foundation models trained end-to-end on SIGHT COMPUTE",
+      "Carrier-neutral fiber across 5 corridors",
+    ],
+    releases: ["SIGHT COMPUTE v3", "African foundation model family", "Fiber corridor program"],
+    revenue: "75 Mds FBU ARR",
+    team: "9,500 → 10,500",
+    infra: ["Seventh data center (carrier hotel)", "Subsea cable landing partnerships"],
+    partners: ["NVIDIA / AMD strategic", "African research alliance"],
+  },
+  {
+    year: 2043,
+    theme: "Standards & Influence",
+    priorities: [
+      "Lead drafting of pan-African digital infrastructure standards",
+      "SIGHT ID adopted as reusable identity layer in 6 countries",
+      "Group becomes net exporter of African-built software",
+    ],
+    releases: ["Pan-African ID standard v1", "Open source contribution program", "Group developer summit"],
+    revenue: "85 Mds FBU ARR",
+    team: "10,500 → 11,500",
+    infra: ["Inter-country ID federation", "Public standards body seat"],
+    partners: ["AU Commission", "Smart Africa Alliance"],
+  },
+  {
+    year: 2044,
+    theme: "Generational Transition",
+    priorities: [
+      "Founder transition into chair role; second-generation CEO in place",
+      "Long-duration capital structure finalized (sovereign + DFI anchors)",
+      "Endowment funding 100% of SIGHT FOUNDATION operations",
+    ],
+    releases: ["Governance v3", "Sovereign anchor partnership", "Foundation flagship programs"],
+    revenue: "95 Mds FBU ARR",
+    team: "11,500 → 12,200",
+    infra: ["Independent group board operating model", "Succession-tested leadership bench"],
+    partners: ["Regional sovereign funds", "Major university endowments"],
+  },
+  {
+    year: 2045,
+    theme: "Continental Infrastructure",
+    priorities: [
+      "100M end-users; recognized critical infrastructure operator in 12 countries",
+      "Revenue diversified across PAY, CLOUD, DATA, COMPUTE, SECURITY, HEALTH, AGRI",
+      "Anchor of an African-owned digital economy alternative",
+    ],
+    releases: ["20-year compact extension", "Continental interconnect", "African digital economy report"],
+    revenue: "110 Mds FBU ARR",
+    team: "12,200 → 13,000",
+    infra: ["Multi-continent resilient backbone", "African-owned compute + identity standard"],
+    partners: ["AU, EAC, ECOWAS, SADC", "Global multilateral institutions"],
+  },
+];
+
 // PART 3 — Product evolution
 export const PRODUCTS = [
   {
