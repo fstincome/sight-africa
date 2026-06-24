@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Section } from "@/components/site-shell";
 import { useLocalizedData, useT } from "@/lib/i18n";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 export const Route = createFileRoute("/roadmap")({
   head: () => ({ meta: [{ title: "Feuille de route — SIGHT AFRICA" }] }),
@@ -9,7 +10,7 @@ export const Route = createFileRoute("/roadmap")({
 
 function Page() {
   const t = useT();
-  const { ROADMAP } = useLocalizedData();
+  const { ROADMAP, ROADMAP_20Y } = useLocalizedData();
   return (
     <SiteShell>
       <PageHeader
@@ -19,33 +20,56 @@ function Page() {
       />
 
       <Section className="rule-line">
-        <div className="space-y-px bg-border">
-          {ROADMAP.map((y, i) => (
-            <div key={y.year} className="bg-background">
-              <div className="container-x !px-0 grid lg:grid-cols-12 gap-8 py-12">
-                <div className="lg:col-span-3">
-                  <div className="font-display text-7xl leading-none">{y.year}</div>
-                  <div className="mt-3 font-mono text-xs tracking-widest text-primary">
-                    {t("PHASE")} · {y.theme.toUpperCase()}
-                  </div>
-                  <div className="mt-6 space-y-2 text-sm">
-                    <div><span className="text-muted-foreground">{t("Revenue")}</span> · <span className="font-mono">{y.revenue}</span></div>
-                    <div><span className="text-muted-foreground">{t("Team")}</span> · <span className="font-mono">{y.team}</span></div>
-                  </div>
-                </div>
-                <div className="lg:col-span-9 grid md:grid-cols-2 gap-8">
-                  <Block title={t("Strategic priorities")} items={y.priorities} />
-                  <Block title={t("Releases")} items={y.releases} />
-                  <Block title={t("Infrastructure")} items={y.infra} />
-                  <Block title={t("Partnerships")} items={y.partners} />
-                </div>
-              </div>
-              {i < ROADMAP.length - 1 && <div className="rule-line" />}
-            </div>
-          ))}
-        </div>
+        <Tabs defaultValue="10y" className="w-full">
+          <TabsList>
+            <TabsTrigger value="10y">{t("10 years")} · 2026–2035</TabsTrigger>
+            <TabsTrigger value="20y">{t("20 years")} · 2026–2045</TabsTrigger>
+          </TabsList>
+          <TabsContent value="10y">
+            <Timeline rows={ROADMAP} t={t} />
+          </TabsContent>
+          <TabsContent value="20y">
+            <Timeline rows={ROADMAP_20Y} t={t} />
+          </TabsContent>
+        </Tabs>
       </Section>
     </SiteShell>
+  );
+}
+
+function Timeline({
+  rows,
+  t,
+}: {
+  rows: ReturnType<typeof useLocalizedData>["ROADMAP"];
+  t: (s: string) => string;
+}) {
+  return (
+    <div className="space-y-px bg-border mt-6">
+      {rows.map((y, i) => (
+        <div key={y.year} className="bg-background">
+          <div className="container-x !px-0 grid lg:grid-cols-12 gap-8 py-12">
+            <div className="lg:col-span-3">
+              <div className="font-display text-7xl leading-none">{y.year}</div>
+              <div className="mt-3 font-mono text-xs tracking-widest text-primary">
+                {t("PHASE")} · {y.theme.toUpperCase()}
+              </div>
+              <div className="mt-6 space-y-2 text-sm">
+                <div><span className="text-muted-foreground">{t("Revenue")}</span> · <span className="font-mono">{y.revenue}</span></div>
+                <div><span className="text-muted-foreground">{t("Team")}</span> · <span className="font-mono">{y.team}</span></div>
+              </div>
+            </div>
+            <div className="lg:col-span-9 grid md:grid-cols-2 gap-8">
+              <Block title={t("Strategic priorities")} items={y.priorities} />
+              <Block title={t("Releases")} items={y.releases} />
+              <Block title={t("Infrastructure")} items={y.infra} />
+              <Block title={t("Partnerships")} items={y.partners} />
+            </div>
+          </div>
+          {i < rows.length - 1 && <div className="rule-line" />}
+        </div>
+      ))}
+    </div>
   );
 }
 
