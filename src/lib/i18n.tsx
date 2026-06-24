@@ -59,6 +59,7 @@ export function useLocalizedData() {
       NAV: RAW.NAV.map((n) => ({ ...n, label: t(n.label) })),
       END_STATE_2035: deepT(RAW.END_STATE_2035, t) as typeof RAW.END_STATE_2035,
       ROADMAP: deepT(RAW.ROADMAP, t) as typeof RAW.ROADMAP,
+      ROADMAP_20Y: deepT(RAW.ROADMAP_20Y, t) as typeof RAW.ROADMAP_20Y,
       PRODUCTS: deepT(RAW.PRODUCTS, t) as typeof RAW.PRODUCTS,
       FUTURE_PRODUCTS: deepT(RAW.FUTURE_PRODUCTS, t) as typeof RAW.FUTURE_PRODUCTS,
       ORG: deepT(RAW.ORG, t) as typeof RAW.ORG,
