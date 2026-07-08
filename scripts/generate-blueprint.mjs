@@ -189,6 +189,24 @@ ROADMAP.forEach((y) => {
 });
 children.push(PageBreakP());
 
+// 3b. 20-year Roadmap — extended horizon (2036–2045 additions)
+children.push(H1("3b. Extended Roadmap (2036–2045)"));
+children.push(P("The 20-year horizon extends the 10-year plan with a second decade: consolidation after IPO, AI industrialization, pan-African reach, sovereign cloud standard, and continental infrastructure. Years 2026–2035 remain as defined in section 3."));
+ROADMAP_20Y.filter((y) => y.year >= 2036).forEach((y) => {
+  children.push(H2(`${y.year} — ${y.theme}`));
+  children.push(KV("Revenue target", y.revenue));
+  children.push(KV("Team", y.team));
+  children.push(H3("Priorities"));
+  y.priorities.forEach((p) => children.push(Bullet(p)));
+  children.push(H3("Key releases"));
+  y.releases.forEach((p) => children.push(Bullet(p)));
+  children.push(H3("Infrastructure"));
+  y.infra.forEach((p) => children.push(Bullet(p)));
+  children.push(H3("Partners"));
+  y.partners.forEach((p) => children.push(Bullet(p)));
+});
+children.push(PageBreakP());
+
 // 4. Products
 children.push(H1("4. Products — Evolution"));
 PRODUCTS.forEach((prod) => {
