@@ -39,7 +39,7 @@ const dump = execSync("bun run scripts/dump-data.ts", { encoding: "utf8" });
 const DATA = JSON.parse(dump);
 
 const {
-  SIGHT, NAV, END_STATE_2035, ROADMAP, PRODUCTS, FUTURE_PRODUCTS,
+  SIGHT, NAV, END_STATE_2035, ROADMAP, ROADMAP_20Y, PRODUCTS, FUTURE_PRODUCTS,
   ORG, PHASES, FINANCIAL_STRATEGY, PLAYBOOK, ECOSYSTEM,
 } = DATA;
 
