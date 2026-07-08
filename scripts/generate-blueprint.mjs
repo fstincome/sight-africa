@@ -360,3 +360,70 @@ try {
   console.warn("PDF conversion failed:", e?.message);
 }
 
+// ---------- Automated export validation ----------
+const REQUIRED_SECTIONS = [
+  "1. Overview", "2. Vision 2035", "3. Roadmap (2026–2035)",
+  "3b. Extended Roadmap (2036–2045)", "4. Products — Evolution",
+  "5. Future Build", "6. Organization", "7. Phases",
+  "8. Financial Strategy", "9. Execution Playbook", "10. Ecosystem Map",
+  "Closing Note",
+];
+const YEARS = Array.from({ length: 20 }, (_, i) => 2026 + i); // 2026..2045
+
+let text = "";
+try {
+  text = execSync("pdftotext -layout public/sight-africa-blueprint.pdf -", { encoding: "utf8" });
+} catch (e) {
+  console.error("❌ Validation could not read PDF:", e?.message);
+  process.exit(1);
+}
+
+const failures = [];
+const missingSections = REQUIRED_SECTIONS.filter((s) => !text.includes(s));
+if (missingSections.length) failures.push(`Missing sections: ${missingSections.join(" | ")}`);
+
+const missingYears = YEARS.filter((y) => !new RegExp(`\\b${y}\\b`).test(text));
+if (missingYears.length) failures.push(`Missing years: ${missingYears.join(", ")}`);
+
+const usdLeaks = text.match(/\$\d[\d.,]*\s*[kKmMbB]?/g) || [];
+if (usdLeaks.length) failures.push(`Residual USD tokens (${usdLeaks.length}): ${usdLeaks.slice(0, 10).join(", ")}`);
+
+const fbuCount = (text.match(/\bFBU\b/g) || []).length;
+if (fbuCount < 20) failures.push(`Too few FBU mentions (${fbuCount} < 20) — currency conversion likely incomplete`);
+
+// Emit human-readable report next to the exports
+const now = new Date().toISOString();
+const pages = (() => {
+  try {
+    const info = execSync("pdfinfo public/sight-africa-blueprint.pdf", { encoding: "utf8" });
+    return /Pages:\s+(\d+)/.exec(info)?.[1] ?? "?";
+  } catch { return "?"; }
+})();
+const report = [
+  "# Blueprint export validation",
+  `Generated: ${now}`,
+  "",
+  `- docx: ${fs.statSync("public/sight-africa-blueprint.docx").size.toLocaleString()} bytes`,
+  `- pdf:  ${fs.statSync("public/sight-africa-blueprint.pdf").size.toLocaleString()} bytes, ${pages} pages`,
+  `- FBU mentions: ${fbuCount}`,
+  `- Residual USD tokens: ${usdLeaks.length}`,
+  "",
+  "## Section presence",
+  ...REQUIRED_SECTIONS.map((s) => `- ${text.includes(s) ? "✅" : "❌"} ${s}`),
+  "",
+  "## Year coverage 2026–2045",
+  ...YEARS.map((y) => `- ${new RegExp(`\\b${y}\\b`).test(text) ? "✅" : "❌"} ${y}`),
+  "",
+  failures.length ? `## ❌ FAILED\n${failures.map((f) => `- ${f}`).join("\n")}` : "## ✅ PASSED",
+  "",
+].join("\n");
+fs.writeFileSync("public/blueprint-validation-report.md", report);
+console.log("Wrote public/blueprint-validation-report.md");
+
+if (failures.length) {
+  console.error("\n❌ Export validation failed:\n" + failures.map((f) => "  - " + f).join("\n"));
+  process.exit(1);
+}
+console.log("✅ Export validation passed.");
+
+
