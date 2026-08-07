@@ -4,6 +4,14 @@
 export const dict: Record<string, string> = {
   // === NAV ===
   "Overview": "Aperçu",
+  "2026 is a preparation year, outside the agenda. Execution starts on 1 January 2027.":
+    "2026 est une année de préparation, hors agenda. L'exécution démarre le 1er janvier 2027.",
+  "Preparation year — outside the agenda": "Année de préparation — hors agenda",
+  "2026 is used to prepare: legal structuring, group identity, capital, first hires and product readiness. Execution officially starts on 1 January 2027.":
+    "2026 sert à préparer : structuration juridique, identité du groupe, capital, premiers recrutements et maturité produit. L'exécution démarre officiellement le 1er janvier 2027.",
+  "National Milestone Consolidation": "Consolidation des jalons nationaux",
+  "Burundi Vision 2040 Delivery": "Livraison de la Vision Burundi 2040",
+  "18 Mds FBU": "18 Mds FBU",
   "Vision 2036": "Vision 2036",
   "Roadmap": "Feuille de route",
   "Products": "Produits",
