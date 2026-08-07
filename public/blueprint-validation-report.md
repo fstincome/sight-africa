@@ -1,5 +1,5 @@
 # Blueprint export validation
-Generated: 2026-08-07T09:33:51.336Z
+Generated: 2026-08-07T09:36:18.970Z
 
 - docx: 30,960 bytes
 - pdf:  667,153 bytes, 41 pages
@@ -41,5 +41,11 @@ Generated: 2026-08-07T09:33:51.336Z
 - ✅ 2044
 - ✅ 2045
 - ✅ 2046
+
+## Preparation year (2026) audit
+- ✅ PREP_YEAR documented as 2026 (preparation, outside the agenda)
+- ✅ No agenda entry anchored on 2026 (roadmap, phases, subsidiary birth years)
+- ✅ No 2026 mention in the document outside the preparation note
+- ✅ No page/document title mentions 2026
 
 ## ✅ PASSED
