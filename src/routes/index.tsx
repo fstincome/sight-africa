@@ -65,6 +65,10 @@ function Hero() {
           </div>
         ))}
       </div>
+
+      <p className="mt-8 font-mono text-xs tracking-wide text-muted-foreground max-w-3xl">
+        {t("2026 is a preparation year, outside the agenda. Execution starts on 1 January 2027.")}
+      </p>
     </section>
   );
 }
