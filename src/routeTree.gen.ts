@@ -9,7 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as Vision2035RouteImport } from './routes/vision-2035'
+import { Route as Vision2036RouteImport } from './routes/vision-2036'
 import { Route as RoadmapRouteImport } from './routes/roadmap'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as PlaybookRouteImport } from './routes/playbook'
@@ -21,9 +21,9 @@ import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as BlueprintRouteImport } from './routes/blueprint'
 import { Route as IndexRouteImport } from './routes/index'
 
-const Vision2035Route = Vision2035RouteImport.update({
-  id: '/vision-2035',
-  path: '/vision-2035',
+const Vision2036Route = Vision2036RouteImport.update({
+  id: '/vision-2036',
+  path: '/vision-2036',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RoadmapRoute = RoadmapRouteImport.update({
@@ -88,7 +88,7 @@ export interface FileRoutesByFullPath {
   '/playbook': typeof PlaybookRoute
   '/products': typeof ProductsRoute
   '/roadmap': typeof RoadmapRoute
-  '/vision-2035': typeof Vision2035Route
+  '/vision-2036': typeof Vision2036Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -101,7 +101,7 @@ export interface FileRoutesByTo {
   '/playbook': typeof PlaybookRoute
   '/products': typeof ProductsRoute
   '/roadmap': typeof RoadmapRoute
-  '/vision-2035': typeof Vision2035Route
+  '/vision-2036': typeof Vision2036Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -115,7 +115,7 @@ export interface FileRoutesById {
   '/playbook': typeof PlaybookRoute
   '/products': typeof ProductsRoute
   '/roadmap': typeof RoadmapRoute
-  '/vision-2035': typeof Vision2035Route
+  '/vision-2036': typeof Vision2036Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -130,7 +130,7 @@ export interface FileRouteTypes {
     | '/playbook'
     | '/products'
     | '/roadmap'
-    | '/vision-2035'
+    | '/vision-2036'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -143,7 +143,7 @@ export interface FileRouteTypes {
     | '/playbook'
     | '/products'
     | '/roadmap'
-    | '/vision-2035'
+    | '/vision-2036'
   id:
     | '__root__'
     | '/'
@@ -156,7 +156,7 @@ export interface FileRouteTypes {
     | '/playbook'
     | '/products'
     | '/roadmap'
-    | '/vision-2035'
+    | '/vision-2036'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -170,16 +170,16 @@ export interface RootRouteChildren {
   PlaybookRoute: typeof PlaybookRoute
   ProductsRoute: typeof ProductsRoute
   RoadmapRoute: typeof RoadmapRoute
-  Vision2035Route: typeof Vision2035Route
+  Vision2036Route: typeof Vision2036Route
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/vision-2035': {
-      id: '/vision-2035'
-      path: '/vision-2035'
-      fullPath: '/vision-2035'
-      preLoaderRoute: typeof Vision2035RouteImport
+    '/vision-2036': {
+      id: '/vision-2036'
+      path: '/vision-2036'
+      fullPath: '/vision-2036'
+      preLoaderRoute: typeof Vision2036RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/roadmap': {
@@ -266,18 +266,8 @@ const rootRouteChildren: RootRouteChildren = {
   PlaybookRoute: PlaybookRoute,
   ProductsRoute: ProductsRoute,
   RoadmapRoute: RoadmapRoute,
-  Vision2035Route: Vision2035Route,
+  Vision2036Route: Vision2036Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
