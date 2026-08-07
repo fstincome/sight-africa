@@ -12,7 +12,7 @@ export const SIGHT = {
 
 export const NAV = [
   { to: "/", label: "Overview" },
-  { to: "/vision-2035", label: "Vision 2035" },
+  { to: "/vision-2036", label: "Vision 2036" },
   { to: "/roadmap", label: "Roadmap" },
   { to: "/products", label: "Products" },
   { to: "/future-products", label: "Future Build" },
@@ -23,8 +23,8 @@ export const NAV = [
   { to: "/ecosystem", label: "Ecosystem" },
 ] as const;
 
-// PART 1 — End state 2035
-export const END_STATE_2035 = {
+// PART 1 — End state 2036
+export const END_STATE_2036 = {
   position:
     "The dominant digital infrastructure group of East Africa: the rails for payments, identity, cloud and AI across Burundi, Rwanda, DRC, Tanzania, Kenya, Uganda — with strategic footprints in Ethiopia and Zambia.",
   stats: [
@@ -45,7 +45,14 @@ export const END_STATE_2035 = {
   ],
 };
 
-// PART 2 — Reverse-engineered roadmap
+// 2026 is a preparation year (pre-launch), outside the execution agenda.
+export const PREP_YEAR = {
+  year: 2026,
+  label: "Preparation year — outside the agenda",
+  note: "2026 is used to prepare: legal structuring, group identity, capital, first hires and product readiness. Execution officially starts on 1 January 2027.",
+};
+
+// PART 2 — Reverse-engineered roadmap (execution starts 1 January 2027)
 export const ROADMAP: Array<{
   year: number;
   theme: string;
@@ -57,7 +64,7 @@ export const ROADMAP: Array<{
   partners: string[];
 }> = [
   {
-    year: 2026,
+    year: 2027,
     theme: "Foundation & Brand",
     priorities: [
       "Consolidate the four existing products under one SIGHT AFRICA group identity",
@@ -71,7 +78,7 @@ export const ROADMAP: Array<{
     partners: ["2 Burundian banks", "Regional MNOs", "Africa Bitcoin community"],
   },
   {
-    year: 2027,
+    year: 2028,
     theme: "Validation & Repeatability",
     priorities: [
       "Open Bujumbura HQ + first satellite office in Kigali",
@@ -85,7 +92,7 @@ export const ROADMAP: Array<{
     partners: ["Telco partnerships in Burundi & Rwanda", "2 regional fintech alliances"],
   },
   {
-    year: 2028,
+    year: 2029,
     theme: "Growth — Regional Footprint",
     priorities: [
       "Cross-border payments live (BI ↔ RW ↔ DRC)",
@@ -99,7 +106,7 @@ export const ROADMAP: Array<{
     partners: ["Central banks (BRB, BNR)", "World Bank / AfDB digital programs"],
   },
   {
-    year: 2029,
+    year: 2030,
     theme: "Platformization",
     priorities: [
       "Open public APIs across PAY, ID, CLOUD",
@@ -113,8 +120,8 @@ export const ROADMAP: Array<{
     partners: ["3 universities", "International VCs as LPs"],
   },
   {
-    year: 2030,
-    theme: "Burundi 2030 Milestone",
+    year: 2031,
+    theme: "National Milestone Consolidation",
     priorities: [
       "Become the de-facto digital integration partner for Burundian state services",
       "Hit 5M end-users across the group",
@@ -127,7 +134,7 @@ export const ROADMAP: Array<{
     partners: ["Government of Burundi", "EAC Secretariat"],
   },
   {
-    year: 2031,
+    year: 2032,
     theme: "Regional Expansion",
     priorities: [
       "Enter Tanzania, Kenya, Uganda commercially",
@@ -141,7 +148,7 @@ export const ROADMAP: Array<{
     partners: ["Pan-African banks", "Visa / Mastercard regional"],
   },
   {
-    year: 2032,
+    year: 2033,
     theme: "Infrastructure Leadership",
     priorities: [
       "Position SIGHT CLOUD as preferred sovereign cloud for francophone Africa",
@@ -155,7 +162,7 @@ export const ROADMAP: Array<{
     partners: ["Francophone African governments", "Tier-1 global cloud reseller alliances"],
   },
   {
-    year: 2033,
+    year: 2034,
     theme: "AI & Compute Sovereignty",
     priorities: [
       "Stand up African-owned GPU compute via SIGHT LABS",
@@ -169,7 +176,7 @@ export const ROADMAP: Array<{
     partners: ["NVIDIA / AMD reseller frameworks", "Universities & research"],
   },
   {
-    year: 2034,
+    year: 2035,
     theme: "Institutional Scale",
     priorities: [
       "Operate in 7 countries; revenue diversification across 4 segments",
@@ -183,7 +190,7 @@ export const ROADMAP: Array<{
     partners: ["DFIs as long-term capital", "Regional sovereign funds"],
   },
   {
-    year: 2035,
+    year: 2036,
     theme: "Foundational Infrastructure",
     priorities: [
       "9 countries, 18 Mds FBU ARR, recognized critical infrastructure operator",
@@ -198,11 +205,11 @@ export const ROADMAP: Array<{
   },
 ];
 
-// PART 2b — Extended 20-year horizon (2036–2045). Same shape as ROADMAP.
+// PART 2b — Extended 20-year horizon (2037–2046). Same shape as ROADMAP.
 export const ROADMAP_20Y: typeof ROADMAP = [
   ...ROADMAP,
   {
-    year: 2036,
+    year: 2037,
     theme: "Post-IPO Consolidation",
     priorities: [
       "Integrate two acquisitions per year across PAY, DATA and MEDIA",
@@ -216,7 +223,7 @@ export const ROADMAP_20Y: typeof ROADMAP = [
     partners: ["AU Digital Strategy", "AfCFTA digital task force"],
   },
   {
-    year: 2037,
+    year: 2038,
     theme: "AI Industrialization",
     priorities: [
       "African-language LLM family in production across SIGHT COMPUTE",
@@ -230,7 +237,7 @@ export const ROADMAP_20Y: typeof ROADMAP = [
     partners: ["AfDB AI fund", "African universities consortium"],
   },
   {
-    year: 2038,
+    year: 2039,
     theme: "Pan-African Reach",
     priorities: [
       "Commercial entry in Ethiopia, Zambia and Senegal",
@@ -244,7 +251,7 @@ export const ROADMAP_20Y: typeof ROADMAP = [
     partners: ["BoZ, NBE, BCEAO", "ECOWAS digital programs"],
   },
   {
-    year: 2039,
+    year: 2040,
     theme: "Sovereign Cloud Standard",
     priorities: [
       "SIGHT CLOUD becomes the default sovereign cloud across francophone Africa",
@@ -258,8 +265,8 @@ export const ROADMAP_20Y: typeof ROADMAP = [
     partners: ["Francophone heads-of-state digital council", "ITU"],
   },
   {
-    year: 2040,
-    theme: "Burundi 2040 Milestone",
+    year: 2041,
+    theme: "Burundi Vision 2040 Delivery",
     priorities: [
       "Deliver Burundi Vision 2040 digital backbone in production",
       "60M end-users; 3M merchants across the group",
@@ -272,7 +279,7 @@ export const ROADMAP_20Y: typeof ROADMAP = [
     partners: ["Government of Burundi", "WHO, FAO regional"],
   },
   {
-    year: 2041,
+    year: 2042,
     theme: "Capital Ecosystem",
     priorities: [
       "SIGHT CAPITAL becomes the largest African-owned tech investor by deployed capital",
@@ -286,7 +293,7 @@ export const ROADMAP_20Y: typeof ROADMAP = [
     partners: ["Sovereign wealth funds (GCC, ZA)", "Global DFIs as anchor LPs"],
   },
   {
-    year: 2042,
+    year: 2043,
     theme: "Compute Sovereignty",
     priorities: [
       "African-owned GPU fleet crosses 25,000 high-end accelerators",
@@ -300,7 +307,7 @@ export const ROADMAP_20Y: typeof ROADMAP = [
     partners: ["NVIDIA / AMD strategic", "African research alliance"],
   },
   {
-    year: 2043,
+    year: 2044,
     theme: "Standards & Influence",
     priorities: [
       "Lead drafting of pan-African digital infrastructure standards",
@@ -314,7 +321,7 @@ export const ROADMAP_20Y: typeof ROADMAP = [
     partners: ["AU Commission", "Smart Africa Alliance"],
   },
   {
-    year: 2044,
+    year: 2045,
     theme: "Generational Transition",
     priorities: [
       "Founder transition into chair role; second-generation CEO in place",
@@ -328,7 +335,7 @@ export const ROADMAP_20Y: typeof ROADMAP = [
     partners: ["Regional sovereign funds", "Major university endowments"],
   },
   {
-    year: 2045,
+    year: 2046,
     theme: "Continental Infrastructure",
     priorities: [
       "100M end-users; recognized critical infrastructure operator in 12 countries",
@@ -451,21 +458,21 @@ export const PRODUCTS = [
 
 // PART 4 — Future products
 export const FUTURE_PRODUCTS = [
-  { code: "SIGHT CLOUD", role: "Sovereign cloud", why: "Local data residency for governments and regulated industries. Hard requirement for digital sovereignty.", born: "2028" },
-  { code: "SIGHT ID", role: "Digital identity", why: "Reusable KYC and authentication across group products + third parties — the trust layer for everything else.", born: "2027" },
-  { code: "SIGHT PAY", role: "Regional payment network", why: "Acquiring + cross-border rails connecting MNOs, banks and BTC liquidity.", born: "2028" },
-  { code: "SIGHT LABS", role: "Applied R&D", why: "Cryptography, AI, hardware, civic tech — translates research to product.", born: "2029" },
-  { code: "SIGHT CAPITAL", role: "Venture arm + fund", why: "Backs adjacent founders, sources M&A, extends the ecosystem.", born: "2029" },
-  { code: "SIGHT ACADEMY", role: "Talent institution", why: "End-to-end engineer / operator pipeline; reduces hiring risk for the whole group.", born: "2028" },
-  { code: "SIGHT DATA", role: "Data & analytics infra", why: "Group data platform + commercial analytics for banks, MNOs, regulators.", born: "2031" },
-  { code: "SIGHT SECURITY", role: "Cybersecurity infra & SOC", why: "Critical for national + group resilience. Sellable as managed service.", born: "2030" },
-  { code: "SIGHT MARKET", role: "Digital commerce rails", why: "Catalog + checkout + logistics handoff layer for SME commerce.", born: "2032" },
-  { code: "SIGHT COMPUTE", role: "African GPU cloud", why: "AI sovereignty requires owned compute. Otherwise we are tenants forever.", born: "2033" },
-  { code: "SIGHT GOV", role: "Government services platform", why: "White-label civic stack: portals, payments, ID, records.", born: "2030" },
-  { code: "SIGHT HEALTH", role: "Health-data infrastructure", why: "Adjacent ID + data + payments use case with high public value.", born: "2032" },
-  { code: "SIGHT AGRI", role: "Agricultural data & finance", why: "Combines DATA + PAY + COMPUTE for the continent's largest sector.", born: "2033" },
-  { code: "SIGHT MEDIA", role: "Media holding (AFJ + adjacencies)", why: "Distribution + influence + research products.", born: "2030" },
-  { code: "SIGHT FOUNDATION", role: "Public-interest arm", why: "Open-source, scholarships, civic tech. Protects the social license to operate.", born: "2029" },
+  { code: "SIGHT CLOUD", role: "Sovereign cloud", why: "Local data residency for governments and regulated industries. Hard requirement for digital sovereignty.", born: "2029" },
+  { code: "SIGHT ID", role: "Digital identity", why: "Reusable KYC and authentication across group products + third parties — the trust layer for everything else.", born: "2028" },
+  { code: "SIGHT PAY", role: "Regional payment network", why: "Acquiring + cross-border rails connecting MNOs, banks and BTC liquidity.", born: "2029" },
+  { code: "SIGHT LABS", role: "Applied R&D", why: "Cryptography, AI, hardware, civic tech — translates research to product.", born: "2030" },
+  { code: "SIGHT CAPITAL", role: "Venture arm + fund", why: "Backs adjacent founders, sources M&A, extends the ecosystem.", born: "2030" },
+  { code: "SIGHT ACADEMY", role: "Talent institution", why: "End-to-end engineer / operator pipeline; reduces hiring risk for the whole group.", born: "2029" },
+  { code: "SIGHT DATA", role: "Data & analytics infra", why: "Group data platform + commercial analytics for banks, MNOs, regulators.", born: "2032" },
+  { code: "SIGHT SECURITY", role: "Cybersecurity infra & SOC", why: "Critical for national + group resilience. Sellable as managed service.", born: "2031" },
+  { code: "SIGHT MARKET", role: "Digital commerce rails", why: "Catalog + checkout + logistics handoff layer for SME commerce.", born: "2033" },
+  { code: "SIGHT COMPUTE", role: "African GPU cloud", why: "AI sovereignty requires owned compute. Otherwise we are tenants forever.", born: "2034" },
+  { code: "SIGHT GOV", role: "Government services platform", why: "White-label civic stack: portals, payments, ID, records.", born: "2031" },
+  { code: "SIGHT HEALTH", role: "Health-data infrastructure", why: "Adjacent ID + data + payments use case with high public value.", born: "2033" },
+  { code: "SIGHT AGRI", role: "Agricultural data & finance", why: "Combines DATA + PAY + COMPUTE for the continent's largest sector.", born: "2034" },
+  { code: "SIGHT MEDIA", role: "Media holding (AFJ + adjacencies)", why: "Distribution + influence + research products.", born: "2031" },
+  { code: "SIGHT FOUNDATION", role: "Public-interest arm", why: "Open-source, scholarships, civic tech. Protects the social license to operate.", born: "2030" },
 ];
 
 // PART 5 — Organization
@@ -511,7 +518,7 @@ export const ORG = [
 export const PHASES = [
   {
     name: "Foundation",
-    years: "2026",
+    years: "2027",
     goals: ["Unify group identity", "Stabilize MS + AFJ + Yepo + LEARN BTC", "Establish governance"],
     kpis: ["Monthly active users", "Gross margin per product", "Operational uptime"],
     revenue: "15M FBU",
@@ -523,7 +530,7 @@ export const PHASES = [
   },
   {
     name: "Validation",
-    years: "2027",
+    years: "2028",
     goals: ["Repeatable revenue per product", "Hire senior product/eng", "Define group platform v0"],
     kpis: ["ARR growth", "CAC payback", "Retention"],
     revenue: "60M FBU",
@@ -535,7 +542,7 @@ export const PHASES = [
   },
   {
     name: "Growth",
-    years: "2028–2029",
+    years: "2029–2030",
     goals: ["Launch infrastructure products (PAY, CLOUD, ACADEMY)", "Open APIs", "Open Kigali office"],
     kpis: ["Platform revenue %", "API consumers", "Cross-product usage"],
     revenue: "220M → 600M FBU",
@@ -547,7 +554,7 @@ export const PHASES = [
   },
   {
     name: "Regional Expansion",
-    years: "2030–2032",
+    years: "2031–2033",
     goals: ["Operate in 3+ countries", "Government contracts", "Sovereign cloud certifications"],
     kpis: ["Cross-border TPV", "Government deals", "Sovereign workloads hosted"],
     revenue: "1,5 → 5,5 Mds FBU",
@@ -559,7 +566,7 @@ export const PHASES = [
   },
   {
     name: "Infrastructure Leadership",
-    years: "2033–2035",
+    years: "2034–2036",
     goals: ["Foundational infra status", "Public listing or strategic capital", "African-owned compute"],
     kpis: ["Critical-infra designation", "Free cash flow", "Regional market share"],
     revenue: "9 → 18 Mds FBU",
