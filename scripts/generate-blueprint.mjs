@@ -393,6 +393,63 @@ if (usdLeaks.length) failures.push(`Residual USD tokens (${usdLeaks.length}): ${
 const fbuCount = (text.match(/\bFBU\b/g) || []).length;
 if (fbuCount < 20) failures.push(`Too few FBU mentions (${fbuCount} < 20) — currency conversion likely incomplete`);
 
+// ---------- 2026 audit: preparation year must never appear in the agenda ----------
+// 2026 is allowed ONLY inside the explicit preparation-year note.
+const PREP_ALLOWLIST = [
+  /preparation year/i,
+  /outside the (execution )?agenda/i,
+  /1 january 2027/i,
+  /is used to prepare/i,
+];
+const isAllowed2026 = (line) => PREP_ALLOWLIST.some((re) => re.test(line));
+
+// a) document body
+const doc2026 = text
+  .split("\n")
+  .map((line, i) => ({ line: line.trim(), n: i + 1 }))
+  .filter((l) => /\b2026\b/.test(l.line) && !isAllowed2026(l.line));
+if (doc2026.length) {
+  failures.push(
+    `2026 leaks in the document (${doc2026.length}): ` +
+      doc2026.slice(0, 6).map((l) => `line ${l.n}: "${l.line.slice(0, 120)}"`).join(" | "),
+  );
+}
+
+// b) agenda data — no roadmap/phase entry may be anchored on 2026
+const agenda2026 = [];
+[["ROADMAP", ROADMAP], ["ROADMAP_20Y", ROADMAP_20Y]].forEach(([name, rows]) => {
+  rows.filter((y) => y.year === 2026).forEach((y) => agenda2026.push(`${name}: year 2026 — "${y.theme}"`));
+});
+PHASES.filter((p) => /2026/.test(p.years)).forEach((p) => agenda2026.push(`PHASES: "${p.name}" years ${p.years}`));
+FUTURE_PRODUCTS.filter((f) => String(f.born) === "2026").forEach((f) => agenda2026.push(`FUTURE_PRODUCTS: ${f.code} born 2026`));
+if (agenda2026.length) failures.push(`Agenda still anchored on 2026 (${agenda2026.length}): ${agenda2026.join(" | ")}`);
+if (!PREP_YEAR || PREP_YEAR.year !== 2026) failures.push("PREP_YEAR is missing or is not 2026 — preparation year not documented");
+
+// c) public page + document titles must not mention 2026
+const titleOffenders = [];
+// document headings used in this export
+REQUIRED_SECTIONS.filter((s) => /2026/.test(s)).forEach((s) => titleOffenders.push(`Document section: "${s}"`));
+// route head() titles, PageHeader titles and nav labels
+const routeFiles = fs.readdirSync("src/routes").filter((f) => f.endsWith(".tsx"));
+for (const f of routeFiles) {
+  const src = fs.readFileSync(path.join("src/routes", f), "utf8");
+  const patterns = [
+    /\{\s*title:\s*"([^"]*)"/g,
+    /title="([^"]*)"/g,
+    /<title>([^<]*)<\/title>/g,
+  ];
+  for (const re of patterns) {
+    for (const m of src.matchAll(re)) {
+      if (/\b2026\b/.test(m[1])) titleOffenders.push(`src/routes/${f}: "${m[1]}"`);
+    }
+  }
+}
+NAV.filter((n) => /\b2026\b/.test(n.label)).forEach((n) => titleOffenders.push(`Nav label: "${n.label}"`));
+if (titleOffenders.length) {
+  failures.push(`Titles mentioning 2026 (${titleOffenders.length}): ${titleOffenders.join(" | ")}`);
+}
+
+
 // Emit human-readable report next to the exports
 const now = new Date().toISOString();
 const pages = (() => {
@@ -415,6 +472,15 @@ const report = [
   "",
   "## Year coverage 2027–2046",
   ...YEARS.map((y) => `- ${new RegExp(`\\b${y}\\b`).test(text) ? "✅" : "❌"} ${y}`),
+  "",
+  "## Preparation year (2026) audit",
+  `- ${PREP_YEAR && PREP_YEAR.year === 2026 ? "✅" : "❌"} PREP_YEAR documented as 2026 (preparation, outside the agenda)`,
+  `- ${agenda2026.length === 0 ? "✅" : "❌"} No agenda entry anchored on 2026 (roadmap, phases, subsidiary birth years)`,
+  ...agenda2026.map((a) => `  - ❌ ${a}`),
+  `- ${doc2026.length === 0 ? "✅" : "❌"} No 2026 mention in the document outside the preparation note`,
+  ...doc2026.slice(0, 20).map((l) => `  - ❌ line ${l.n}: ${l.line.slice(0, 160)}`),
+  `- ${titleOffenders.length === 0 ? "✅" : "❌"} No page/document title mentions 2026`,
+  ...titleOffenders.map((t) => `  - ❌ ${t}`),
   "",
   failures.length ? `## ❌ FAILED\n${failures.map((f) => `- ${f}`).join("\n")}` : "## ✅ PASSED",
   "",
