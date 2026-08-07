@@ -19,6 +19,16 @@ function Page() {
         lead="Each year carries one theme, a short list of priorities, named product releases, a revenue target, hiring plan, infrastructure investment and the partnerships that unlock the next year."
       />
 
+      <Section>
+        <div className="border border-border bg-muted/40 p-6">
+          <div className="eyebrow">{t("Preparation year — outside the agenda")}</div>
+          <p className="mt-3 text-sm leading-relaxed max-w-3xl">
+            {t("2026 is used to prepare: legal structuring, group identity, capital, first hires and product readiness. Execution officially starts on 1 January 2027.")}
+          </p>
+        </div>
+      </Section>
+
+
       <Section className="rule-line">
         <Tabs defaultValue="10y" className="w-full">
           <TabsList>
