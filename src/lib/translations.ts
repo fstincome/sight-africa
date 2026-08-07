@@ -63,7 +63,6 @@ export const dict: Record<string, string> = {
   "Validation & Repeatability": "Validation et reproductibilité",
   "Growth — Regional Footprint": "Croissance — empreinte régionale",
   "Platformization": "Plateformisation",
-  "Burundi 2030 Milestone": "Étape Burundi 2030",
   "Regional Expansion": "Expansion régionale",
   "Infrastructure Leadership": "Leadership d'infrastructure",
   "AI & Compute Sovereignty": "Souveraineté IA et calcul",

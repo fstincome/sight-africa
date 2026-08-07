@@ -39,7 +39,7 @@ const dump = execSync("bun run scripts/dump-data.ts", { encoding: "utf8" });
 const DATA = JSON.parse(dump);
 
 const {
-  SIGHT, NAV, END_STATE_2035, ROADMAP, ROADMAP_20Y, PRODUCTS, FUTURE_PRODUCTS,
+  SIGHT, NAV, PREP_YEAR, END_STATE_2036, ROADMAP, ROADMAP_20Y, PRODUCTS, FUTURE_PRODUCTS,
   ORG, PHASES, FINANCIAL_STRATEGY, PLAYBOOK, ECOSYSTEM,
 } = DATA;
 
@@ -136,7 +136,7 @@ children.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before
 children.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 },
   children: [new TextRun({ text: SIGHT.tagline, size: 28, color: TEAL, italics: true, font: "Georgia" })] }));
 children.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 1200 },
-  children: [new TextRun({ text: "Strategic Operating System — 10-Year Blueprint (2026–2035)", size: 24, color: MUTED })] }));
+  children: [new TextRun({ text: "Strategic Operating System — 10-Year Blueprint (2027–2036)", size: 24, color: MUTED })] }));
 children.push(new Paragraph({ alignment: AlignmentType.CENTER,
   children: [new TextRun({ text: "Confidential — all monetary values in Burundian Francs (FBU). Indicative conversion 1 USD ≈ 2,950 FBU.", size: 18, color: MUTED, italics: true })] }));
 children.push(PageBreakP());
@@ -163,17 +163,19 @@ children.push(H2("Strategic Pillars"));
 ].forEach(([k, v]) => children.push(KV(k, v)));
 children.push(PageBreakP());
 
-// 2. Vision 2035
-children.push(H1("2. Vision 2035 — End State"));
-children.push(P(END_STATE_2035.position));
-children.push(H2("Headline KPIs (2035)"));
-children.push(table2col(END_STATE_2035.stats.map((s) => [s.k, `${s.v} — ${s.note}`])));
+// 2. Vision 2036
+children.push(H1("2. Vision 2036 — End State"));
+children.push(P(END_STATE_2036.position));
+children.push(H2("Headline KPIs (2036)"));
+children.push(table2col(END_STATE_2036.stats.map((s) => [s.k, `${s.v} — ${s.note}`])));
 children.push(H2("Strategic Influence"));
-END_STATE_2035.influence.forEach((i) => children.push(Bullet(i)));
+END_STATE_2036.influence.forEach((i) => children.push(Bullet(i)));
 children.push(PageBreakP());
 
 // 3. Roadmap
-children.push(H1("3. Roadmap (2026–2035)"));
+children.push(H1("3. Roadmap (2027–2036)"));
+children.push(H2(`${PREP_YEAR.year} — ${PREP_YEAR.label}`));
+children.push(P(PREP_YEAR.note));
 ROADMAP.forEach((y) => {
   children.push(H2(`${y.year} — ${y.theme}`));
   children.push(KV("Revenue target", y.revenue));
@@ -189,10 +191,10 @@ ROADMAP.forEach((y) => {
 });
 children.push(PageBreakP());
 
-// 3b. 20-year Roadmap — extended horizon (2036–2045 additions)
-children.push(H1("3b. Extended Roadmap (2036–2045)"));
-children.push(P("The 20-year horizon extends the 10-year plan with a second decade: consolidation after IPO, AI industrialization, pan-African reach, sovereign cloud standard, and continental infrastructure. Years 2026–2035 remain as defined in section 3."));
-ROADMAP_20Y.filter((y) => y.year >= 2036).forEach((y) => {
+// 3b. 20-year Roadmap — extended horizon (2037–2046 additions)
+children.push(H1("3b. Extended Roadmap (2037–2046)"));
+children.push(P("The 20-year horizon extends the 10-year plan with a second decade: consolidation after IPO, AI industrialization, pan-African reach, sovereign cloud standard, and continental infrastructure. Years 2027–2036 remain as defined in section 3."));
+ROADMAP_20Y.filter((y) => y.year >= 2037).forEach((y) => {
   children.push(H2(`${y.year} — ${y.theme}`));
   children.push(KV("Revenue target", y.revenue));
   children.push(KV("Team", y.team));
@@ -362,13 +364,13 @@ try {
 
 // ---------- Automated export validation ----------
 const REQUIRED_SECTIONS = [
-  "1. Overview", "2. Vision 2035", "3. Roadmap (2026–2035)",
-  "3b. Extended Roadmap (2036–2045)", "4. Products — Evolution",
+  "1. Overview", "2. Vision 2036", "3. Roadmap (2027–2036)",
+  "3b. Extended Roadmap (2037–2046)", "4. Products — Evolution",
   "5. Future Build", "6. Organization", "7. Phases",
   "8. Financial Strategy", "9. Execution Playbook", "10. Ecosystem Map",
   "Closing Note",
 ];
-const YEARS = Array.from({ length: 20 }, (_, i) => 2026 + i); // 2026..2045
+const YEARS = Array.from({ length: 20 }, (_, i) => 2027 + i); // 2027..2046
 
 let text = "";
 try {
@@ -411,7 +413,7 @@ const report = [
   "## Section presence",
   ...REQUIRED_SECTIONS.map((s) => `- ${text.includes(s) ? "✅" : "❌"} ${s}`),
   "",
-  "## Year coverage 2026–2045",
+  "## Year coverage 2027–2046",
   ...YEARS.map((y) => `- ${new RegExp(`\\b${y}\\b`).test(text) ? "✅" : "❌"} ${y}`),
   "",
   failures.length ? `## ❌ FAILED\n${failures.map((f) => `- ${f}`).join("\n")}` : "## ✅ PASSED",
