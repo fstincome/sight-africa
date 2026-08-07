@@ -2,26 +2,26 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Section } from "@/components/site-shell";
 import { useLocalizedData, useT } from "@/lib/i18n";
 
-export const Route = createFileRoute("/vision-2035")({
+export const Route = createFileRoute("/vision-2036")({
   head: () => ({
-    meta: [{ title: "Vision 2035 — SIGHT AFRICA" }],
+    meta: [{ title: "Vision 2036 — SIGHT AFRICA" }],
   }),
   component: Page,
 });
 
 function Page() {
   const t = useT();
-  const { END_STATE_2035 } = useLocalizedData();
+  const { END_STATE_2036 } = useLocalizedData();
   return (
     <SiteShell>
       <PageHeader
         eyebrow="Part 01 · The future end state"
-        title="In 2035, SIGHT AFRICA is the operator of East Africa's digital backbone."
-        lead={END_STATE_2035.position}
+        title="In 2036, SIGHT AFRICA is the operator of East Africa's digital backbone."
+        lead={END_STATE_2036.position}
       />
       <Section className="rule-line">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
-          {END_STATE_2035.stats.map((s) => (
+          {END_STATE_2036.stats.map((s) => (
             <div key={s.k} className="bg-background p-6">
               <div className="eyebrow">{s.k}</div>
               <div className="font-display text-2xl mt-3 break-words">{s.v}</div>
@@ -38,7 +38,7 @@ function Page() {
             <h2 className="font-display text-4xl mt-3 leading-tight">{t("More than a company — a piece of national infrastructure.")}</h2>
           </div>
           <ul className="space-y-5">
-            {END_STATE_2035.influence.map((i, idx) => (
+            {END_STATE_2036.influence.map((i, idx) => (
               <li key={i} className="flex gap-4 border-t border-border pt-5">
                 <span className="font-mono text-xs text-primary mt-1">0{idx + 1}</span>
                 <span className="text-lg leading-relaxed">{i}</span>

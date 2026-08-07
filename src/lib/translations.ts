@@ -4,7 +4,7 @@
 export const dict: Record<string, string> = {
   // === NAV ===
   "Overview": "Aperçu",
-  "Vision 2035": "Vision 2035",
+  "Vision 2036": "Vision 2036",
   "Roadmap": "Feuille de route",
   "Products": "Produits",
   "Future Build": "Construction future",
@@ -26,7 +26,7 @@ export const dict: Record<string, string> = {
   "Sovereignty": "Souveraineté",
   "Excellence": "Excellence",
 
-  // === END_STATE_2035 ===
+  // === END_STATE_2036 ===
   "The dominant digital infrastructure group of East Africa: the rails for payments, identity, cloud and AI across Burundi, Rwanda, DRC, Tanzania, Kenya, Uganda — with strategic footprints in Ethiopia and Zambia.":
     "Le groupe dominant d'infrastructure numérique d'Afrique de l'Est : les rails des paiements, de l'identité, du cloud et de l'IA au Burundi, Rwanda, RDC, Tanzanie, Kenya, Ouganda — avec une présence stratégique en Éthiopie et en Zambie.",
   "Active end-users": "Utilisateurs finaux actifs",
@@ -126,19 +126,19 @@ export const dict: Record<string, string> = {
   "Yepo": "Yepo",
 
   // === Index page ===
-  "Strategic Operating System · 2026 → 2035": "Système d'exploitation stratégique · 2026 → 2035",
+  "Strategic Operating System · 2027 → 2036": "Système d'exploitation stratégique · 2027 → 2036",
   "Building the digital infrastructure of": "Construire l'infrastructure numérique de",
   "East Africa": "l'Afrique de l'Est",
   "SIGHT AFRICA is not a software agency. It is a future African technology group whose mission is to build the rails — payments, identity, cloud, AI, education, media — that allow Burundi and East Africa to participate in the global digital economy on their own terms.":
     "SIGHT AFRICA n'est pas une agence logicielle. C'est un futur groupe technologique africain dont la mission est de bâtir les rails — paiements, identité, cloud, IA, éducation, médias — qui permettent au Burundi et à l'Afrique de l'Est de participer à l'économie numérique mondiale selon leurs propres termes.",
-  "Read the 2035 end state": "Lire l'état final 2035",
+  "Read the 2036 end state": "Lire l'état final 2036",
   "Year-by-year roadmap": "Feuille de route année par année",
   "Geography": "Géographie",
   "Burundi → East Africa → AU": "Burundi → Afrique de l'Est → UA",
   "Horizon": "Horizon",
-  "10 years (2026–2035)": "10 ans (2026–2035)",
+  "10 years (2027–2036)": "10 ans (2027–2036)",
   "Subsidiaries planned": "Filiales planifiées",
-  "Target ARR 2035": "ARR cible 2035",
+  "Target ARR 2036": "ARR cible 2036",
   "Foundational beliefs": "Convictions fondatrices",
   "We are building for decades, not quarters.": "Nous bâtissons pour des décennies, pas pour des trimestres.",
   "Vision": "Vision",
@@ -146,7 +146,7 @@ export const dict: Record<string, string> = {
   "Values": "Valeurs",
   "Architecture": "Architecture",
   "A holding group of focused subsidiaries sharing payments, identity, cloud, data and security as common infrastructure.": "Un groupe holding de filiales focalisées partageant paiements, identité, cloud, données et sécurité comme infrastructure commune.",
-  "North star · 2035": "Étoile polaire · 2035",
+  "North star · 2036": "Étoile polaire · 2036",
   "The four assets we operate today": "Les quatre actifs que nous opérons aujourd'hui",
   "A working foundation.": "Une fondation opérationnelle.",
   "Full product evolution →": "Évolution complète des produits →",
@@ -159,7 +159,7 @@ export const dict: Record<string, string> = {
   "Nine documents. One blueprint.": "Neuf documents. Un seul plan.",
   "Market position, scale, influence": "Position de marché, échelle, influence",
   "10-Year Roadmap": "Feuille de route 10 ans",
-  "Year by year, 2026 → 2035": "Année par année, 2026 → 2035",
+  "Year by year, 2027 → 2036": "Année par année, 2027 → 2036",
   "Today → 1y → 5y → 10y → mature": "Aujourd'hui → 1 an → 5 ans → 10 ans → maturité",
   "15 subsidiaries — why each": "15 filiales — pourquoi chacune",
   "From 15 people to 4,800": "De 15 personnes à 4 800",
@@ -170,7 +170,7 @@ export const dict: Record<string, string> = {
 
   // === Vision page ===
   "Part 01 · The future end state": "Partie 01 · L'état final futur",
-  "In 2035, SIGHT AFRICA is the operator of East Africa's digital backbone.": "En 2035, SIGHT AFRICA est l'opérateur de la dorsale numérique de l'Afrique de l'Est.",
+  "In 2036, SIGHT AFRICA is the operator of East Africa's digital backbone.": "En 2036, SIGHT AFRICA est l'opérateur de la dorsale numérique de l'Afrique de l'Est.",
   "Strategic influence": "Influence stratégique",
   "More than a company — a piece of national infrastructure.": "Plus qu'une entreprise — un élément d'infrastructure nationale.",
   "Products at maturity": "Produits à maturité",
@@ -182,7 +182,7 @@ export const dict: Record<string, string> = {
 
   // === Roadmap page ===
   "Part 02 · Reverse-engineered roadmap": "Partie 02 · Feuille de route rétro-conçue",
-  "Ten years, working backwards from 2035.": "Dix ans, en remontant à partir de 2035.",
+  "Ten years, working backwards from 2036.": "Dix ans, en remontant à partir de 2036.",
   "Each year carries one theme, a short list of priorities, named product releases, a revenue target, hiring plan, infrastructure investment and the partnerships that unlock the next year.": "Chaque année porte un thème, une courte liste de priorités, des sorties produit nommées, un objectif de revenu, un plan de recrutement, des investissements d'infrastructure et les partenariats qui débloquent l'année suivante.",
   "PHASE": "PHASE",
   "Revenue": "Revenu",

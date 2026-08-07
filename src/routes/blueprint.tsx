@@ -142,8 +142,8 @@ function BlueprintPage() {
             <div className="eyebrow mb-2">Contents</div>
             <ol className="space-y-1 list-decimal list-inside">
               <li>Overview</li>
-              <li>Vision 2035</li>
-              <li>Roadmap 2026–2035</li>
+              <li>Vision 2036</li>
+              <li>Roadmap 2027–2036</li>
               <li>Products — evolution</li>
               <li>Future build — subsidiaries</li>
               <li>Organization</li>

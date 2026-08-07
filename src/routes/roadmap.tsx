@@ -15,15 +15,15 @@ function Page() {
     <SiteShell>
       <PageHeader
         eyebrow="Part 02 · Reverse-engineered roadmap"
-        title="Ten years, working backwards from 2035."
+        title="Ten years, working backwards from 2036."
         lead="Each year carries one theme, a short list of priorities, named product releases, a revenue target, hiring plan, infrastructure investment and the partnerships that unlock the next year."
       />
 
       <Section className="rule-line">
         <Tabs defaultValue="10y" className="w-full">
           <TabsList>
-            <TabsTrigger value="10y">{t("10 years")} · 2026–2035</TabsTrigger>
-            <TabsTrigger value="20y">{t("20 years")} · 2026–2045</TabsTrigger>
+            <TabsTrigger value="10y">{t("10 years")} · 2027–2036</TabsTrigger>
+            <TabsTrigger value="20y">{t("20 years")} · 2027–2046</TabsTrigger>
           </TabsList>
           <TabsContent value="10y">
             <Timeline rows={ROADMAP} t={t} />
