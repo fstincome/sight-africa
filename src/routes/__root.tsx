@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Vision 2035, feuille de route, produits, organisation et plan d'exécution d'un groupe technologique africain.",
+          "Vision 2036, feuille de route, produits, organisation et plan d'exécution d'un groupe technologique africain.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

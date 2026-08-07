@@ -103,7 +103,7 @@ function Footer() {
         <div>
           <div className="eyebrow mb-3">{t("Group")}</div>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/vision-2035" className="hover:text-primary">{t("Vision 2035")}</Link></li>
+            <li><Link to="/vision-2036" className="hover:text-primary">{t("Vision 2036")}</Link></li>
             <li><Link to="/roadmap" className="hover:text-primary">{t("10-year roadmap")}</Link></li>
             <li><Link to="/ecosystem" className="hover:text-primary">{t("Ecosystem map")}</Link></li>
             <li><Link to="/organization" className="hover:text-primary">{t("Organization")}</Link></li>
@@ -123,7 +123,7 @@ function Footer() {
       <div className="rule-line">
         <div className="container-x py-6 flex flex-wrap justify-between gap-4 text-xs text-muted-foreground">
           <div>© {new Date().getFullYear()} SIGHT AFRICA · Bujumbura · East Africa</div>
-          <div className="font-mono">v.2035 / blueprint.01</div>
+          <div className="font-mono">v.2036 / blueprint.01</div>
         </div>
       </div>
     </footer>

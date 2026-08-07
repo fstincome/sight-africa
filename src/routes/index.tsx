@@ -34,7 +34,7 @@ function Hero() {
   const t = useT();
   return (
     <section className="container-x pt-24 pb-24 lg:pt-32">
-      <Eyebrow>{t("Strategic Operating System · 2026 → 2035")}</Eyebrow>
+      <Eyebrow>{t("Strategic Operating System · 2027 → 2036")}</Eyebrow>
       <h1 className="font-display text-[3.2rem] sm:text-7xl lg:text-[6.5rem] leading-[0.92] tracking-tight mt-6 max-w-5xl">
         {t("Building the digital infrastructure of")} <em className="italic text-primary not-italic font-display">{t("East Africa")}</em>.
       </h1>
@@ -43,8 +43,8 @@ function Hero() {
           {t("SIGHT AFRICA is not a software agency. It is a future African technology group whose mission is to build the rails — payments, identity, cloud, AI, education, media — that allow Burundi and East Africa to participate in the global digital economy on their own terms.")}
         </p>
         <div className="flex flex-col gap-3">
-          <Link to="/vision-2035" className="inline-flex items-center justify-between gap-3 px-5 py-4 bg-foreground text-background hover:bg-primary transition-colors text-sm">
-            {t("Read the 2035 end state")} <span>→</span>
+          <Link to="/vision-2036" className="inline-flex items-center justify-between gap-3 px-5 py-4 bg-foreground text-background hover:bg-primary transition-colors text-sm">
+            {t("Read the 2036 end state")} <span>→</span>
           </Link>
           <Link to="/roadmap" className="inline-flex items-center justify-between gap-3 px-5 py-4 border border-border hover:border-foreground transition-colors text-sm">
             {t("Year-by-year roadmap")} <span>→</span>
@@ -55,9 +55,9 @@ function Hero() {
       <div className="rule-line mt-20 pt-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
         {[
           ["Geography", "Burundi → East Africa → AU"],
-          ["Horizon", "10 years (2026–2035)"],
+          ["Horizon", "10 years (2027–2036)"],
           ["Subsidiaries planned", "15+"],
-          ["Target ARR 2035", "$640M"],
+          ["Target ARR 2036", "18 Mds FBU"],
         ].map(([k, v]) => (
           <div key={k}>
             <div className="eyebrow">{t(k)}</div>
@@ -65,6 +65,10 @@ function Hero() {
           </div>
         ))}
       </div>
+
+      <p className="mt-8 font-mono text-xs tracking-wide text-muted-foreground max-w-3xl">
+        {t("2026 is a preparation year, outside the agenda. Execution starts on 1 January 2027.")}
+      </p>
     </section>
   );
 }
@@ -101,15 +105,15 @@ function Pillars() {
 
 function NorthStar() {
   const t = useT();
-  const { END_STATE_2035 } = useLocalizedData();
+  const { END_STATE_2036 } = useLocalizedData();
   return (
     <Section className="rule-line">
-      <Eyebrow>{t("North star · 2035")}</Eyebrow>
+      <Eyebrow>{t("North star · 2036")}</Eyebrow>
       <h2 className="font-display text-4xl md:text-6xl mt-3 max-w-4xl leading-[1.05]">
-        {END_STATE_2035.position}
+        {END_STATE_2036.position}
       </h2>
       <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
-        {END_STATE_2035.stats.map((s) => (
+        {END_STATE_2036.stats.map((s) => (
           <div key={s.k} className="bg-background p-6">
             <div className="eyebrow">{s.k}</div>
             <div className="font-display text-2xl mt-3 break-words">{s.v}</div>
@@ -194,8 +198,8 @@ function FutureGrid() {
 function CTA() {
   const t = useT();
   const links: Array<[string, string, string]> = [
-    ["Vision 2035", "/vision-2035", "Market position, scale, influence"],
-    ["10-Year Roadmap", "/roadmap", "Year by year, 2026 → 2035"],
+    ["Vision 2036", "/vision-2036", "Market position, scale, influence"],
+    ["10-Year Roadmap", "/roadmap", "Year by year, 2027 → 2036"],
     ["Products", "/products", "Today → 1y → 5y → 10y → mature"],
     ["Future Build", "/future-products", "15 subsidiaries — why each"],
     ["Organization", "/organization", "From 15 people to 4,800"],
