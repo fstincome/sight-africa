@@ -457,23 +457,25 @@ export const PRODUCTS = [
 ];
 
 // PART 4 — Future products
+// Ordered by implementation priority — 2 to 3 entities per year, 2027 → 2032.
 export const FUTURE_PRODUCTS = [
-  { code: "SIGHT CLOUD", role: "Sovereign cloud", why: "Local data residency for governments and regulated industries. Hard requirement for digital sovereignty.", born: "2029" },
-  { code: "SIGHT ID", role: "Digital identity", why: "Reusable KYC and authentication across group products + third parties — the trust layer for everything else.", born: "2028" },
-  { code: "SIGHT PAY", role: "Regional payment network", why: "Acquiring + cross-border rails connecting MNOs, banks and BTC liquidity.", born: "2029" },
-  { code: "SIGHT LABS", role: "Applied R&D", why: "Cryptography, AI, hardware, civic tech — translates research to product.", born: "2030" },
-  { code: "SIGHT CAPITAL", role: "Venture arm + fund", why: "Backs adjacent founders, sources M&A, extends the ecosystem.", born: "2030" },
-  { code: "SIGHT ACADEMY", role: "Talent institution", why: "End-to-end engineer / operator pipeline; reduces hiring risk for the whole group.", born: "2029" },
-  { code: "SIGHT DATA", role: "Data & analytics infra", why: "Group data platform + commercial analytics for banks, MNOs, regulators.", born: "2032" },
-  { code: "SIGHT SECURITY", role: "Cybersecurity infra & SOC", why: "Critical for national + group resilience. Sellable as managed service.", born: "2031" },
-  { code: "SIGHT MARKET", role: "Digital commerce rails", why: "Catalog + checkout + logistics handoff layer for SME commerce.", born: "2033" },
-  { code: "SIGHT COMPUTE", role: "African GPU cloud", why: "AI sovereignty requires owned compute. Otherwise we are tenants forever.", born: "2034" },
-  { code: "SIGHT GOV", role: "Government services platform", why: "White-label civic stack: portals, payments, ID, records.", born: "2031" },
-  { code: "SIGHT HEALTH", role: "Health-data infrastructure", why: "Adjacent ID + data + payments use case with high public value.", born: "2033" },
-  { code: "SIGHT AGRI", role: "Agricultural data & finance", why: "Combines DATA + PAY + COMPUTE for the continent's largest sector.", born: "2034" },
-  { code: "SIGHT MEDIA", role: "Media holding (AFJ + adjacencies)", why: "Distribution + influence + research products.", born: "2031" },
-  { code: "SIGHT FOUNDATION", role: "Public-interest arm", why: "Open-source, scholarships, civic tech. Protects the social license to operate.", born: "2030" },
+  { code: "SIGHT ID", role: "Digital identity", why: "First dependency of everything else: reusable KYC and authentication across group products + third parties — the trust layer.", born: "2027" },
+  { code: "SIGHT PAY", role: "Regional payment network", why: "Acquiring + cross-border rails connecting MNOs, banks and BTC liquidity. Monetises the existing My Satoshis base immediately.", born: "2027" },
+  { code: "SIGHT ACADEMY", role: "Talent institution", why: "Nothing scales without engineers and operators. Formalises LEARN BTC into the group's hiring pipeline from year one.", born: "2027" },
+  { code: "SIGHT SECURITY", role: "Cybersecurity infra & SOC", why: "Payments and identity cannot run unprotected. Becomes a managed service sold to banks and public bodies.", born: "2028" },
+  { code: "SIGHT DATA", role: "Data & analytics infra", why: "Group data platform once PAY and ID generate volume; commercial analytics for banks, MNOs, regulators.", born: "2028" },
+  { code: "SIGHT MEDIA", role: "Media holding (AFJ + adjacencies)", why: "Cheap to stand up, compounds distribution and institutional credibility for every later launch.", born: "2028" },
+  { code: "SIGHT CLOUD", role: "Sovereign cloud", why: "Local data residency for governments and regulated industries — required before any public-sector contract.", born: "2029" },
+  { code: "SIGHT GOV", role: "Government services platform", why: "White-label civic stack: portals, payments, ID, records. Activated as soon as sovereign hosting exists.", born: "2029" },
+  { code: "SIGHT FOUNDATION", role: "Public-interest arm", why: "Open-source, scholarships, civic tech. Protects the social license before the group becomes systemically visible.", born: "2029" },
+  { code: "SIGHT LABS", role: "Applied R&D", why: "Cryptography, AI, hardware, civic tech — funded only once core products produce cash.", born: "2030" },
+  { code: "SIGHT CAPITAL", role: "Venture arm + fund", why: "Backs adjacent founders, sources M&A, extends the ecosystem once the balance sheet allows it.", born: "2030" },
+  { code: "SIGHT MARKET", role: "Digital commerce rails", why: "Catalog + checkout + logistics handoff for SME commerce, built on top of PAY and ID.", born: "2031" },
+  { code: "SIGHT COMPUTE", role: "African GPU cloud", why: "AI sovereignty requires owned compute. Follows CLOUD and Yepo demand — otherwise we stay tenants forever.", born: "2031" },
+  { code: "SIGHT AGRI", role: "Agricultural data & finance", why: "Combines DATA + PAY + COMPUTE for the continent's largest sector — needs all three to exist first.", born: "2032" },
+  { code: "SIGHT HEALTH", role: "Health-data infrastructure", why: "Highest regulatory bar; launched last, on mature ID, CLOUD and SECURITY foundations.", born: "2032" },
 ];
+
 
 // PART 5 — Organization
 export const ORG = [
