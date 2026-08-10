@@ -20,11 +20,6 @@
     "kind": "current"
   },
   {
-    "id": "sight-cloud",
-    "name": "SIGHT CLOUD",
-    "kind": "future"
-  },
-  {
     "id": "sight-id",
     "name": "SIGHT ID",
     "kind": "future"
@@ -32,6 +27,41 @@
   {
     "id": "sight-pay",
     "name": "SIGHT PAY",
+    "kind": "future"
+  },
+  {
+    "id": "sight-academy",
+    "name": "SIGHT ACADEMY",
+    "kind": "future"
+  },
+  {
+    "id": "sight-security",
+    "name": "SIGHT SECURITY",
+    "kind": "future"
+  },
+  {
+    "id": "sight-data",
+    "name": "SIGHT DATA",
+    "kind": "future"
+  },
+  {
+    "id": "sight-media",
+    "name": "SIGHT MEDIA",
+    "kind": "future"
+  },
+  {
+    "id": "sight-cloud",
+    "name": "SIGHT CLOUD",
+    "kind": "future"
+  },
+  {
+    "id": "sight-gov",
+    "name": "SIGHT GOV",
+    "kind": "future"
+  },
+  {
+    "id": "sight-foundation",
+    "name": "SIGHT FOUNDATION",
     "kind": "future"
   },
   {
@@ -45,21 +75,6 @@
     "kind": "future"
   },
   {
-    "id": "sight-academy",
-    "name": "SIGHT ACADEMY",
-    "kind": "future"
-  },
-  {
-    "id": "sight-data",
-    "name": "SIGHT DATA",
-    "kind": "future"
-  },
-  {
-    "id": "sight-security",
-    "name": "SIGHT SECURITY",
-    "kind": "future"
-  },
-  {
     "id": "sight-market",
     "name": "SIGHT MARKET",
     "kind": "future"
@@ -70,28 +85,13 @@
     "kind": "future"
   },
   {
-    "id": "sight-gov",
-    "name": "SIGHT GOV",
-    "kind": "future"
-  },
-  {
-    "id": "sight-health",
-    "name": "SIGHT HEALTH",
-    "kind": "future"
-  },
-  {
     "id": "sight-agri",
     "name": "SIGHT AGRI",
     "kind": "future"
   },
   {
-    "id": "sight-media",
-    "name": "SIGHT MEDIA",
-    "kind": "future"
-  },
-  {
-    "id": "sight-foundation",
-    "name": "SIGHT FOUNDATION",
+    "id": "sight-health",
+    "name": "SIGHT HEALTH",
     "kind": "future"
   }
 ]

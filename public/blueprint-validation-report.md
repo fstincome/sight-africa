@@ -1,8 +1,8 @@
 # Blueprint export validation
-Generated: 2026-08-07T09:36:18.970Z
+Generated: 2026-08-10T07:43:12.209Z
 
-- docx: 30,960 bytes
-- pdf:  667,153 bytes, 41 pages
+- docx: 31,289 bytes
+- pdf:  672,495 bytes, 42 pages
 - FBU mentions: 56
 - Residual USD tokens: 0
 
