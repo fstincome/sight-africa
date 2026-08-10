@@ -162,7 +162,7 @@ function futureDossier(f) {
     H2("3. Investment required"),
     table([
       ["Phase", "Window", "Capital needed", "Main use"],
-      ["Study & design", `${Number(f.born) - 1}`, "60 M FBU", "Feasibility, architecture, legal structure"],
+      ["Study & design", `${Number(f.born) - 1 <= 2026 ? "2026 (preparation year)" : Number(f.born) - 1}`, "60 M FBU", "Feasibility, architecture, legal structure"],
       ["Incorporation & MVP", `${f.born}`, "450 M FBU", "Entity setup, core team, first platform"],
       ["Commercial ramp", `${Number(f.born) + 1}–${Number(f.born) + 3}`, "2 Mds FBU", "Sales, certification, capacity"],
       ["Consolidation", `${Number(f.born) + 4}+`, "Self-funded", "Reinvested cash flow"],
