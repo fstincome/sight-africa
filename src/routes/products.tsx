@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Section } from "@/components/site-shell";
+import { DossierButtons } from "@/components/dossier-buttons";
 import { useLocalizedData, useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/products")({
@@ -15,7 +16,7 @@ function Page() {
       <PageHeader
         eyebrow="Part 03 · Product evolution"
         title="Four products today. Foundational infrastructure tomorrow."
-        lead="Each existing product carries a 10-year arc: users, revenue, features, market position, risks, competitive advantage, technology stack and team requirements at every stage."
+        lead="Each existing product carries a 10-year arc: users, revenue, features, market position, risks, competitive advantage, technology stack and team requirements at every stage. Each also has a detailed PDF dossier — expectations, investment, economic model, feasibility, KPIs and risks."
       />
 
       {PRODUCTS.map((p) => (
@@ -25,8 +26,12 @@ function Page() {
               <div className="eyebrow">{t("Product")}</div>
               <h2 className="font-display text-5xl mt-2">{p.name}</h2>
             </div>
-            <p className="max-w-md text-muted-foreground">{p.summary}</p>
+            <div className="max-w-md space-y-4">
+              <p className="text-muted-foreground">{p.summary}</p>
+              <DossierButtons id={p.id} name={p.name} />
+            </div>
           </div>
+
           <div className="mt-10 grid grid-cols-1 md:grid-cols-5 gap-px bg-border">
             {p.stages.map((s) => (
               <div key={s.label} className="bg-background p-5">
