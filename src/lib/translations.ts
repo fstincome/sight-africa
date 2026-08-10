@@ -204,6 +204,8 @@ export const dict: Record<string, string> = {
   "Four products today. Foundational infrastructure tomorrow.": "Quatre produits aujourd'hui. Infrastructure fondamentale demain.",
   "Each existing product carries a 10-year arc: users, revenue, features, market position, risks, competitive advantage, technology stack and team requirements at every stage.": "Chaque produit existant porte un arc de 10 ans : utilisateurs, revenu, fonctionnalités, position de marché, risques, avantage compétitif, pile technologique et besoins en équipe à chaque étape.",
   "Product": "Produit",
+  "View PDF dossier": "Voir le dossier PDF",
+
   "Users": "Utilisateurs",
   "Features": "Fonctionnalités",
   "Market": "Marché",
