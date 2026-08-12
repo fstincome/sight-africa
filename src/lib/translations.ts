@@ -20,6 +20,7 @@ export const dict: Record<string, string> = {
   "Phases": "Phases",
   "Financials": "Finances",
   "Playbook": "Plan d'exécution",
+  "Implementation": "Mise en place",
   "Ecosystem": "Écosystème",
 
   // === SIGHT ===
