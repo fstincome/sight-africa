@@ -15,6 +15,7 @@ import { Route as ProductsRouteImport } from './routes/products'
 import { Route as PlaybookRouteImport } from './routes/playbook'
 import { Route as PhasesRouteImport } from './routes/phases'
 import { Route as OrganizationRouteImport } from './routes/organization'
+import { Route as ImplementationRouteImport } from './routes/implementation'
 import { Route as FutureProductsRouteImport } from './routes/future-products'
 import { Route as FinancialsRouteImport } from './routes/financials'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
@@ -51,6 +52,11 @@ const OrganizationRoute = OrganizationRouteImport.update({
   path: '/organization',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ImplementationRoute = ImplementationRouteImport.update({
+  id: '/implementation',
+  path: '/implementation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FutureProductsRoute = FutureProductsRouteImport.update({
   id: '/future-products',
   path: '/future-products',
@@ -83,6 +89,7 @@ export interface FileRoutesByFullPath {
   '/ecosystem': typeof EcosystemRoute
   '/financials': typeof FinancialsRoute
   '/future-products': typeof FutureProductsRoute
+  '/implementation': typeof ImplementationRoute
   '/organization': typeof OrganizationRoute
   '/phases': typeof PhasesRoute
   '/playbook': typeof PlaybookRoute
@@ -96,6 +103,7 @@ export interface FileRoutesByTo {
   '/ecosystem': typeof EcosystemRoute
   '/financials': typeof FinancialsRoute
   '/future-products': typeof FutureProductsRoute
+  '/implementation': typeof ImplementationRoute
   '/organization': typeof OrganizationRoute
   '/phases': typeof PhasesRoute
   '/playbook': typeof PlaybookRoute
@@ -110,6 +118,7 @@ export interface FileRoutesById {
   '/ecosystem': typeof EcosystemRoute
   '/financials': typeof FinancialsRoute
   '/future-products': typeof FutureProductsRoute
+  '/implementation': typeof ImplementationRoute
   '/organization': typeof OrganizationRoute
   '/phases': typeof PhasesRoute
   '/playbook': typeof PlaybookRoute
@@ -125,6 +134,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/financials'
     | '/future-products'
+    | '/implementation'
     | '/organization'
     | '/phases'
     | '/playbook'
@@ -138,6 +148,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/financials'
     | '/future-products'
+    | '/implementation'
     | '/organization'
     | '/phases'
     | '/playbook'
@@ -151,6 +162,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/financials'
     | '/future-products'
+    | '/implementation'
     | '/organization'
     | '/phases'
     | '/playbook'
@@ -165,6 +177,7 @@ export interface RootRouteChildren {
   EcosystemRoute: typeof EcosystemRoute
   FinancialsRoute: typeof FinancialsRoute
   FutureProductsRoute: typeof FutureProductsRoute
+  ImplementationRoute: typeof ImplementationRoute
   OrganizationRoute: typeof OrganizationRoute
   PhasesRoute: typeof PhasesRoute
   PlaybookRoute: typeof PlaybookRoute
@@ -217,6 +230,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OrganizationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/implementation': {
+      id: '/implementation'
+      path: '/implementation'
+      fullPath: '/implementation'
+      preLoaderRoute: typeof ImplementationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/future-products': {
       id: '/future-products'
       path: '/future-products'
@@ -261,6 +281,7 @@ const rootRouteChildren: RootRouteChildren = {
   EcosystemRoute: EcosystemRoute,
   FinancialsRoute: FinancialsRoute,
   FutureProductsRoute: FutureProductsRoute,
+  ImplementationRoute: ImplementationRoute,
   OrganizationRoute: OrganizationRoute,
   PhasesRoute: PhasesRoute,
   PlaybookRoute: PlaybookRoute,
@@ -271,13 +292,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
