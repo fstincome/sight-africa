@@ -20,6 +20,7 @@ export const NAV = [
   { to: "/phases", label: "Phases" },
   { to: "/financials", label: "Financials" },
   { to: "/playbook", label: "Playbook" },
+  { to: "/implementation", label: "Implementation" },
   { to: "/ecosystem", label: "Ecosystem" },
 ] as const;
 
