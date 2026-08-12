@@ -24,6 +24,36 @@ export const NAV = [
   { to: "/ecosystem", label: "Ecosystem" },
 ] as const;
 
+// Grouped navigation (every NAV entry appears exactly once)
+export const NAV_GROUPS = [
+  { label: "Overview", to: "/", items: [] as { to: string; label: string; note: string }[] },
+  {
+    label: "Strategy",
+    items: [
+      { to: "/vision-2036", label: "Vision 2036", note: "Market position, scale, influence" },
+      { to: "/roadmap", label: "Roadmap", note: "Year by year, 2027 → 2036" },
+      { to: "/phases", label: "Phases", note: "Foundation → Infrastructure Leadership" },
+    ],
+  },
+  {
+    label: "Products",
+    items: [
+      { to: "/products", label: "Products", note: "Today → 1y → 5y → 10y → mature" },
+      { to: "/future-products", label: "Future Build", note: "15 subsidiaries — why each" },
+      { to: "/implementation", label: "Implementation", note: "Stacks, specs, dependencies" },
+    ],
+  },
+  {
+    label: "Operations",
+    items: [
+      { to: "/organization", label: "Organization", note: "From 15 people to 4,800" },
+      { to: "/financials", label: "Financials", note: "Bootstrap, grants, venture, IPO" },
+      { to: "/playbook", label: "Playbook", note: "Build, wait, outsource, automate" },
+      { to: "/ecosystem", label: "Ecosystem", note: "Group · Infra · Platforms · Voice" },
+    ],
+  },
+] as const;
+
 // PART 1 — End state 2036
 export const END_STATE_2036 = {
   position:
