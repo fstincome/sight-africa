@@ -16,7 +16,6 @@ export function SiteShell({ children }: { children?: ReactNode }) {
 }
 
 function Header() {
-  const { NAV } = useLocalizedData();
   const t = useT();
   const { signOut } = useAuth();
   return (
@@ -29,19 +28,7 @@ function Header() {
             <span className="block text-[10px] tracking-[0.16em] uppercase text-primary font-mono mt-1">{t("Strategic OS")}</span>
           </span>
         </Link>
-        <nav className="hidden lg:flex items-center gap-1 flex-1 justify-center">
-          {NAV.map((n) => (
-            <Link
-              key={n.to}
-              to={n.to}
-              className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              activeProps={{ className: "px-3 py-2 text-sm text-foreground font-medium" }}
-              activeOptions={{ exact: n.to === "/" }}
-            >
-              {n.label}
-            </Link>
-          ))}
-        </nav>
+        <DesktopNav />
         <div className="flex items-center gap-2 shrink-0">
           <Link
             to="/blueprint"
@@ -65,21 +52,83 @@ function Header() {
   );
 }
 
+function DesktopNav() {
+  const { NAV_GROUPS } = useLocalizedData();
+  return (
+    <nav className="hidden lg:flex items-center gap-1 flex-1 justify-center">
+      {NAV_GROUPS.map((g) =>
+        g.items.length === 0 && g.to ? (
+          <Link
+            key={g.label}
+            to={g.to}
+            className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            activeProps={{ className: "px-3 py-2 text-sm text-foreground font-medium" }}
+            activeOptions={{ exact: true }}
+          >
+            {g.label}
+          </Link>
+        ) : (
+          <div key={g.label} className="relative group">
+            <button className="px-3 py-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors inline-flex items-center gap-1.5">
+              {g.label}
+              <span className="text-[9px] opacity-60">▾</span>
+            </button>
+            <div className="absolute left-0 top-full pt-1 hidden group-hover:block group-focus-within:block">
+              <div className="w-72 border border-border bg-background shadow-xl">
+                {g.items.map((i) => (
+                  <Link
+                    key={i.to}
+                    to={i.to}
+                    className="block px-4 py-3 border-b border-border last:border-b-0 hover:bg-secondary transition-colors"
+                    activeProps={{ className: "block px-4 py-3 border-b border-border last:border-b-0 bg-secondary" }}
+                  >
+                    <div className="text-sm">{i.label}</div>
+                    <div className="text-xs text-muted-foreground mt-0.5 leading-snug">{i.note}</div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        ),
+      )}
+    </nav>
+  );
+}
+
 function MobileNav() {
-  const { NAV } = useLocalizedData();
+  const { NAV_GROUPS } = useLocalizedData();
   return (
     <div className="lg:hidden border-t border-border overflow-x-auto">
-      <div className="container-x flex gap-1 py-2 whitespace-nowrap">
-        {NAV.map((n) => (
-          <Link
-            key={n.to}
-            to={n.to}
-            className="px-3 py-1.5 text-xs text-muted-foreground hover:text-foreground"
-            activeProps={{ className: "px-3 py-1.5 text-xs text-foreground font-medium" }}
-            activeOptions={{ exact: n.to === "/" }}
-          >
-            {n.label}
-          </Link>
+      <div className="container-x flex items-stretch gap-4 py-2 whitespace-nowrap">
+        {NAV_GROUPS.map((g) => (
+          <div key={g.label} className="flex flex-col gap-1">
+            {g.items.length === 0 && g.to ? (
+              <Link
+                to={g.to}
+                className="px-2 py-1.5 text-xs text-muted-foreground hover:text-foreground"
+                activeProps={{ className: "px-2 py-1.5 text-xs text-foreground font-medium" }}
+                activeOptions={{ exact: true }}
+              >
+                {g.label}
+              </Link>
+            ) : (
+              <>
+                <div className="px-2 font-mono text-[9px] uppercase tracking-[0.16em] text-primary">{g.label}</div>
+                <div className="flex gap-1">
+                  {g.items.map((i) => (
+                    <Link
+                      key={i.to}
+                      to={i.to}
+                      className="px-2 py-1 text-xs text-muted-foreground hover:text-foreground"
+                      activeProps={{ className: "px-2 py-1 text-xs text-foreground font-medium" }}
+                    >
+                      {i.label}
+                    </Link>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
         ))}
       </div>
     </div>
