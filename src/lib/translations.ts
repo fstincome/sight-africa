@@ -119,7 +119,7 @@ export const dict: Record<string, string> = {
   "LEARN BTC": "LEARN BTC",
   "AFRICA FINTECH JOURNAL": "AFRICA FINTECH JOURNAL",
   "YEPO": "YEPO",
-  "Digital financial platform — Bitcoin exchange, mobile money, local payments.": "Plateforme financière numérique — échange Bitcoin, mobile money, paiements locaux.",
+  "Open financial freedom platform — Bitcoin, stablecoins, mobile money, merchant payments and cross-border rails for Africa.": "Plateforme de liberté financière ouverte — Bitcoin, stablecoins, mobile money, paiements marchands et rails transfrontaliers pour l’Afrique.",
   "Bitcoin & digital economy education — community, meetups, programs.": "Éducation Bitcoin et économie numérique — communauté, meetups, programmes.",
   "Independent media + research covering fintech, BTC, AI, startups, cyber.": "Média indépendant et recherche couvrant fintech, BTC, IA, startups, cybersécurité.",
   "AI marketplace — Africans access global AI services with local payment.": "Marketplace IA — accès africain aux services IA mondiaux via paiement local.",

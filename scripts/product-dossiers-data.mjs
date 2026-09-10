@@ -2,7 +2,7 @@
 export const DOSSIERS = {
   bitlibera: {
     title: "BITLIBERA",
-    subtitle: "Digital financial platform — Bitcoin exchange, mobile money, local payments",
+    subtitle: "Open financial freedom platform — Bitcoin, stablecoins, mobile money, merchant payments, cross-border rails",
     expectation:
       "BitLibera is expected to become the default on-ramp between local money (Lumicash, Ecocash, Bancobu e-Noti, bank accounts) and digital value (Bitcoin, stablecoins, merchant payments). It is the payment backbone of the whole group: every other SIGHT product settles through it.",
     outcomes: [
