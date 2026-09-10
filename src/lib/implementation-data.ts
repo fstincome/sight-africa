@@ -51,8 +51,8 @@ export const STACK_LAYERS: {
     layer: b("Identité", "Identity"),
     target: b("OIDC interne opéré par SIGHT ID", "In-house OIDC operated by SIGHT ID"),
     why: b(
-      "Le KYC doit être réutilisable : vérifié une fois chez My Satoshis, valable pour PAY, MARKET, GOV.",
-      "KYC must be reusable: verified once on My Satoshis, valid for PAY, MARKET, GOV.",
+      "Le KYC doit être réutilisable : vérifié une fois chez BitLibera, valable pour PAY, MARKET, GOV.",
+      "KYC must be reusable: verified once on BitLibera, valid for PAY, MARKET, GOV.",
     ),
     items: ["OIDC / OAuth2 + jetons courts", "Pipeline KYC (document, selfie, revue humaine)", "Journal d'audit inaltérable", "SDK client unique pour le groupe"],
   },
@@ -115,8 +115,8 @@ export const STAGE_SPECS: {
     period: b("2027 — lancement", "2027 — launch"),
     name: b("Rails de base : ID + PAY", "Base rails: ID + PAY"),
     scope: b(
-      "SIGHT ID et SIGHT PAY entrent en service sur la base existante de My Satoshis. SIGHT ACADEMY ouvre pour alimenter le recrutement.",
-      "SIGHT ID and SIGHT PAY go live on the existing My Satoshis base. SIGHT ACADEMY opens to feed hiring.",
+      "SIGHT ID et SIGHT PAY entrent en service sur la base existante de BitLibera. SIGHT ACADEMY ouvre pour alimenter le recrutement.",
+      "SIGHT ID and SIGHT PAY go live on the existing BitLibera base. SIGHT ACADEMY opens to feed hiring.",
     ),
     deliverables: [
       b("KYC réutilisable en production, une identité pour tous les produits", "Reusable KYC in production, one identity across all products"),
@@ -190,12 +190,12 @@ export const STAGE_SPECS: {
 
 // 3 — Relations between entities
 export const RELATIONS: { code: string; needs: string[]; serves: string[]; note: L }[] = [
-  { code: "MY SATOSHIS", needs: ["SIGHT ID", "SIGHT PAY"], serves: ["SIGHT PAY", "SIGHT MARKET"], note: b("Fournit la base d'utilisateurs et la liquidité initiale.", "Provides the initial user base and liquidity.") },
-  { code: "LEARN BTC", needs: [], serves: ["SIGHT ACADEMY", "MY SATOSHIS"], note: b("Canal d'acquisition et vivier de recrutement.", "Acquisition channel and hiring pool.") },
+  { code: "BITLIBERA", needs: ["SIGHT ID", "SIGHT PAY"], serves: ["SIGHT PAY", "SIGHT MARKET"], note: b("Fournit la base d'utilisateurs et la liquidité initiale.", "Provides the initial user base and liquidity.") },
+  { code: "LEARN BTC", needs: [], serves: ["SIGHT ACADEMY", "BITLIBERA"], note: b("Canal d'acquisition et vivier de recrutement.", "Acquisition channel and hiring pool.") },
   { code: "AFJ", needs: [], serves: ["SIGHT MEDIA"], note: b("Crédibilité institutionnelle avant chaque lancement.", "Institutional credibility ahead of each launch.") },
   { code: "YEPO", needs: ["SIGHT DATA", "SIGHT COMPUTE"], serves: ["SIGHT COMPUTE", "SIGHT LABS"], note: b("Première charge IA justifiant le calcul possédé.", "First AI workload justifying owned compute.") },
   { code: "SIGHT ID", needs: [], serves: ["Tout le groupe", "Tiers (banques, MNO)"], note: b("Dépendance racine : rien ne se lance avant elle.", "Root dependency: nothing launches before it.") },
-  { code: "SIGHT PAY", needs: ["SIGHT ID"], serves: ["MY SATOSHIS", "SIGHT MARKET", "SIGHT GOV", "SIGHT AGRI"], note: b("Encaissement de tout le groupe.", "Collection layer for the whole group.") },
+  { code: "SIGHT PAY", needs: ["SIGHT ID"], serves: ["BITLIBERA", "SIGHT MARKET", "SIGHT GOV", "SIGHT AGRI"], note: b("Encaissement de tout le groupe.", "Collection layer for the whole group.") },
   { code: "SIGHT ACADEMY", needs: ["LEARN BTC"], serves: ["Toutes les filiales"], note: b("Alimente le recrutement de chaque étape.", "Feeds hiring at every stage.") },
   { code: "SIGHT SECURITY", needs: ["SIGHT ID", "SIGHT PAY"], serves: ["Toutes les filiales", "Banques, secteur public"], note: b("Condition d'accès aux contrats régulés.", "Gate to regulated contracts.") },
   { code: "SIGHT DATA", needs: ["SIGHT PAY", "SIGHT ID"], serves: ["YEPO", "SIGHT AGRI", "SIGHT CAPITAL"], note: b("Sans volume transactionnel, aucun produit data.", "Without transaction volume there is no data product.") },

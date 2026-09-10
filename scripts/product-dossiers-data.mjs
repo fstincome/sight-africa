@@ -1,10 +1,10 @@
 // Per-product dossier content (English). Amounts already in FBU.
 export const DOSSIERS = {
-  mysatoshis: {
-    title: "MY SATOSHIS",
+  bitlibera: {
+    title: "BITLIBERA",
     subtitle: "Digital financial platform — Bitcoin exchange, mobile money, local payments",
     expectation:
-      "My Satoshis is expected to become the default on-ramp between local money (Lumicash, Ecocash, Bancobu e-Noti, bank accounts) and digital value (Bitcoin, stablecoins, merchant payments). It is the payment backbone of the whole group: every other SIGHT product settles through it.",
+      "BitLibera is expected to become the default on-ramp between local money (Lumicash, Ecocash, Bancobu e-Noti, bank accounts) and digital value (Bitcoin, stablecoins, merchant payments). It is the payment backbone of the whole group: every other SIGHT product settles through it.",
     outcomes: [
       "Own the liquidity between FBU and digital assets, at a predictable spread.",
       "Convert retail users into merchants, then merchants into API consumers.",
@@ -71,7 +71,7 @@ export const DOSSIERS = {
     ],
     model: [
       ["Revenue line", "Mechanism", "Target margin"],
-      ["Paid cohorts", "Per-learner tuition, instalments via My Satoshis", "55%"],
+      ["Paid cohorts", "Per-learner tuition, instalments via BitLibera", "55%"],
       ["Corporate training", "B2B contracts, per-seat pricing", "70%"],
       ["Certification", "Exam + credential fee", "85%"],
       ["Sponsorship & grants", "Partners, DFIs, foundations", "n/a"],
@@ -152,7 +152,7 @@ export const DOSSIERS = {
       "Headless CMS + CDN, newsletter infrastructure with strong deliverability.",
       "Structured research database (operators, funding, regulation, volumes).",
       "AI editorial copilots for translation and data extraction — never for bylines.",
-      "Paywall and entitlements settled through My Satoshis.",
+      "Paywall and entitlements settled through BitLibera.",
     ],
     kpis: [
       ["Metric", "2027", "2031", "2036"],

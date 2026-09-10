@@ -76,7 +76,7 @@ export const dict: Record<string, string> = {
   "Digital identity": "Identité numérique",
   "First dependency of everything else: reusable KYC and authentication across group products + third parties — the trust layer.": "Première dépendance de tout le reste : KYC et authentification réutilisables à travers les produits du groupe et les tiers — la couche de confiance.",
   "Regional payment network": "Réseau de paiement régional",
-  "Acquiring + cross-border rails connecting MNOs, banks and BTC liquidity. Monetises the existing My Satoshis base immediately.": "Acquisition + rails transfrontaliers connectant MNO, banques et liquidité BTC. Monétise immédiatement la base My Satoshis existante.",
+  "Acquiring + cross-border rails connecting MNOs, banks and BTC liquidity. Monetises the existing BitLibera base immediately.": "Acquisition + rails transfrontaliers connectant MNO, banques et liquidité BTC. Monétise immédiatement la base BitLibera existante.",
   "Applied R&D": "R&D appliquée",
   "Cryptography, AI, hardware, civic tech — funded only once core products produce cash.": "Cryptographie, IA, matériel, tech civique — financée seulement quand les produits cœur génèrent du cash.",
   "Venture arm + fund": "Bras d'investissement + fonds",
@@ -115,7 +115,7 @@ export const dict: Record<string, string> = {
   "Growth": "Croissance",
 
   // === PRODUCTS summaries ===
-  "MY SATOSHIS": "MY SATOSHIS",
+  "BITLIBERA": "BITLIBERA",
   "LEARN BTC": "LEARN BTC",
   "AFRICA FINTECH JOURNAL": "AFRICA FINTECH JOURNAL",
   "YEPO": "YEPO",
@@ -182,7 +182,7 @@ export const dict: Record<string, string> = {
   "Strategic influence": "Influence stratégique",
   "More than a company — a piece of national infrastructure.": "Plus qu'une entreprise — un élément d'infrastructure nationale.",
   "Products at maturity": "Produits à maturité",
-  "My Satoshis, Yepo, AFJ and LEARN BTC have evolved into full subsidiaries operating alongside SIGHT PAY, ID, CLOUD, DATA, SECURITY, COMPUTE, MARKET, GOV, HEALTH, AGRI, MEDIA, ACADEMY, CAPITAL, LABS and FOUNDATION.": "My Satoshis, Yepo, AFJ et LEARN BTC sont devenus des filiales complètes opérant aux côtés de SIGHT PAY, ID, CLOUD, DATA, SECURITY, COMPUTE, MARKET, GOV, HEALTH, AGRI, MEDIA, ACADEMY, CAPITAL, LABS et FOUNDATION.",
+  "BitLibera, Yepo, AFJ and LEARN BTC have evolved into full subsidiaries operating alongside SIGHT PAY, ID, CLOUD, DATA, SECURITY, COMPUTE, MARKET, GOV, HEALTH, AGRI, MEDIA, ACADEMY, CAPITAL, LABS and FOUNDATION.": "BitLibera, Yepo, AFJ et LEARN BTC sont devenus des filiales complètes opérant aux côtés de SIGHT PAY, ID, CLOUD, DATA, SECURITY, COMPUTE, MARKET, GOV, HEALTH, AGRI, MEDIA, ACADEMY, CAPITAL, LABS et FOUNDATION.",
   "Geographic presence": "Présence géographique",
   "Operating entities in Burundi, Rwanda, DRC, Tanzania, Kenya, Uganda — with revenue from Ethiopia, Zambia and selected pan-African corridors.": "Entités opérantes au Burundi, Rwanda, RDC, Tanzanie, Kenya, Ouganda — avec des revenus venant d'Éthiopie, de Zambie et de corridors pan-africains sélectionnés.",
   "Capital structure": "Structure du capital",

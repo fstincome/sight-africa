@@ -161,8 +161,8 @@ function Footer() {
         <div>
           <div className="eyebrow mb-3">{t("Stack")}</div>
           <ul className="space-y-2 text-sm">
-            <li><a href="https://www.mysatoshis.bi" className="hover:text-primary" target="_blank" rel="noreferrer">My Satoshis →</a></li>
-            <li><a href="https://www.exchanger.mysatoshis.bi" className="hover:text-primary" target="_blank" rel="noreferrer">MS Exchanger →</a></li>
+            <li><a href="https://www.bitlibera.bi" className="hover:text-primary" target="_blank" rel="noreferrer">BitLibera →</a></li>
+            <li><a href="https://www.exchanger.bitlibera.bi" className="hover:text-primary" target="_blank" rel="noreferrer">MS Exchanger →</a></li>
             <li><Link to="/products" className="hover:text-primary">LEARN BTC</Link></li>
             <li><Link to="/products" className="hover:text-primary">{t("Africa Fintech Journal")}</Link></li>
             <li><Link to="/products" className="hover:text-primary">{t("Yepo")}</Link></li>

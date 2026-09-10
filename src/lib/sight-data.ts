@@ -99,10 +99,10 @@ export const ROADMAP: Array<{
     theme: "Foundation & Brand",
     priorities: [
       "Consolidate the four existing products under one SIGHT AFRICA group identity",
-      "Stabilize My Satoshis as a profitable BTC + mobile-money corridor",
+      "Stabilize BitLibera as a profitable BTC + mobile-money corridor",
       "Launch Africa Fintech Journal as a recognized regional publication",
     ],
-    releases: ["My Satoshis 2.0 (merchant pilot)", "LEARN BTC certificate program v1", "AFJ weekly editorial"],
+    releases: ["BitLibera 2.0 (merchant pilot)", "LEARN BTC certificate program v1", "AFJ weekly editorial"],
     revenue: "15M FBU ARR",
     team: "18 → 35",
     infra: ["Group brand system", "Single SSO across products", "Shared data platform v0"],
@@ -384,8 +384,8 @@ export const ROADMAP_20Y: typeof ROADMAP = [
 // PART 3 — Product evolution
 export const PRODUCTS = [
   {
-    id: "mysatoshis",
-    name: "MY SATOSHIS",
+    id: "bitlibera",
+    name: "BITLIBERA",
     color: "from-teal-500/10",
     summary: "Digital financial platform — Bitcoin exchange, mobile money, local payments.",
     stages: [
@@ -478,7 +478,7 @@ export const PRODUCTS = [
     color: "from-violet-500/10",
     summary: "AI marketplace — Africans access global AI services with local payment.",
     stages: [
-      { label: "Today", users: "Early users", revenue: "Small margins on AI credits", features: ["Local payment for AI APIs"], market: "Niche but unique in BI", risks: ["AI provider terms"], advantage: "Payment localization", stack: ["Provider APIs + My Satoshis billing"], team: "4" },
+      { label: "Today", users: "Early users", revenue: "Small margins on AI credits", features: ["Local payment for AI APIs"], market: "Niche but unique in BI", risks: ["AI provider terms"], advantage: "Payment localization", stack: ["Provider APIs + BitLibera billing"], team: "4" },
       { label: "1 Year", users: "10k users + 200 SMEs", revenue: "12M FBU", features: ["Yepo Business", "Prompt library"], market: "AI access default for francophone Africa", risks: ["Margin compression"], advantage: "Distribution + billing", stack: ["Multi-provider router"], team: "15" },
       { label: "5 Years", users: "500k users, 8k SMEs", revenue: "500M FBU", features: ["Verticalized AI agents (legal, accounting, ag)", "Local LLM fine-tunes"], market: "African AI consumption platform", risks: ["Foundation model price wars"], advantage: "Local context + integrations", stack: ["Orchestration layer", "Vector + RAG infra"], team: "120" },
       { label: "10 Years", users: "5M users, 80k SMEs", revenue: "2,7 Mds FBU", features: ["Yepo Compute (GPUs)", "African-language LLMs"], market: "AI infrastructure for the continent", risks: ["Compute sovereignty"], advantage: "GPU access + local talent", stack: ["Owned GPU clusters via SIGHT COMPUTE"], team: "420" },
@@ -491,7 +491,7 @@ export const PRODUCTS = [
 // Ordered by implementation priority — 2 to 3 entities per year, 2027 → 2032.
 export const FUTURE_PRODUCTS = [
   { code: "SIGHT ID", role: "Digital identity", why: "First dependency of everything else: reusable KYC and authentication across group products + third parties — the trust layer.", born: "2027" },
-  { code: "SIGHT PAY", role: "Regional payment network", why: "Acquiring + cross-border rails connecting MNOs, banks and BTC liquidity. Monetises the existing My Satoshis base immediately.", born: "2027" },
+  { code: "SIGHT PAY", role: "Regional payment network", why: "Acquiring + cross-border rails connecting MNOs, banks and BTC liquidity. Monetises the existing BitLibera base immediately.", born: "2027" },
   { code: "SIGHT ACADEMY", role: "Talent institution", why: "Nothing scales without engineers and operators. Formalises LEARN BTC into the group's hiring pipeline from year one.", born: "2027" },
   { code: "SIGHT SECURITY", role: "Cybersecurity infra & SOC", why: "Payments and identity cannot run unprotected. Becomes a managed service sold to banks and public bodies.", born: "2028" },
   { code: "SIGHT DATA", role: "Data & analytics infra", why: "Group data platform once PAY and ID generate volume; commercial analytics for banks, MNOs, regulators.", born: "2028" },
@@ -513,7 +513,7 @@ export const ORG = [
   {
     label: "Today",
     headcount: "~15",
-    teams: ["Founder + ops", "My Satoshis eng", "LEARN BTC community", "AFJ editorial (forming)", "Yepo eng"],
+    teams: ["Founder + ops", "BitLibera eng", "LEARN BTC community", "AFJ editorial (forming)", "Yepo eng"],
   },
   {
     label: "1 Year",
@@ -525,7 +525,7 @@ export const ORG = [
     headcount: "~500",
     teams: [
       "Group CEO, CFO, COO, CTO, CISO, Chief Legal, Chief People",
-      "Product subsidiaries (My Satoshis, Yepo, AFJ, Academy)",
+      "Product subsidiaries (BitLibera, Yepo, AFJ, Academy)",
       "Infrastructure: Cloud, ID, PAY, Security",
       "SIGHT LABS (R&D)",
       "SIGHT CAPITAL",
@@ -623,7 +623,7 @@ export const FINANCIAL_STRATEGY = [
 // PART 8 — Execution playbook
 export const PLAYBOOK = [
   {
-    product: "My Satoshis",
+    product: "BitLibera",
     now: "Stabilize ops, compliance, merchant pilot",
     later: "Cross-border corridors, BaaS APIs",
     outsource: "Audit, pen-tests",
@@ -700,7 +700,7 @@ export const ECOSYSTEM = {
     },
     {
       name: "Platforms",
-      items: ["My Satoshis", "Yepo", "SIGHT MARKET", "SIGHT GOV", "SIGHT HEALTH", "SIGHT AGRI"],
+      items: ["BitLibera", "Yepo", "SIGHT MARKET", "SIGHT GOV", "SIGHT HEALTH", "SIGHT AGRI"],
     },
     {
       name: "Talent & Voice",

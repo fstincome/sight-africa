@@ -51,7 +51,7 @@ function Page() {
       <Section className="rule-line">
         <div className="grid md:grid-cols-3 gap-10">
           {[
-            { t: "Products at maturity", b: "My Satoshis, Yepo, AFJ and LEARN BTC have evolved into full subsidiaries operating alongside SIGHT PAY, ID, CLOUD, DATA, SECURITY, COMPUTE, MARKET, GOV, HEALTH, AGRI, MEDIA, ACADEMY, CAPITAL, LABS and FOUNDATION." },
+            { t: "Products at maturity", b: "BitLibera, Yepo, AFJ and LEARN BTC have evolved into full subsidiaries operating alongside SIGHT PAY, ID, CLOUD, DATA, SECURITY, COMPUTE, MARKET, GOV, HEALTH, AGRI, MEDIA, ACADEMY, CAPITAL, LABS and FOUNDATION." },
             { t: "Geographic presence", b: "Operating entities in Burundi, Rwanda, DRC, Tanzania, Kenya, Uganda — with revenue from Ethiopia, Zambia and selected pan-African corridors." },
             { t: "Capital structure", b: "Either publicly listed on a regional exchange or anchored by long-duration strategic capital from sovereign and development funds." },
           ].map((x) => (
