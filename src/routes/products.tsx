@@ -28,6 +28,21 @@ function Page() {
             </div>
             <div className="max-w-md space-y-4">
               <p className="text-muted-foreground">{p.summary}</p>
+              {"links" in p && Array.isArray((p as { links?: { label: string; url: string }[] }).links) && (
+                <div className="flex flex-wrap gap-2">
+                  {(p as { links: { label: string; url: string }[] }).links.map((l) => (
+                    <a
+                      key={l.url}
+                      href={l.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-mono text-[11px] px-2 py-1 border border-border text-muted-foreground hover:text-primary hover:border-primary"
+                    >
+                      {l.label} →
+                    </a>
+                  ))}
+                </div>
+              )}
               <DossierButtons id={p.id} name={p.name} />
             </div>
           </div>
