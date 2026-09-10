@@ -388,6 +388,10 @@ export const PRODUCTS = [
     name: "BITLIBERA",
     color: "from-teal-500/10",
     summary: "Open financial freedom platform — Bitcoin, stablecoins, mobile money, merchant payments and cross-border rails for Africa.",
+    links: [
+      { label: "exchanger.bitlibera.com", url: "https://exchanger.bitlibera.com" },
+      { label: "API docs", url: "https://exchanger.bitlibera.com/docs" },
+    ],
     stages: [
       {
         label: "Today",
