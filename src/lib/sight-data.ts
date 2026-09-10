@@ -387,7 +387,7 @@ export const PRODUCTS = [
     id: "bitlibera",
     name: "BITLIBERA",
     color: "from-teal-500/10",
-    summary: "Digital financial platform — Bitcoin exchange, mobile money, local payments.",
+    summary: "Open financial freedom platform — Bitcoin, stablecoins, mobile money, merchant payments and cross-border rails for Africa.",
     stages: [
       {
         label: "Today",
