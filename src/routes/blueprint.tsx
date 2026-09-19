@@ -22,6 +22,7 @@ function BlueprintPage() {
   const [progress, setProgress] = useState({ rendered: 0, total: 0, done: false });
   const [pdfLoading, setPdfLoading] = useState(true);
   const [wordLoading, setWordLoading] = useState(true);
+  const [prioritiesLoading, setPrioritiesLoading] = useState(true);
 
   const thumbPct = progress.total > 0 ? Math.round((progress.rendered / progress.total) * 100) : 0;
 
