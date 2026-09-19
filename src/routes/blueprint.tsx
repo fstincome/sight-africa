@@ -15,6 +15,7 @@ export const Route = createFileRoute("/blueprint")({
 
 const DOCX = "/sight-africa-blueprint.docx";
 const PDF = "/sight-africa-blueprint.pdf";
+const PRIORITIES_PDF = "/sight-africa-priorities.pdf";
 
 function BlueprintPage() {
   const [page, setPage] = useState(1);
@@ -44,6 +45,12 @@ function BlueprintPage() {
           </a>
           <a href={PDF} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-3 border border-border text-sm font-medium hover:bg-muted">
             Open PDF
+          </a>
+          <a href={PRIORITIES_PDF} download className="inline-flex items-center gap-2 px-5 py-3 border border-primary text-primary text-sm font-medium hover:bg-primary hover:text-primary-foreground">
+            ↓ Priorities (.pdf)
+          </a>
+          <a href={PRIORITIES_PDF} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-3 border border-border text-sm font-medium hover:bg-muted">
+            Open Priorities
           </a>
         </div>
 
