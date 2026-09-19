@@ -11,7 +11,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "export:blueprint": "node scripts/generate-blueprint.mjs",
-    "export:dossiers": "node scripts/generate-product-dossiers.mjs"
+    "export:dossiers": "node scripts/generate-product-dossiers.mjs",
+    "export:priorities": "node scripts/generate-priorities.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
