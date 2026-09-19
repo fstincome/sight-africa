@@ -22,6 +22,7 @@ function BlueprintPage() {
   const [progress, setProgress] = useState({ rendered: 0, total: 0, done: false });
   const [pdfLoading, setPdfLoading] = useState(true);
   const [wordLoading, setWordLoading] = useState(true);
+  const [prioritiesLoading, setPrioritiesLoading] = useState(true);
 
   const thumbPct = progress.total > 0 ? Math.round((progress.rendered / progress.total) * 100) : 0;
 
@@ -142,6 +143,40 @@ function BlueprintPage() {
               Inline via Microsoft Office viewer. If blocked, use the download buttons above.
             </p>
           </div>
+        </div>
+
+        <div className="mt-12">
+          <div className="eyebrow mb-3 flex justify-between">
+            <span>Priorities — read directly</span>
+            <span className="text-muted-foreground normal-case tracking-normal">
+              {prioritiesLoading ? "loading…" : "ready"}
+            </span>
+          </div>
+          <div className="relative border border-border bg-muted/30 h-[85vh] overflow-hidden">
+            <div
+              className={`absolute top-0 left-0 right-0 h-1 z-10 transition-opacity ${
+                prioritiesLoading ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <div className="h-full bg-primary/30 overflow-hidden">
+                <div className="h-full w-1/3 bg-primary animate-[shimmer_1.2s_ease-in-out_infinite]" />
+              </div>
+            </div>
+            {prioritiesLoading && (
+              <div className="absolute inset-0 flex items-center justify-center text-xs text-muted-foreground pointer-events-none">
+                Loading priorities document…
+              </div>
+            )}
+            <iframe
+              onLoad={() => setPrioritiesLoading(false)}
+              title="SIGHT AFRICA — Priorities (PDF)"
+              src={`${PRIORITIES_PDF}#view=FitH`}
+              className="w-full h-full relative"
+            />
+          </div>
+          <p className="text-xs text-muted-foreground mt-2">
+            Read here or download with the buttons above.
+          </p>
         </div>
 
         <div className="mt-12 grid md:grid-cols-2 gap-6 text-sm text-muted-foreground">
