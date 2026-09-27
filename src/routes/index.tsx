@@ -57,7 +57,7 @@ function Hero() {
           ["Geography", "Burundi → East Africa → AU"],
           ["Horizon", "10 years (2027–2036)"],
           ["Subsidiaries planned", "15+"],
-          ["Target ARR 2036", "18 Mds FBU"],
+          ["Target ARR 2036", "1,3 Md FBU"],
         ].map(([k, v]) => (
           <div key={k}>
             <div className="eyebrow">{t(k)}</div>

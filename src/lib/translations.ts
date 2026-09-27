@@ -11,7 +11,7 @@ export const dict: Record<string, string> = {
     "2026 sert à préparer : structuration juridique, identité du groupe, capital, premiers recrutements et maturité produit. L'exécution démarre officiellement le 1er janvier 2027.",
   "National Milestone Consolidation": "Consolidation des jalons nationaux",
   "Burundi Vision 2040 Delivery": "Livraison de la Vision Burundi 2040",
-  "18 Mds FBU": "18 Mds FBU",
+  "1,3 Md FBU": "1,3 Md FBU",
   "Vision 2036": "Vision 2036",
   "Roadmap": "Feuille de route",
   "Products": "Produits",

@@ -9,7 +9,7 @@ export const DOSSIERS = {
       "Own the liquidity between FBU and digital assets, at a predictable spread.",
       "Convert retail users into merchants, then merchants into API consumers.",
       "Become the settlement layer for LEARN BTC, YEPO, AFJ and later SIGHT PAY.",
-      "8M end-users and 400k merchants by 2036, 4,5 Mds FBU ARR.",
+      "8M end-users and 400k merchants by 2036, 500 M FBU ARR.",
     ],
     model: [
       ["Revenue line", "Mechanism", "Target margin"],
@@ -21,17 +21,17 @@ export const DOSSIERS = {
     ],
     investment: [
       ["Phase", "Window", "Capital needed", "Main use"],
-      ["Preparation", "2026", "45 M FBU", "Licences, legal opinion, compliance kit, audit"],
-      ["Launch", "2027", "180 M FBU", "Core ledger, KYC pipeline, liquidity float"],
-      ["Scale", "2028–2030", "1,2 Md FBU", "Liquidity depth, merchant field sales, risk engine"],
-      ["Regional", "2031–2036", "6 Mds FBU", "Corridors, licences EAC, HSM custody, multi-region"],
+      ["Preparation", "2026", "15 M FBU", "Licences, legal opinion, compliance kit, audit"],
+      ["Launch", "2027", "50 M FBU", "Core ledger, KYC pipeline, liquidity float"],
+      ["Scale", "2028–2030", "200 M FBU", "Liquidity depth, merchant field sales, risk engine"],
+      ["Regional", "2031–2036", "700 M FBU", "Corridors, licences EAC, HSM custody, multi-region"],
     ],
     feasibility: [
       ["Dimension", "Assessment", "Condition to satisfy"],
       ["Technical", "High — stack already in production", "Ledger correctness audit + Lightning liquidity ops"],
       ["Regulatory", "Medium — framework still forming", "Payment-service registration, AML/CFT programme, BRB dialogue"],
       ["Operational", "Medium-high", "Cash-in/cash-out agent network and 24/7 support"],
-      ["Financial", "High once float is funded", "Working-capital float of at least 150 M FBU"],
+      ["Financial", "High once float is funded", "Working-capital float of at least 40 M FBU"],
       ["Talent", "Medium", "2 senior ledger engineers + 1 compliance officer"],
     ],
     stack: [
@@ -44,8 +44,8 @@ export const DOSSIERS = {
       ["Metric", "2027", "2031", "2036"],
       ["Active users / month", "50 000", "1 000 000", "8 000 000"],
       ["Merchants", "1 000", "60 000", "400 000"],
-      ["Monthly volume", "900 M FBU", "40 Mds FBU", "260 Mds FBU"],
-      ["ARR", "30 M FBU", "700 M FBU", "4,5 Mds FBU"],
+      ["Monthly volume", "150 M FBU", "3 Mds FBU", "20 Mds FBU"],
+      ["ARR", "20 M FBU", "150 M FBU", "500 M FBU"],
       ["Fraud loss / volume", "< 0,5%", "< 0,25%", "< 0,1%"],
     ],
     risks: [
@@ -67,7 +67,7 @@ export const DOSSIERS = {
       "Turn a 500-person community into a certified, employable talent pipeline.",
       "Supply at least 40% of group hires from its own alumni by 2032.",
       "Sell corporate and institutional training to banks, MNOs and public bodies.",
-      "300k+ alumni and 700 M FBU revenue by 2036, becoming SIGHT ACADEMY.",
+      "300k+ alumni and 110 M FBU revenue by 2036, becoming SIGHT ACADEMY.",
     ],
     model: [
       ["Revenue line", "Mechanism", "Target margin"],
@@ -79,10 +79,10 @@ export const DOSSIERS = {
     ],
     investment: [
       ["Phase", "Window", "Capital needed", "Main use"],
-      ["Preparation", "2026", "12 M FBU", "Curriculum design, trainer certification"],
-      ["Launch", "2027", "60 M FBU", "LMS, cohort tooling, 2 physical classrooms"],
-      ["Scale", "2028–2030", "350 M FBU", "Content in Kirundi/French, regional hubs"],
-      ["Institution", "2031–2036", "1,5 Md FBU", "Campus, accreditation, research unit"],
+      ["Preparation", "2026", "5 M FBU", "Curriculum design, trainer certification"],
+      ["Launch", "2027", "20 M FBU", "LMS, cohort tooling, 2 physical classrooms"],
+      ["Scale", "2028–2030", "80 M FBU", "Content in Kirundi/French, regional hubs"],
+      ["Institution", "2031–2036", "300 M FBU", "Campus, accreditation, research unit"],
     ],
     feasibility: [
       ["Dimension", "Assessment", "Condition to satisfy"],
@@ -102,7 +102,7 @@ export const DOSSIERS = {
       ["Metric", "2027", "2031", "2036"],
       ["Learners / year", "3 000", "60 000", "300 000"],
       ["Completion rate", "> 60%", "> 70%", "> 75%"],
-      ["Revenue", "4 M FBU", "120 M FBU", "700 M FBU"],
+      ["Revenue", "2 M FBU", "35 M FBU", "110 M FBU"],
       ["Alumni hired by group", "10", "300", "1 500"],
     ],
     risks: [
@@ -123,7 +123,7 @@ export const DOSSIERS = {
       "Become the reference publication of francophone African fintech.",
       "Build proprietary datasets (operators, volumes, regulation) nobody else has.",
       "Convert audience into institutional research revenue at high margin.",
-      "1M+ professional audience and 600 M FBU revenue by 2036.",
+      "1M+ professional audience and 90 M FBU revenue by 2036.",
     ],
     model: [
       ["Revenue line", "Mechanism", "Target margin"],
@@ -135,10 +135,10 @@ export const DOSSIERS = {
     ],
     investment: [
       ["Phase", "Window", "Capital needed", "Main use"],
-      ["Preparation", "2026", "8 M FBU", "Editorial charter, brand, first datasets"],
-      ["Launch", "2027", "45 M FBU", "2 journalists, CMS, distribution"],
-      ["Scale", "2028–2030", "260 M FBU", "Research desk, annual summit"],
-      ["Institution", "2031–2036", "900 M FBU", "Data platform, regional bureaus"],
+      ["Preparation", "2026", "3 M FBU", "Editorial charter, brand, first datasets"],
+      ["Launch", "2027", "15 M FBU", "2 journalists, CMS, distribution"],
+      ["Scale", "2028–2030", "60 M FBU", "Research desk, annual summit"],
+      ["Institution", "2031–2036", "200 M FBU", "Data platform, regional bureaus"],
     ],
     feasibility: [
       ["Dimension", "Assessment", "Condition to satisfy"],
@@ -158,7 +158,7 @@ export const DOSSIERS = {
       ["Metric", "2027", "2031", "2036"],
       ["Subscribers", "25 000", "250 000", "1 000 000"],
       ["Paying institutions", "5", "60", "300"],
-      ["Revenue", "6 M FBU", "150 M FBU", "600 M FBU"],
+      ["Revenue", "3 M FBU", "30 M FBU", "90 M FBU"],
       ["Editorial output / month", "12 pieces", "40 pieces", "80 pieces"],
     ],
     risks: [
@@ -179,7 +179,7 @@ export const DOSSIERS = {
       "Remove the payment barrier to AI for individuals and SMEs.",
       "Aggregate demand, then verticalise into legal, accounting and agricultural agents.",
       "Move up the stack to owned GPU capacity through SIGHT COMPUTE.",
-      "5M users, 80k SMEs and 2,7 Mds FBU ARR by 2036.",
+      "5M users, 80k SMEs and 350 M FBU ARR by 2036.",
     ],
     model: [
       ["Revenue line", "Mechanism", "Target margin"],
@@ -191,10 +191,10 @@ export const DOSSIERS = {
     ],
     investment: [
       ["Phase", "Window", "Capital needed", "Main use"],
-      ["Preparation", "2026", "18 M FBU", "Router prototype, Afripay + Blink integration, pricing model"],
-      ["Launch", "2027", "90 M FBU", "Wallet, OTP onboarding, dashboard, support"],
-      ["Scale", "2028–2030", "600 M FBU", "Multi-provider routing, vertical agents, RAG infra"],
-      ["Compute", "2031–2036", "5 Mds FBU", "GPU clusters, African-language fine-tunes"],
+      ["Preparation", "2026", "6 M FBU", "Router prototype, Afripay + Blink integration, pricing model"],
+      ["Launch", "2027", "25 M FBU", "Wallet, OTP onboarding, dashboard, support"],
+      ["Scale", "2028–2030", "120 M FBU", "Multi-provider routing, vertical agents, RAG infra"],
+      ["Compute", "2031–2036", "600 M FBU", "GPU clusters, African-language fine-tunes"],
     ],
     feasibility: [
       ["Dimension", "Assessment", "Condition to satisfy"],
@@ -216,7 +216,7 @@ export const DOSSIERS = {
       ["Active users / month", "10 000", "500 000", "5 000 000"],
       ["SME accounts", "200", "8 000", "80 000"],
       ["Requests / month", "300 000", "18 M", "180 M"],
-      ["Revenue", "12 M FBU", "500 M FBU", "2,7 Mds FBU"],
+      ["Revenue", "8 M FBU", "90 M FBU", "350 M FBU"],
       ["Gross margin on requests", "10%", "12%", "15%"],
     ],
     risks: [
