@@ -117,7 +117,7 @@ export const ROADMAP: Array<{
       "Launch SIGHT ID pilot for KYC across group products",
     ],
     releases: ["Yepo Business", "SIGHT ID alpha", "AFJ research reports"],
-    revenue: "20M FBU ARR",
+    revenue: "30M FBU ARR",
     team: "35 → 80",
     infra: ["Group payments rails v1", "Internal compliance & risk function"],
     partners: ["Telco partnerships in Burundi & Rwanda", "2 regional fintech alliances"],
