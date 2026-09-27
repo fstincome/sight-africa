@@ -14,6 +14,7 @@ import { Route as RoadmapRouteImport } from './routes/roadmap'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as PlaybookRouteImport } from './routes/playbook'
 import { Route as PhasesRouteImport } from './routes/phases'
+import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as OrganizationRouteImport } from './routes/organization'
 import { Route as ImplementationRouteImport } from './routes/implementation'
 import { Route as FutureProductsRouteImport } from './routes/future-products'
@@ -45,6 +46,11 @@ const PlaybookRoute = PlaybookRouteImport.update({
 const PhasesRoute = PhasesRouteImport.update({
   id: '/phases',
   path: '/phases',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OrganizationRoute = OrganizationRouteImport.update({
@@ -91,6 +97,7 @@ export interface FileRoutesByFullPath {
   '/future-products': typeof FutureProductsRoute
   '/implementation': typeof ImplementationRoute
   '/organization': typeof OrganizationRoute
+  '/partners': typeof PartnersRoute
   '/phases': typeof PhasesRoute
   '/playbook': typeof PlaybookRoute
   '/products': typeof ProductsRoute
@@ -105,6 +112,7 @@ export interface FileRoutesByTo {
   '/future-products': typeof FutureProductsRoute
   '/implementation': typeof ImplementationRoute
   '/organization': typeof OrganizationRoute
+  '/partners': typeof PartnersRoute
   '/phases': typeof PhasesRoute
   '/playbook': typeof PlaybookRoute
   '/products': typeof ProductsRoute
@@ -120,6 +128,7 @@ export interface FileRoutesById {
   '/future-products': typeof FutureProductsRoute
   '/implementation': typeof ImplementationRoute
   '/organization': typeof OrganizationRoute
+  '/partners': typeof PartnersRoute
   '/phases': typeof PhasesRoute
   '/playbook': typeof PlaybookRoute
   '/products': typeof ProductsRoute
@@ -136,6 +145,7 @@ export interface FileRouteTypes {
     | '/future-products'
     | '/implementation'
     | '/organization'
+    | '/partners'
     | '/phases'
     | '/playbook'
     | '/products'
@@ -150,6 +160,7 @@ export interface FileRouteTypes {
     | '/future-products'
     | '/implementation'
     | '/organization'
+    | '/partners'
     | '/phases'
     | '/playbook'
     | '/products'
@@ -164,6 +175,7 @@ export interface FileRouteTypes {
     | '/future-products'
     | '/implementation'
     | '/organization'
+    | '/partners'
     | '/phases'
     | '/playbook'
     | '/products'
@@ -179,6 +191,7 @@ export interface RootRouteChildren {
   FutureProductsRoute: typeof FutureProductsRoute
   ImplementationRoute: typeof ImplementationRoute
   OrganizationRoute: typeof OrganizationRoute
+  PartnersRoute: typeof PartnersRoute
   PhasesRoute: typeof PhasesRoute
   PlaybookRoute: typeof PlaybookRoute
   ProductsRoute: typeof ProductsRoute
@@ -221,6 +234,13 @@ declare module '@tanstack/react-router' {
       path: '/phases'
       fullPath: '/phases'
       preLoaderRoute: typeof PhasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/organization': {
@@ -283,6 +303,7 @@ const rootRouteChildren: RootRouteChildren = {
   FutureProductsRoute: FutureProductsRoute,
   ImplementationRoute: ImplementationRoute,
   OrganizationRoute: OrganizationRoute,
+  PartnersRoute: PartnersRoute,
   PhasesRoute: PhasesRoute,
   PlaybookRoute: PlaybookRoute,
   ProductsRoute: ProductsRoute,
