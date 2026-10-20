@@ -1,0 +1,2 @@
+# Architecture rules
+- Keep partner affiliations, bilingual descriptions and public research evidence in a single browser-safe data module shared by the partners page and blueprint exporter, so both stay consistent.

@@ -4,6 +4,20 @@
 export const dict: Record<string, string> = {
   // === NAV ===
   "Overview": "Aperçu",
+  "Partners": "Partenaires",
+  "Potential partners per project": "Partenaires potentiels par projet",
+  "Strategy": "Stratégie",
+  "Operations": "Opérations",
+  "Market position, scale, influence": "Positionnement, taille et influence",
+  "Year by year, 2027 → 2036": "Année par année, 2027 → 2036",
+  "Foundation → Infrastructure Leadership": "Fondation → Leadership d'infrastructure",
+  "Today → 1y → 5y → 10y → mature": "Aujourd'hui → 1 an → 5 ans → 10 ans → maturité",
+  "15 subsidiaries — why each": "15 filiales — leur raison d'être",
+  "Stacks, specs, dependencies": "Technologies, cahiers des charges et dépendances",
+  "From 15 people to 4,800": "De 15 à 4 800 personnes",
+  "Bootstrap, grants, venture, IPO": "Autofinancement, subventions, capital et bourse",
+  "Build, wait, outsource, automate": "Construire, attendre, externaliser, automatiser",
+  "Group · Infra · Platforms · Voice": "Groupe · Infrastructure · Plateformes · Voix",
   "2026 is a preparation year, outside the agenda. Execution starts on 1 January 2027.":
     "2026 est une année de préparation, hors agenda. L'exécution démarre le 1er janvier 2027.",
   "Preparation year — outside the agenda": "Année de préparation — hors agenda",
