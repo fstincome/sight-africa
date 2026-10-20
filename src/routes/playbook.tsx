@@ -3,7 +3,31 @@ import { SiteShell, PageHeader, Section } from "@/components/site-shell";
 import { useLocalizedData, useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/playbook")({
-  head: () => ({ meta: [{ title: "Plan d'exécution — SIGHT AFRICA" }] }),
+  head: () => ({ meta: [
+  {
+    "title": "Plan d’exécution — SIGHT AFRICA"
+  },
+  {
+    "name": "description",
+    "content": "Décisions de réalisation, externalisation et automatisation par produit SIGHT AFRICA."
+  },
+  {
+    "property": "og:title",
+    "content": "Plan d’exécution — SIGHT AFRICA"
+  },
+  {
+    "property": "og:description",
+    "content": "Décisions de réalisation, externalisation et automatisation par produit SIGHT AFRICA."
+  },
+  {
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "name": "twitter:card",
+    "content": "summary"
+  }
+] }),
   component: Page,
 });
 

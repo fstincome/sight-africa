@@ -4,7 +4,31 @@ import { useLocalizedData, useT } from "@/lib/i18n";
 import { formatFBU } from "@/lib/money";
 
 export const Route = createFileRoute("/ecosystem")({
-  head: () => ({ meta: [{ title: "Écosystème — SIGHT AFRICA" }] }),
+  head: () => ({ meta: [
+  {
+    "title": "Écosystème — SIGHT AFRICA"
+  },
+  {
+    "name": "description",
+    "content": "Relations entre les infrastructures, plateformes et institutions de talents de SIGHT AFRICA."
+  },
+  {
+    "property": "og:title",
+    "content": "Écosystème — SIGHT AFRICA"
+  },
+  {
+    "property": "og:description",
+    "content": "Relations entre les infrastructures, plateformes et institutions de talents de SIGHT AFRICA."
+  },
+  {
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "name": "twitter:card",
+    "content": "summary"
+  }
+] }),
   component: Page,
 });
 

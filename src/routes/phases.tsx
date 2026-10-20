@@ -3,7 +3,31 @@ import { SiteShell, PageHeader, Section } from "@/components/site-shell";
 import { useLocalizedData, useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/phases")({
-  head: () => ({ meta: [{ title: "Phases stratégiques — SIGHT AFRICA" }] }),
+  head: () => ({ meta: [
+  {
+    "title": "Phases stratégiques — SIGHT AFRICA"
+  },
+  {
+    "name": "description",
+    "content": "Objectifs, risques et moyens de chaque phase de développement de SIGHT AFRICA."
+  },
+  {
+    "property": "og:title",
+    "content": "Phases stratégiques — SIGHT AFRICA"
+  },
+  {
+    "property": "og:description",
+    "content": "Objectifs, risques et moyens de chaque phase de développement de SIGHT AFRICA."
+  },
+  {
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "name": "twitter:card",
+    "content": "summary"
+  }
+] }),
   component: Page,
 });
 

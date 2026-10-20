@@ -4,7 +4,31 @@ import { DossierButtons } from "@/components/dossier-buttons";
 import { useLocalizedData, useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/products")({
-  head: () => ({ meta: [{ title: "Évolution des produits — SIGHT AFRICA" }] }),
+  head: () => ({ meta: [
+  {
+    "title": "Évolution des produits — SIGHT AFRICA"
+  },
+  {
+    "name": "description",
+    "content": "BitLibera, LEARN BTC, AFJ et Yepo : évolution, investissements et dossiers des produits SIGHT AFRICA."
+  },
+  {
+    "property": "og:title",
+    "content": "Évolution des produits — SIGHT AFRICA"
+  },
+  {
+    "property": "og:description",
+    "content": "BitLibera, LEARN BTC, AFJ et Yepo : évolution, investissements et dossiers des produits SIGHT AFRICA."
+  },
+  {
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "name": "twitter:card",
+    "content": "summary"
+  }
+] }),
   component: Page,
 });
 

@@ -3,7 +3,31 @@ import { SiteShell, PageHeader, Section } from "@/components/site-shell";
 import { useLocalizedData, useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/financials")({
-  head: () => ({ meta: [{ title: "Stratégie financière — SIGHT AFRICA" }] }),
+  head: () => ({ meta: [
+  {
+    "title": "Stratégie financière — SIGHT AFRICA"
+  },
+  {
+    "name": "description",
+    "content": "Financement et allocation du capital de SIGHT AFRICA, avec objectifs financiers en FBU."
+  },
+  {
+    "property": "og:title",
+    "content": "Stratégie financière — SIGHT AFRICA"
+  },
+  {
+    "property": "og:description",
+    "content": "Financement et allocation du capital de SIGHT AFRICA, avec objectifs financiers en FBU."
+  },
+  {
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "name": "twitter:card",
+    "content": "summary"
+  }
+] }),
   component: Page,
 });
 

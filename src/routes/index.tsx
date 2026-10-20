@@ -5,14 +5,30 @@ import { useLocalizedData, useT } from "@/lib/i18n";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SIGHT AFRICA — Infrastructure numérique de l'Afrique de l'Est" },
-      {
-        name: "description",
-        content:
-          "SIGHT AFRICA est un futur groupe technologique africain bâtissant l'infrastructure numérique critique du Burundi et de l'Afrique de l'Est. Blueprint stratégique 10 ans.",
-      },
-      { property: "og:title", content: "SIGHT AFRICA — Strategic Operating System" },
-    ],
+  {
+    "title": "SIGHT AFRICA — Infrastructure numérique de l’Afrique de l’Est"
+  },
+  {
+    "name": "description",
+    "content": "Vision stratégique des infrastructures numériques du Burundi et de l’Afrique de l’Est."
+  },
+  {
+    "property": "og:title",
+    "content": "SIGHT AFRICA — Infrastructure numérique de l’Afrique de l’Est"
+  },
+  {
+    "property": "og:description",
+    "content": "Vision stratégique des infrastructures numériques du Burundi et de l’Afrique de l’Est."
+  },
+  {
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "name": "twitter:card",
+    "content": "summary"
+  }
+],
   }),
   component: Index,
 });

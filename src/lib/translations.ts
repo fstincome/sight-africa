@@ -179,16 +179,7 @@ export const dict: Record<string, string> = {
   "See why each must exist →": "Voir pourquoi chacune doit exister →",
   "Read the operating system": "Lire le système d'exploitation",
   "Nine documents. One blueprint.": "Neuf documents. Un seul plan.",
-  "Market position, scale, influence": "Position de marché, échelle, influence",
   "10-Year Roadmap": "Feuille de route 10 ans",
-  "Year by year, 2027 → 2036": "Année par année, 2027 → 2036",
-  "Today → 1y → 5y → 10y → mature": "Aujourd'hui → 1 an → 5 ans → 10 ans → maturité",
-  "15 subsidiaries — why each": "15 filiales — pourquoi chacune",
-  "From 15 people to 4,800": "De 15 personnes à 4 800",
-  "Foundation → Infrastructure Leadership": "Fondation → Leadership d'infrastructure",
-  "Bootstrap, grants, venture, IPO": "Auto-financement, subventions, capital-risque, IPO",
-  "Build, wait, outsource, automate": "Construire, attendre, externaliser, automatiser",
-  "Group · Infra · Platforms · Voice": "Groupe · Infra · Plateformes · Voix",
 
   // === Vision page ===
   "Part 01 · The future end state": "Partie 01 · L'état final futur",
