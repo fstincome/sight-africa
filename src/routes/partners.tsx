@@ -27,8 +27,8 @@ function Page() {
         eyebrow={fr ? "Annexe · Partenaires" : "Annex · Partners"}
         title={fr ? "Partenaires potentiels, projet par projet." : "Potential partners, project by project."}
         lead={fr
-          ? "Organisations identifiées sur internet pour chaque projet, avec leurs coordonnées publiques. Vérifiez chaque contact avant la prise de contact."
-          : "Organisations identified online for each project, with their public contact details. Verify each contact before outreach."}
+          ? "Pistes de collaboration par projet, avec sources et contacts publics. Aucune relation n'est confirmée ; l'éligibilité aux programmes et les autorisations restent à vérifier."
+          : "Collaboration candidates by project, with public sources and contacts. No partnership is confirmed; programme eligibility and approvals still require verification."}
       />
       {PARTNERS.map((g) => (
         <Section key={g.project} className="rule-line">
@@ -44,7 +44,15 @@ function Page() {
                 <p className="text-sm text-foreground/80">{l(p.role)}</p>
                 <div className="mt-auto pt-3 text-xs font-mono space-y-1 break-all">
                   <a href={p.site} target="_blank" rel="noreferrer" className="underline block">{p.site.replace(/^https?:\/\//, "")}</a>
-                  <div className="text-muted-foreground">{fr ? "Contact : " : "Contact: "}{p.contact}</div>
+                  <div className="text-muted-foreground">
+                    {fr ? "Contact : " : "Contact: "}
+                    {/^(https?:\/\/|[^\s]+@[^\s]+\.[^\s]+$)/.test(p.contact) ? (
+                      <a href={p.contact.includes("@") && !p.contact.startsWith("http") ? `mailto:${p.contact}` : p.contact} target="_blank" rel="noreferrer" className="underline">{p.contact}</a>
+                    ) : p.contact}
+                  </div>
+                  {p.source && <a href={p.source} target="_blank" rel="noreferrer" className="underline text-primary">{fr ? "Source publique" : "Public source"} ↗</a>}
+                  {p.checkedAt && <div className="text-muted-foreground">{fr ? "Consulté le " : "Checked "}{p.checkedAt}</div>}
+                  {p.status && <p className="font-sans text-xs leading-relaxed text-muted-foreground">{l(p.status)}</p>}
                 </div>
               </div>
             ))}
