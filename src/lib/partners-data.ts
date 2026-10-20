@@ -9,6 +9,9 @@ export type Partner = {
   role: L;
   site: string;
   contact: string; // public contact page, email or phone
+  source?: string;
+  checkedAt?: string;
+  status?: L;
 };
 export type PartnerGroup = { project: string; note: L; partners: Partner[] };
 

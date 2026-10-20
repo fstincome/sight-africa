@@ -4,7 +4,31 @@ import { DossierButtons } from "@/components/dossier-buttons";
 import { useLocalizedData, useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/future-products")({
-  head: () => ({ meta: [{ title: "Construction future — SIGHT AFRICA" }] }),
+  head: () => ({ meta: [
+  {
+    "title": "Construction future — SIGHT AFRICA"
+  },
+  {
+    "name": "description",
+    "content": "Les 15 filiales SIGHT AFRICA, leurs priorités et leur calendrier de lancement de 2027 à 2032."
+  },
+  {
+    "property": "og:title",
+    "content": "Construction future — SIGHT AFRICA"
+  },
+  {
+    "property": "og:description",
+    "content": "Les 15 filiales SIGHT AFRICA, leurs priorités et leur calendrier de lancement de 2027 à 2032."
+  },
+  {
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "name": "twitter:card",
+    "content": "summary"
+  }
+] }),
   component: Page,
 });
 

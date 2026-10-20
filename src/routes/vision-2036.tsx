@@ -4,7 +4,31 @@ import { useLocalizedData, useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/vision-2036")({
   head: () => ({
-    meta: [{ title: "Vision 2036 — SIGHT AFRICA" }],
+    meta: [
+  {
+    "title": "Vision 2036 — SIGHT AFRICA"
+  },
+  {
+    "name": "description",
+    "content": "Ambition de SIGHT AFRICA pour 2036 et résultats visés au Burundi et en Afrique de l’Est."
+  },
+  {
+    "property": "og:title",
+    "content": "Vision 2036 — SIGHT AFRICA"
+  },
+  {
+    "property": "og:description",
+    "content": "Ambition de SIGHT AFRICA pour 2036 et résultats visés au Burundi et en Afrique de l’Est."
+  },
+  {
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "name": "twitter:card",
+    "content": "summary"
+  }
+],
   }),
   component: Page,
 });

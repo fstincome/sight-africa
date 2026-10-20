@@ -3,7 +3,31 @@ import { SiteShell, PageHeader, Section } from "@/components/site-shell";
 import { useLocalizedData, useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/organization")({
-  head: () => ({ meta: [{ title: "Organisation — SIGHT AFRICA" }] }),
+  head: () => ({ meta: [
+  {
+    "title": "Organisation — SIGHT AFRICA"
+  },
+  {
+    "name": "description",
+    "content": "Équipes, responsabilités et gouvernance du groupe technologique SIGHT AFRICA."
+  },
+  {
+    "property": "og:title",
+    "content": "Organisation — SIGHT AFRICA"
+  },
+  {
+    "property": "og:description",
+    "content": "Équipes, responsabilités et gouvernance du groupe technologique SIGHT AFRICA."
+  },
+  {
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "name": "twitter:card",
+    "content": "summary"
+  }
+] }),
   component: Page,
 });
 

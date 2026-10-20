@@ -40,7 +40,7 @@ const DATA = JSON.parse(dump);
 
 const {
   SIGHT, NAV, PREP_YEAR, END_STATE_2036, ROADMAP, ROADMAP_20Y, PRODUCTS, FUTURE_PRODUCTS,
-  ORG, PHASES, FINANCIAL_STRATEGY, PLAYBOOK, ECOSYSTEM,
+  ORG, PHASES, FINANCIAL_STRATEGY, PLAYBOOK, ECOSYSTEM, PARTNERS,
 } = DATA;
 
 // --- Style helpers ---
@@ -306,6 +306,24 @@ ECOSYSTEM.layers.forEach((layer) => {
 
 // Closing
 children.push(PageBreakP());
+children.push(H1("11. Potential Partners"));
+children.push(P("These organisations are potential partners, not confirmed partnerships. Public contact channels do not establish eligibility, funding availability or regulatory approval. Confirm each programme and contact before outreach."));
+PARTNERS.forEach((group) => {
+  children.push(H2(group.project));
+  children.push(P(group.note.en));
+  group.partners.forEach((partner) => {
+    children.push(H3(partner.name));
+    children.push(KV("Type", partner.type.en));
+    children.push(KV("Proposed role", partner.role.en));
+    children.push(KV("Website", partner.site));
+    children.push(KV("Public contact", partner.contact));
+    if (partner.source) children.push(KV("Source", partner.source));
+    if (partner.checkedAt) children.push(KV("Checked", partner.checkedAt));
+    if (partner.status) children.push(KV("Verification", partner.status.en));
+  });
+});
+
+children.push(PageBreakP());
 children.push(H1("Closing Note"));
 children.push(P("SIGHT AFRICA is not a website builder. It is a long-term institutional bet on African-owned digital infrastructure. This document is the single canonical reference for founders, employees, investors and partners over the next ten years."));
 children.push(Small("Confidential — for internal and authorized stakeholders only."));
@@ -368,7 +386,7 @@ const REQUIRED_SECTIONS = [
   "3b. Extended Roadmap (2037–2046)", "4. Products — Evolution",
   "5. Future Build", "6. Organization", "7. Phases",
   "8. Financial Strategy", "9. Execution Playbook", "10. Ecosystem Map",
-  "Closing Note",
+  "11. Potential Partners", "Closing Note",
 ];
 const YEARS = Array.from({ length: 20 }, (_, i) => 2027 + i); // 2027..2046
 
@@ -381,6 +399,9 @@ try {
 }
 
 const failures = [];
+const missingPartners = PARTNERS.flatMap((group) => group.partners)
+  .filter((partner) => !text.includes(partner.name));
+if (missingPartners.length) failures.push(`Missing partner entries: ${missingPartners.map((partner) => partner.name).join(" | ")}`);
 const missingSections = REQUIRED_SECTIONS.filter((s) => !text.includes(s));
 if (missingSections.length) failures.push(`Missing sections: ${missingSections.join(" | ")}`);
 
@@ -466,6 +487,7 @@ const report = [
   `- pdf:  ${fs.statSync("public/sight-africa-blueprint.pdf").size.toLocaleString()} bytes, ${pages} pages`,
   `- FBU mentions: ${fbuCount}`,
   `- Residual USD tokens: ${usdLeaks.length}`,
+  `- Partner entries: ${PARTNERS.reduce((sum, group) => sum + group.partners.length, 0)}, missing: ${missingPartners.length}`,
   "",
   "## Section presence",
   ...REQUIRED_SECTIONS.map((s) => `- ${text.includes(s) ? "✅" : "❌"} ${s}`),

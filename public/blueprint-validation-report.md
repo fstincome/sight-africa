@@ -1,10 +1,11 @@
 # Blueprint export validation
-Generated: 2026-09-27T08:30:16.718Z
+Generated: 2026-10-20T08:51:20.027Z
 
-- docx: 31,258 bytes
-- pdf:  673,038 bytes, 42 pages
-- FBU mentions: 56
+- docx: 34,272 bytes
+- pdf:  727,210 bytes, 49 pages
+- FBU mentions: 57
 - Residual USD tokens: 0
+- Partner entries: 36, missing: 0
 
 ## Section presence
 - ✅ 1. Overview
@@ -18,6 +19,7 @@ Generated: 2026-09-27T08:30:16.718Z
 - ✅ 8. Financial Strategy
 - ✅ 9. Execution Playbook
 - ✅ 10. Ecosystem Map
+- ✅ 11. Potential Partners
 - ✅ Closing Note
 
 ## Year coverage 2027–2046

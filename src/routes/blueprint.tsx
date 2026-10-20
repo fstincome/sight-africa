@@ -7,9 +7,30 @@ export const Route = createFileRoute("/blueprint")({
   component: BlueprintPage,
   head: () => ({
     meta: [
-      { title: "Blueprint — SIGHT AFRICA" },
-      { name: "description", content: "Downloadable Word and PDF document of the full SIGHT AFRICA 10-year strategy." },
-    ],
+  {
+    "title": "Blueprint stratégique — SIGHT AFRICA"
+  },
+  {
+    "name": "description",
+    "content": "Consultez et téléchargez la stratégie SIGHT AFRICA sur 2027–2046 et ses partenaires potentiels en Word et PDF."
+  },
+  {
+    "property": "og:title",
+    "content": "Blueprint stratégique — SIGHT AFRICA"
+  },
+  {
+    "property": "og:description",
+    "content": "Consultez et téléchargez la stratégie SIGHT AFRICA sur 2027–2046 et ses partenaires potentiels en Word et PDF."
+  },
+  {
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "name": "twitter:card",
+    "content": "summary"
+  }
+],
   }),
 });
 

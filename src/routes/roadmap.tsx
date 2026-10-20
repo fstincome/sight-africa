@@ -4,7 +4,31 @@ import { useLocalizedData, useT } from "@/lib/i18n";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 export const Route = createFileRoute("/roadmap")({
-  head: () => ({ meta: [{ title: "Feuille de route — SIGHT AFRICA" }] }),
+  head: () => ({ meta: [
+  {
+    "title": "Feuille de route — SIGHT AFRICA"
+  },
+  {
+    "name": "description",
+    "content": "Calendrier stratégique de SIGHT AFRICA sur 10 et 20 ans, de 2027 à 2046."
+  },
+  {
+    "property": "og:title",
+    "content": "Feuille de route — SIGHT AFRICA"
+  },
+  {
+    "property": "og:description",
+    "content": "Calendrier stratégique de SIGHT AFRICA sur 10 et 20 ans, de 2027 à 2046."
+  },
+  {
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "name": "twitter:card",
+    "content": "summary"
+  }
+] }),
   component: Page,
 });
 
