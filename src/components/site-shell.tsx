@@ -25,7 +25,7 @@ function Header() {
           <Mark className="h-10 w-auto" />
           <span className="hidden sm:block leading-none border-l border-border pl-3">
             <span className="block text-[11px] tracking-[0.18em] uppercase text-muted-foreground font-mono">AFRICA</span>
-            <span className="block text-[10px] tracking-[0.16em] uppercase text-primary font-mono mt-1">{t("Strategic OS")}</span>
+            <span className="block text-[10px] tracking-[0.16em] uppercase text-primary font-mono mt-1">SIGHT HUB</span>
           </span>
         </Link>
         <DesktopNav />
@@ -172,7 +172,7 @@ function Footer() {
       <div className="rule-line">
         <div className="container-x py-6 flex flex-wrap justify-between gap-4 text-xs text-muted-foreground">
           <div>© {new Date().getFullYear()} SIGHT AFRICA · Bujumbura · East Africa</div>
-          <div className="font-mono">v.2036 / blueprint.01</div>
+          <div className="font-mono">SIGHT HUB · v.2036 / blueprint.01</div>
         </div>
       </div>
     </footer>
