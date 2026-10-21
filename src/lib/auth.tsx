@@ -1,41 +1,40 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
-// NOTE: simple client-side gate. Confidential reading only — not real security.
-const ALLOWED_EMAIL = "advaxe.mucatcha@gmail.com";
-const ALLOWED_PASSWORD = "Nadvaxe2025";
-const STORAGE_KEY = "sight.auth.v1";
-
 type AuthCtx = {
   authed: boolean;
-  signIn: (email: string, password: string) => { ok: true } | { ok: false; error: string };
-  signOut: () => void;
+  signIn: (email: string, password: string) => Promise<{ ok: true } | { ok: false; error: string }>;
+  signOut: () => Promise<void>;
 };
 const Ctx = createContext<AuthCtx>({
   authed: false,
-  signIn: () => ({ ok: false, error: "not initialized" }),
-  signOut: () => {},
+  signIn: async () => ({ ok: false, error: "not initialized" }),
+  signOut: async () => {},
 });
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [authed, setAuthed] = useState(false);
   useEffect(() => {
-    try {
-      if (localStorage.getItem(STORAGE_KEY) === "1") setAuthed(true);
-    } catch {}
+    localStorage.removeItem("sight.auth.v1");
+    fetch("/api/site-session", { credentials: "same-origin", cache: "no-store" })
+      .then((response) => response.ok ? response.json() : { authed: false })
+      .then((session) => setAuthed(session.authed === true)).catch(() => setAuthed(false));
   }, []);
 
-  const signIn: AuthCtx["signIn"] = (email, password) => {
-    if (email.trim().toLowerCase() === ALLOWED_EMAIL && password === ALLOWED_PASSWORD) {
-      try { localStorage.setItem(STORAGE_KEY, "1"); } catch {}
-      setAuthed(true);
-      return { ok: true };
+  const signIn: AuthCtx["signIn"] = async (email, password) => {
+    try {
+      const response = await fetch("/api/site-session", { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ email, password }) });
+      if (response.ok) { setAuthed(true); return { ok: true }; }
+    } catch {
+      return { ok: false, error: "Connexion indisponible / Connection unavailable" };
     }
     return { ok: false, error: "Identifiants invalides / Invalid credentials" };
   };
 
-  const signOut = () => {
-    try { localStorage.removeItem(STORAGE_KEY); } catch {}
+  const signOut = async () => {
+    const response = await fetch("/api/site-session", { method: "DELETE", credentials: "same-origin" });
+    if (!response.ok) return;
     setAuthed(false);
+    window.location.reload();
   };
 
   return <Ctx.Provider value={{ authed, signIn, signOut }}>{children}</Ctx.Provider>;

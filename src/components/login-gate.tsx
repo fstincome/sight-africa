@@ -21,9 +21,9 @@ function LoginScreen() {
 
   const L = lang === "fr" ? FR : EN;
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const r = signIn(email, password);
+    const r = await signIn(email, password);
     if (!r.ok) setError(r.error);
   };
 
