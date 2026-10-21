@@ -80,15 +80,15 @@ export function PWAInstallPrompt() {
 
 const FR = {
   eyebrow: "Installation",
-  title: "Installer SIGHT AFRICA sur votre appareil",
-  lead: "Accédez au blueprint stratégique hors-ligne, en plein écran, comme une application native.",
+  title: "Installer SIGHT HUB sur votre appareil",
+  lead: "SIGHT HUB",
   install: "Installer l'application",
   later: "Plus tard",
 };
 const EN = {
   eyebrow: "Install",
-  title: "Install SIGHT AFRICA on your device",
-  lead: "Access the strategic blueprint offline, full-screen, like a native app.",
+  title: "Install SIGHT HUB on your device",
+  lead: "SIGHT HUB",
   install: "Install app",
   later: "Later",
 };

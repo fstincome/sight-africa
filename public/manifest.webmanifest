@@ -1,6 +1,6 @@
 {
-  "name": "SIGHT AFRICA — Strategic Operating System",
-  "short_name": "SIGHT AFRICA",
+  "name": "SIGHT HUB",
+  "short_name": "SIGHT HUB",
   "description": "Blueprint stratégique 10 ans de SIGHT AFRICA — infrastructure numérique de l'Afrique de l'Est.",
   "start_url": "/",
   "scope": "/",
@@ -11,13 +11,13 @@
   "lang": "fr",
   "icons": [
     {
-      "src": "/__l5e/assets-v1/e8f53c28-8749-4984-927b-9891140f3645/sight-logo.png",
+      "src": "/sight-icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/__l5e/assets-v1/e8f53c28-8749-4984-927b-9891140f3645/sight-logo.png",
+      "src": "/sight-icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
