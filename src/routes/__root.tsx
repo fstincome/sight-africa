@@ -94,8 +94,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/manifest.webmanifest" },
-      { rel: "icon", type: "image/png", href: "/__l5e/assets-v1/e8f53c28-8749-4984-927b-9891140f3645/sight-logo.png" },
-      { rel: "apple-touch-icon", href: "/__l5e/assets-v1/e8f53c28-8749-4984-927b-9891140f3645/sight-logo.png" },
+      { rel: "icon", type: "image/png", href: "/sight-icon-192.png" },
+      { rel: "apple-touch-icon", href: "/sight-icon-192.png" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
