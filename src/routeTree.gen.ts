@@ -9,73 +9,23 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as Vision2036RouteImport } from './routes/vision-2036'
-import { Route as RoadmapRouteImport } from './routes/roadmap'
-import { Route as ProductsRouteImport } from './routes/products'
-import { Route as PlaybookRouteImport } from './routes/playbook'
-import { Route as PhasesRouteImport } from './routes/phases'
-import { Route as PartnersRouteImport } from './routes/partners'
-import { Route as OrganizationRouteImport } from './routes/organization'
-import { Route as ImplementationRouteImport } from './routes/implementation'
-import { Route as FutureProductsRouteImport } from './routes/future-products'
-import { Route as FinancialsRouteImport } from './routes/financials'
-import { Route as EcosystemRouteImport } from './routes/ecosystem'
-import { Route as BlueprintRouteImport } from './routes/blueprint'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlueprintRouteImport } from './routes/blueprint'
+import { Route as EcosystemRouteImport } from './routes/ecosystem'
+import { Route as FinancialsRouteImport } from './routes/financials'
+import { Route as FutureProductsRouteImport } from './routes/future-products'
+import { Route as ImplementationRouteImport } from './routes/implementation'
+import { Route as OrganizationRouteImport } from './routes/organization'
+import { Route as PartnersRouteImport } from './routes/partners'
+import { Route as PhasesRouteImport } from './routes/phases'
+import { Route as PlaybookRouteImport } from './routes/playbook'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as RoadmapRouteImport } from './routes/roadmap'
+import { Route as Vision2036RouteImport } from './routes/vision-2036'
 
-const Vision2036Route = Vision2036RouteImport.update({
-  id: '/vision-2036',
-  path: '/vision-2036',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RoadmapRoute = RoadmapRouteImport.update({
-  id: '/roadmap',
-  path: '/roadmap',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProductsRoute = ProductsRouteImport.update({
-  id: '/products',
-  path: '/products',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlaybookRoute = PlaybookRouteImport.update({
-  id: '/playbook',
-  path: '/playbook',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PhasesRoute = PhasesRouteImport.update({
-  id: '/phases',
-  path: '/phases',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PartnersRoute = PartnersRouteImport.update({
-  id: '/partners',
-  path: '/partners',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OrganizationRoute = OrganizationRouteImport.update({
-  id: '/organization',
-  path: '/organization',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ImplementationRoute = ImplementationRouteImport.update({
-  id: '/implementation',
-  path: '/implementation',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FutureProductsRoute = FutureProductsRouteImport.update({
-  id: '/future-products',
-  path: '/future-products',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FinancialsRoute = FinancialsRouteImport.update({
-  id: '/financials',
-  path: '/financials',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EcosystemRoute = EcosystemRouteImport.update({
-  id: '/ecosystem',
-  path: '/ecosystem',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlueprintRoute = BlueprintRouteImport.update({
@@ -83,9 +33,59 @@ const BlueprintRoute = BlueprintRouteImport.update({
   path: '/blueprint',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const EcosystemRoute = EcosystemRouteImport.update({
+  id: '/ecosystem',
+  path: '/ecosystem',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinancialsRoute = FinancialsRouteImport.update({
+  id: '/financials',
+  path: '/financials',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FutureProductsRoute = FutureProductsRouteImport.update({
+  id: '/future-products',
+  path: '/future-products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImplementationRoute = ImplementationRouteImport.update({
+  id: '/implementation',
+  path: '/implementation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrganizationRoute = OrganizationRouteImport.update({
+  id: '/organization',
+  path: '/organization',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PhasesRoute = PhasesRouteImport.update({
+  id: '/phases',
+  path: '/phases',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlaybookRoute = PlaybookRouteImport.update({
+  id: '/playbook',
+  path: '/playbook',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoadmapRoute = RoadmapRouteImport.update({
+  id: '/roadmap',
+  path: '/roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Vision2036Route = Vision2036RouteImport.update({
+  id: '/vision-2036',
+  path: '/vision-2036',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -201,81 +201,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/vision-2036': {
-      id: '/vision-2036'
-      path: '/vision-2036'
-      fullPath: '/vision-2036'
-      preLoaderRoute: typeof Vision2036RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/roadmap': {
-      id: '/roadmap'
-      path: '/roadmap'
-      fullPath: '/roadmap'
-      preLoaderRoute: typeof RoadmapRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/products': {
-      id: '/products'
-      path: '/products'
-      fullPath: '/products'
-      preLoaderRoute: typeof ProductsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/playbook': {
-      id: '/playbook'
-      path: '/playbook'
-      fullPath: '/playbook'
-      preLoaderRoute: typeof PlaybookRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/phases': {
-      id: '/phases'
-      path: '/phases'
-      fullPath: '/phases'
-      preLoaderRoute: typeof PhasesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/partners': {
-      id: '/partners'
-      path: '/partners'
-      fullPath: '/partners'
-      preLoaderRoute: typeof PartnersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/organization': {
-      id: '/organization'
-      path: '/organization'
-      fullPath: '/organization'
-      preLoaderRoute: typeof OrganizationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/implementation': {
-      id: '/implementation'
-      path: '/implementation'
-      fullPath: '/implementation'
-      preLoaderRoute: typeof ImplementationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/future-products': {
-      id: '/future-products'
-      path: '/future-products'
-      fullPath: '/future-products'
-      preLoaderRoute: typeof FutureProductsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/financials': {
-      id: '/financials'
-      path: '/financials'
-      fullPath: '/financials'
-      preLoaderRoute: typeof FinancialsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ecosystem': {
-      id: '/ecosystem'
-      path: '/ecosystem'
-      fullPath: '/ecosystem'
-      preLoaderRoute: typeof EcosystemRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blueprint': {
@@ -285,11 +215,81 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlueprintRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/ecosystem': {
+      id: '/ecosystem'
+      path: '/ecosystem'
+      fullPath: '/ecosystem'
+      preLoaderRoute: typeof EcosystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/financials': {
+      id: '/financials'
+      path: '/financials'
+      fullPath: '/financials'
+      preLoaderRoute: typeof FinancialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/future-products': {
+      id: '/future-products'
+      path: '/future-products'
+      fullPath: '/future-products'
+      preLoaderRoute: typeof FutureProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/implementation': {
+      id: '/implementation'
+      path: '/implementation'
+      fullPath: '/implementation'
+      preLoaderRoute: typeof ImplementationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/organization': {
+      id: '/organization'
+      path: '/organization'
+      fullPath: '/organization'
+      preLoaderRoute: typeof OrganizationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/phases': {
+      id: '/phases'
+      path: '/phases'
+      fullPath: '/phases'
+      preLoaderRoute: typeof PhasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/playbook': {
+      id: '/playbook'
+      path: '/playbook'
+      fullPath: '/playbook'
+      preLoaderRoute: typeof PlaybookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roadmap': {
+      id: '/roadmap'
+      path: '/roadmap'
+      fullPath: '/roadmap'
+      preLoaderRoute: typeof RoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vision-2036': {
+      id: '/vision-2036'
+      path: '/vision-2036'
+      fullPath: '/vision-2036'
+      preLoaderRoute: typeof Vision2036RouteImport
       parentRoute: typeof rootRouteImport
     }
   }
