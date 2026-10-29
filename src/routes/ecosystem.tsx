@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Section } from "@/components/site-shell";
-import { useLocalizedData, useT } from "@/lib/i18n";
+import { useLang, useLocalizedData, useT } from "@/lib/i18n";
 import { formatFBU } from "@/lib/money";
+import { ECOSYSTEM_SITES } from "@/lib/ecosystem-sites";
+import { Button } from "@/components/ui/button";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 
 export const Route = createFileRoute("/ecosystem")({
   head: () => ({ meta: [
@@ -34,6 +37,8 @@ export const Route = createFileRoute("/ecosystem")({
 
 function Page() {
   const t = useT();
+  const { lang } = useLang();
+  const fr = lang === "fr";
   const { ECOSYSTEM, ROADMAP } = useLocalizedData();
   return (
     <SiteShell>
@@ -42,6 +47,32 @@ function Page() {
         title="The ecosystem at a glance."
         lead="Four layers: a holding group, infrastructure rails, consumer and business platforms, and the talent + voice institutions that protect the long term."
       />
+
+      <Section className="rule-line">
+        <div className="eyebrow">{fr ? "Sites disponibles" : "Available sites"}</div>
+        <h2 className="font-display text-4xl mt-3">{fr ? "Déjà en ligne. Commercialisation en janvier 2027." : "Already online. Commercialization in January 2027."}</h2>
+        <p className="text-muted-foreground mt-4 max-w-3xl leading-relaxed">
+          {fr ? "Ces sites sont déjà disponibles. Leur commercialisation commence le 1er janvier 2027 ; 2026 reste une année de préparation, hors agenda d’exécution." : "These sites are already available. Commercialization starts on January 1, 2027; 2026 remains a preparation year, outside the execution agenda."}
+        </p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+          {ECOSYSTEM_SITES.map((site) => (
+            <article key={site.url} className="border border-border p-5 rounded-md flex flex-col gap-4 min-w-0">
+              <div className="flex items-center gap-2 text-primary text-sm"><CheckCircle2 className="size-4 shrink-0" />{fr ? "Disponible" : "Available"}</div>
+              <div>
+                <h3 className="font-display text-2xl">{site.name}</h3>
+                {site.kind && <p className="text-sm text-muted-foreground mt-1">{site.kind === "application" ? (fr ? "Application" : "Application") : (fr ? "Site web" : "Website")}</p>}
+                <p className="text-xs font-mono text-muted-foreground mt-3 break-all">{new URL(site.url).hostname}</p>
+              </div>
+              <p className="text-sm border-t border-border pt-4">{fr ? "Commercialisation : janvier 2027" : "Commercialization: January 2027"}</p>
+              <Button asChild variant="outline" className="mt-auto self-start">
+                <a href={site.url} target="_blank" rel="noopener noreferrer" aria-label={`${fr ? "Ouvrir" : "Open"} ${site.name} — ${new URL(site.url).hostname}`}>
+                  {fr ? "Ouvrir" : "Open"}<ArrowUpRight />
+                </a>
+              </Button>
+            </article>
+          ))}
+        </div>
+      </Section>
 
       <Section className="rule-line">
         <div className="space-y-px bg-border">
