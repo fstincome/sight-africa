@@ -1,4 +1,5 @@
 # Architecture rules
+- Internal commercial preparation uses Cloud persistence with direct Data API access revoked; server functions validate the existing signed site cookie and same-origin writes before loading the privileged client, preserving the single confidential site account.
 - Keep confirmed ecosystem URLs and their availability/commercialization dates in a browser-safe data module so the page and rule tests use the same facts.
 - Keep partner affiliations, bilingual descriptions and public research evidence in a single browser-safe data module shared by the partners page and blueprint exporter, so both stay consistent.
 - Vercel deployments use Nitro's Vercel preset and root Routing Middleware on every path, including static bundles and documents, because client rendering gates cannot protect confidential files.

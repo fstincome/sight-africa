@@ -23,6 +23,7 @@ export const NAV = [
   { to: "/implementation", label: "Implementation" },
   { to: "/ecosystem", label: "Ecosystem" },
   { to: "/partners", label: "Partners" },
+  { to: "/preparation", label: "Commercial preparation" },
 ] as const;
 
 // Grouped navigation (every NAV entry appears exactly once)
@@ -52,6 +53,7 @@ export const NAV_GROUPS = [
       { to: "/playbook", label: "Playbook", note: "Build, wait, outsource, automate" },
       { to: "/ecosystem", label: "Ecosystem", note: "Group · Infra · Platforms · Voice" },
       { to: "/partners", label: "Partners", note: "Potential partners per project" },
+      { to: "/preparation", label: "Commercial preparation", note: "Owners, stages and deadlines" },
     ],
   },
 ] as const;
