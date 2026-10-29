@@ -14,7 +14,27 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      ecosystem_preparation: {
+        Row: {
+          owner: string
+          site_url: string
+          steps: Json
+          updated_at: string
+        }
+        Insert: {
+          owner?: string
+          site_url: string
+          steps?: Json
+          updated_at?: string
+        }
+        Update: {
+          owner?: string
+          site_url?: string
+          steps?: Json
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
