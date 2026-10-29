@@ -19,6 +19,7 @@ import { Route as OrganizationRouteImport } from './routes/organization'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as PhasesRouteImport } from './routes/phases'
 import { Route as PlaybookRouteImport } from './routes/playbook'
+import { Route as PreparationRouteImport } from './routes/preparation'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as RoadmapRouteImport } from './routes/roadmap'
 import { Route as Vision2036RouteImport } from './routes/vision-2036'
@@ -73,6 +74,11 @@ const PlaybookRoute = PlaybookRouteImport.update({
   path: '/playbook',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PreparationRoute = PreparationRouteImport.update({
+  id: '/preparation',
+  path: '/preparation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsRoute = ProductsRouteImport.update({
   id: '/products',
   path: '/products',
@@ -100,6 +106,7 @@ export interface FileRoutesByFullPath {
   '/partners': typeof PartnersRoute
   '/phases': typeof PhasesRoute
   '/playbook': typeof PlaybookRoute
+  '/preparation': typeof PreparationRoute
   '/products': typeof ProductsRoute
   '/roadmap': typeof RoadmapRoute
   '/vision-2036': typeof Vision2036Route
@@ -115,6 +122,7 @@ export interface FileRoutesByTo {
   '/partners': typeof PartnersRoute
   '/phases': typeof PhasesRoute
   '/playbook': typeof PlaybookRoute
+  '/preparation': typeof PreparationRoute
   '/products': typeof ProductsRoute
   '/roadmap': typeof RoadmapRoute
   '/vision-2036': typeof Vision2036Route
@@ -131,6 +139,7 @@ export interface FileRoutesById {
   '/partners': typeof PartnersRoute
   '/phases': typeof PhasesRoute
   '/playbook': typeof PlaybookRoute
+  '/preparation': typeof PreparationRoute
   '/products': typeof ProductsRoute
   '/roadmap': typeof RoadmapRoute
   '/vision-2036': typeof Vision2036Route
@@ -148,6 +157,7 @@ export interface FileRouteTypes {
     | '/partners'
     | '/phases'
     | '/playbook'
+    | '/preparation'
     | '/products'
     | '/roadmap'
     | '/vision-2036'
@@ -163,6 +173,7 @@ export interface FileRouteTypes {
     | '/partners'
     | '/phases'
     | '/playbook'
+    | '/preparation'
     | '/products'
     | '/roadmap'
     | '/vision-2036'
@@ -178,6 +189,7 @@ export interface FileRouteTypes {
     | '/partners'
     | '/phases'
     | '/playbook'
+    | '/preparation'
     | '/products'
     | '/roadmap'
     | '/vision-2036'
@@ -194,6 +206,7 @@ export interface RootRouteChildren {
   PartnersRoute: typeof PartnersRoute
   PhasesRoute: typeof PhasesRoute
   PlaybookRoute: typeof PlaybookRoute
+  PreparationRoute: typeof PreparationRoute
   ProductsRoute: typeof ProductsRoute
   RoadmapRoute: typeof RoadmapRoute
   Vision2036Route: typeof Vision2036Route
@@ -271,6 +284,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlaybookRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/preparation': {
+      id: '/preparation'
+      path: '/preparation'
+      fullPath: '/preparation'
+      preLoaderRoute: typeof PreparationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products': {
       id: '/products'
       path: '/products'
@@ -306,6 +326,7 @@ const rootRouteChildren: RootRouteChildren = {
   PartnersRoute: PartnersRoute,
   PhasesRoute: PhasesRoute,
   PlaybookRoute: PlaybookRoute,
+  PreparationRoute: PreparationRoute,
   ProductsRoute: ProductsRoute,
   RoadmapRoute: RoadmapRoute,
   Vision2036Route: Vision2036Route,
