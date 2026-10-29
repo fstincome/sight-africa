@@ -2,6 +2,8 @@
 // Keep keys EXACTLY as they appear in the source.
 
 export const dict: Record<string, string> = {
+  "Commercial preparation": "Préparation commerciale",
+  "Owners, stages and deadlines": "Responsables, étapes et échéances",
   // === NAV ===
   "Overview": "Aperçu",
   "Partners": "Partenaires",
